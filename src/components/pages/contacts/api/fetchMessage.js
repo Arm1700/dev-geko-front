@@ -1,5 +1,5 @@
 import axios from 'axios';
-const api = 'https://gekoeducation.com/api/contact/';
+const api = 'http://gekoeducation.com/api/contact/';
 
 export async function postData(data) {
   try {

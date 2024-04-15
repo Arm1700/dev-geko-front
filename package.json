@@ -46,5 +46,9 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.3"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/emmasaf/geko-front.git",
+  "author": "emma <safaryanemma05@gmail.com>",
+  "license": "MIT"
 }

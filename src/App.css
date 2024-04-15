@@ -26,9 +26,3 @@
 
 /* slider */
 
-.slick-center {
-  border: 2px solid red;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  transform: scale(1.1);
-   /* Scale up the central slide */
-}
