@@ -3,9 +3,7 @@ import reviewsArray from '../../../../entities/reviewsArray'
 import Slider from 'react-slick'
 
 export default function Review() {
-  const [currentIndex, setCurrentIndex] = useState(
-    window.innerWidth < 780 ? 0 : 1,
-  )
+  const [currentIndex, setCurrentIndex] = useState(0)
   const sliderUp = useRef(null)
   const sliderDown = useRef(null)
   const [slidesToShow, setSlidesToShow] = useState(
