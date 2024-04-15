@@ -1,0 +1,28 @@
+/* Course */
+.inner-img {
+  transition: 0.3s;
+}
+
+.inner-img:hover {
+  transform: scale(1.1);
+}
+
+.img-wrapper {
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #1c2f38; /* Use a darker shade or different color for the scrollbar handle */
+  border-radius: 6px;
+}
+
+
+/* slider */
+
