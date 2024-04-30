@@ -127,7 +127,7 @@ export default function Home() {
           How real people said about Education WordPress Theme
         </p>
       </div>
-      <div className="text-start lg:px-20 px-5 pt-5 ">
+      <div className="text-start lg:px-20 px-5 pt-5 slider-container">
         <Reviews />
       </div>
     </main>
