@@ -12,14 +12,14 @@ export default function Event({
   image,
 }) {
   return (
-    <section className=" border-b-2  py-[30px] border-gray-300 flex flex-col gap-5 md:flex-row  md:justify-between md:items-center">
-      <div className="flex flex-col gap-1">
+    <section className="events-container border-b-2  py-[30px] border-gray-300 flex  gap-5   md:justify-between md:items-center">
+      <div className="events-position-month flex flex-col gap-1">
         <span className="text-primary font-bold text-6xl leading-60">
           {day}
         </span>
         <span className="text-gray leading-[25px]">{month}</span>
       </div>
-      <div className="gap-2 flex flex-col">
+      <div className="events-info gap-2 flex flex-col">
         <h5 className="text-2xl font-bold hover:text-primary transition-colors duration-300 cursor-pointer ">{title}</h5>
         <div className="flex gap-1 items-center">
           <TbClockHour3 className="text-primary" /> <span>{hour}</span>
@@ -27,7 +27,7 @@ export default function Event({
         </div>
         <p>{description}</p>
       </div>
-      <img alt={"image " + description} src={image} className="rounded-md w-full md:w-[270px]" />
+      <img alt={"image " + description} src={image} className="rounded-md events-container-img" />
     </section>
   )
 }

@@ -11,7 +11,7 @@ import socialsArray from '../../entities/socialsArray';
 const Footer = () => {
   const {t} = useTranslation()
   return (
-    <footer className="flex flex-row items-center justify-between lg:px-20 px-5 bg-secondary lg:px-20 px-5 text-pseudo p-5">
+    <footer className="flex flex-row items-center justify-between lg:px-20 px-5 bg-black text-pseudo p-5">
       <div className="flex flex-col gap-4">
         <Logo />
         <p className="flex">

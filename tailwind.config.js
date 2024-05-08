@@ -14,6 +14,7 @@ module.exports = {
         lightBlue: '#4489f3',
         lightYellow: '#ffb606',
         lightRed: '#dd4b39',
+        black: '#111111',
       },
       fontFamily: {
         sans: ['Arial', 'sans-serif'],
