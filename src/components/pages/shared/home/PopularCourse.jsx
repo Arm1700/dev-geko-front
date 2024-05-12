@@ -1,13 +1,11 @@
+import {FaExternalLinkAlt} from 'react-icons/fa'
 import {useNavigate} from 'react-router-dom'
 import {useState} from 'react'
-import {FaExternalLinkAlt} from 'react-icons/fa'
 
 export default function PopularCourse({
                                           image,
                                           id,
                                           title,
-                                          count = [0, 0],
-                                          price,
                                       }) {
     const nav = useNavigate()
     const [isHovered, setIsHovered] = useState(false)
@@ -22,10 +20,10 @@ export default function PopularCourse({
 
     return (
         <article
-            // max-w-[250px]
-            className="my-5 cursor-pointer rounded-lg lg:mx-1  border min-w-[250px] h-[300px]  border-gray "
+            className="my-5 cursor-pointer rounded-lg  border md:w-[260px] sm:max-w-[40%] sm:h-[400px] md:h-[300px] border-gray"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+
         >
             <div
                 onClick={() => nav(`/courses/${id}`)}
@@ -33,9 +31,11 @@ export default function PopularCourse({
                     backgroundImage: isHovered
                         ? `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${image})`
                         : `url(${image})`,
-                    width:'250px'
+                    backgroundSize: '100% 100%',
+                    width: '100%',
+                    height:'65%',
                 }}
-                className="w-full relative bg-no-repeat bg-cover rounded-t-lg h-[65%]"
+                className="w-full relative bg-no-repeat bg-cover rounded-t-lg "
             >
                 <FaExternalLinkAlt
                     style={{
@@ -49,10 +49,10 @@ export default function PopularCourse({
                     className='text-pseudo'
                 />
             </div>
-            <p className="text-center hover:text-primary cursor-pointer transition-colors duration-300 font-roboto-slab px-5 text-parimaryDark font-extrabold py-6 w-[250px]">
-                {title}
-            </p>
-            <div className="flex flex-col justify-between items-center ">
+            <div className='w-[100%] h-[35%] flex justify-center items-center'>
+                <p className="text-center hover:text-primary cursor-pointer transition-colors duration-300   text-primaryDark font-roboto-slab  w-[250px]">
+                    {title}
+                </p>
             </div>
         </article>
     )

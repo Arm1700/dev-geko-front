@@ -12,12 +12,12 @@ export const coursesArray = [
   {
     id: 3,
     image: 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-3-170x170.png',
-    text: 'English',
+    text: 'ARTS & CRAFTS',
   },
   {
     id: 4,
     image: 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-8-170x170.png',
-    text: 'Coding',
+    text: 'COACHING',
   },
   {
     id: 5,

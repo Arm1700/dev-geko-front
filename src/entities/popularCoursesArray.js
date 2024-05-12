@@ -3,7 +3,7 @@ const popularCoursesArray = [
     id: 1, 
     image:
       'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-14-400x300.jpg',
-    title: 'Eduma Course Creation for Passive Income',
+    title: 'How to Teach English Online and Get Paid',
     count: [6, 123],
     price: '$223',
     features: {

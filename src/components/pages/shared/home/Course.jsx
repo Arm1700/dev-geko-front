@@ -49,7 +49,7 @@ const CourseSlider = () => {
         }
     }, [])
     return (
-        <div className="slider-container lg:px-20 px-5 py-20 ">
+        <div className="lg:px-20 px-10 py-20 ">
             <Swiper
                 style={{
                     height: '220px',
@@ -80,7 +80,7 @@ const CourseSlider = () => {
                             className="cursor-pointer img-wrapper  relative w-[180px] h-[180px] bg-primary rounded-lg overflow-hidden flex flex-col justify-center items-center">
                             <img className="inner-img absolute inset-0 w-full h-full object-cover" src={image}
                                  alt="Course" style={{filter: 'brightness(50%)'}}/>
-                            <p className="absolute font-bold text-pseudo hover:text-primary text-lg top-[43%] left-[33%] transform translate(-50%, -50%) z-50">{text}</p>
+                            <p className="absoluteP absolute font-bold text-pseudo  hover:text-primary text-base font-roboto-slab top-[50%] left-[50%] w-[90%] text-center z-50">{text}</p>
                         </article>
                     </SwiperSlide>
                 ))}

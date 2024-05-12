@@ -7,6 +7,12 @@ const reviewsArray = [
       "Wow, I'm truly impressed by your creativity! Your attention to detail and the depth of your analysis are remarkable. It's clear that you've put a lot of thought and effort into this project. Keep up the amazing work!",
   },
   {
+    id: 65,
+    image: 'https://eduma.thimpress.com/wp-content/uploads/2015/11/team-6.jpg',
+    name: 'Anthony',
+    comment: "a",
+  },
+  {
     id: 2,
     image: 'https://eduma.thimpress.com/wp-content/uploads/2015/11/team-3.jpg',
     name: 'Manuel',
@@ -17,19 +23,27 @@ const reviewsArray = [
     id: 3,
     image: 'https://eduma.thimpress.com/wp-content/uploads/2015/11/team-5.jpg',
     name: 'John Doe',
-    comment: 'This is absolutely fantastic! Great work!',
+    comment: " Beg WP Theme is a comprehensive LMS solution for WordPress Theme. This beautiful theme based on LearnPress - the best WordPress LMS plugin. Education WP theme will bring you the best LMS experience ever with super friendly UX and complete eLearning features. ",
   },
+
   {
     id: 4,
     image: 'https://eduma.thimpress.com/wp-content/uploads/2015/11/team-7.jpg',
     name: 'Elsie',
-    comment: 'This is exactly what I needed. Thank you for sharing!',
+    comment: " Arm WP Theme is a comprehensive LMS solution for WordPress Theme. This beautiful theme based on LearnPress - the best WordPress LMS plugin. Education WP theme will bring you the best LMS experience ever with super friendly UX and complete eLearning features. ",
   },
   {
     id: 5,
     image: 'https://eduma.thimpress.com/wp-content/uploads/2015/11/team-6.jpg',
     name: 'Anthony',
     comment: "I can't believe how insightful this is. Mind blown!",
+  },
+
+  {
+    id: 46,
+    image: 'https://eduma.thimpress.com/wp-content/uploads/2015/11/team-6.jpg',
+    name: 'Anthony',
+    comment: "b",
   },
 ];
 
