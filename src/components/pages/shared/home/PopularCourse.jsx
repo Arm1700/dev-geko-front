@@ -20,10 +20,12 @@ export default function PopularCourse({
 
     return (
         <article
-            className="my-5 cursor-pointer rounded-lg  border md:w-[260px] sm:max-w-[40%] sm:h-[400px] md:h-[300px] border-gray"
+            className="my-5 cursor-pointer rounded-lg border  border-gray"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-
+            style={{
+                aspectRatio: "4 / 5"
+            }}
         >
             <div
                 onClick={() => nav(`/courses/${id}`)}
@@ -33,7 +35,8 @@ export default function PopularCourse({
                         : `url(${image})`,
                     backgroundSize: '100% 100%',
                     width: '100%',
-                    height:'65%',
+                    // height:'65%',
+                    aspectRatio: "4 / 3"
                 }}
                 className="w-full relative bg-no-repeat bg-cover rounded-t-lg "
             >
@@ -50,7 +53,7 @@ export default function PopularCourse({
                 />
             </div>
             <div className='w-[100%] h-[35%] flex justify-center items-center'>
-                <p className="text-center hover:text-primary cursor-pointer transition-colors duration-300   text-primaryDark font-roboto-slab  w-[250px]">
+                <p className="text-center hover:text-primary cursor-pointer transition-colors duration-300 text-custom-15 font-medium text-primaryDark font-roboto-slab  ">
                     {title}
                 </p>
             </div>

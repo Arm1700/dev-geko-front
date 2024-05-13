@@ -7,37 +7,24 @@ import 'swiper/css/pagination';
 
 import {useLayoutEffect, useState} from 'react'
 
-
 const CourseSlider = () => {
 
     const [slidesToShow, setSlidesToShow] = useState(5)
     const [spaceBetween, setSpaceBetween] = useState(30)
     const renderBullet = (index, className) => {
-        return `<span class="${className}" style="background-color: orange"></span>`; // Установите цвет фона в orange
+        return `<span class="${className}" style="background-color: orange; "></span>`; // Установите цвет фона в orange
     };
     useLayoutEffect(() => {
         function updateSlidesToShow() {
             const screenWidth = window.innerWidth
-            if (screenWidth >= 1200) {
+            if (screenWidth >= 992) {
                 setSlidesToShow(6)
                 setSpaceBetween(30)
-            } else if (screenWidth >= 992) {
-                setSlidesToShow(5)
-                setSpaceBetween(30)
-            } else if (screenWidth >= 768) {
-                setSlidesToShow(4)
-                setSpaceBetween(30)
-            } else if (screenWidth >= 640) {
-                setSlidesToShow(3)
-                setSpaceBetween(30)
             } else if (screenWidth >= 480) {
-                setSlidesToShow(2)
+                setSlidesToShow(4)
                 setSpaceBetween(10)
-            } else if (screenWidth >= 320) {
-                setSlidesToShow(2)
-                setSpaceBetween(30)
             } else {
-                setSlidesToShow(1)
+                setSlidesToShow(2)
                 setSpaceBetween(30)
             }
         }
@@ -49,21 +36,20 @@ const CourseSlider = () => {
         }
     }, [])
     return (
-        <div className="lg:px-20 px-10 py-20 ">
+        <div className="max:px-5 py-20 mx-auto"
+        style={{
+            maxWidth:"1200px",
+        }}>
             <Swiper
-                style={{
-                    height: '220px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                }}
                 loop={true}
                 modules={[Pagination, A11y]}
                 spaceBetween={spaceBetween}
                 slidesPerView={slidesToShow}
                 pagination={{
                     clickable: true,
-                    renderBullet
+                    renderBullet,
                 }}
+                speed={500}
                 navigation
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
@@ -76,10 +62,19 @@ const CourseSlider = () => {
                                      justifyContent: 'center',
                                  }}
                     >
+
                         <article
-                            className="cursor-pointer img-wrapper  relative w-[180px] h-[180px] bg-primary rounded-lg overflow-hidden flex flex-col justify-center items-center">
-                            <img className="inner-img absolute inset-0 w-full h-full object-cover" src={image}
-                                 alt="Course" style={{filter: 'brightness(50%)'}}/>
+                            className="cursor-pointer img-wrapper  relative bg-primary rounded-lg  overflow-hidden md:w-[162px] max:w-[220px] flex flex-col justify-center items-center"
+                            style={{
+                                aspectRatio: "1 / 1"
+                            }}>
+                            <img className="inner-img absolute inset-0 w-full  object-cover" src={image}
+                                 alt="Course" style={{
+                                filter: 'brightness(50%)',
+                                objectFit: 'cover', // Ресайз изображения по краям с сохранением пропорций
+                                width: '100%', // Ширина 100%
+                                height: '100%', // Высота 100%
+                            }}/>
                             <p className="absoluteP absolute font-bold text-pseudo  hover:text-primary text-base font-roboto-slab top-[50%] left-[50%] w-[90%] text-center z-50">{text}</p>
                         </article>
                     </SwiperSlide>

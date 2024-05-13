@@ -15,25 +15,31 @@ export default function Home() {
     return (<main>
             <MainPhoto image={url} text1="The best time for" text2="education"/>
             <Course/>
-            <div className="text-start lg:px-20 px-10 bigpx-5  pt-5 ">
-                <h1 className="text-3xl font-roboto-slab font-bold text-primeryDark">
-                    Popular Course​s
-                </h1>
-                <p className="text-md text-secondaryLight">
-                    Limitless learning, more possibilities
-                </p>
-            </div>
+
             <div
-                className="flex content-center  lg:px-20 px-10 gap-20 py-10 flex-wrap md:justify-between max920:h[400px] justify-center">
-                {popularCoursesArray.map(({image, id, title, count, price}) => {
-                    return (<PopularCourse
-                            id={id}
-                            image={image}
-                            title={title}
-                            key={id}
-                        />)
-                })}
+                className="flex content-center justify-center gap-20 py-10">
+                <div className='popularDiv mx-[auto] px-5 '>
+                    <div className="text-start">
+                        <h1 className="text-custom-28 font-roboto-slab font-bold text-primeryDark">
+                            Popular Course​s
+                        </h1>
+                        <p className="text-md text-secondaryLight text-custom-15">
+                            Limitless learning, more possibilities
+                        </p>
+                    </div>
+                    <div className="popular">
+                        {popularCoursesArray.map(({image, id, title, count, price}) => {
+                            return (<PopularCourse
+                                id={id}
+                                image={image}
+                                title={title}
+                                key={id}
+                            />)
+                        })}
+                    </div>
+                </div>
             </div>
+
             <div
                 style={{
                     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${books})`,
@@ -44,17 +50,22 @@ export default function Home() {
                     return <LessonInfo key={id} Icon={icon} title={title} count={count}/>
                 })}
             </div>
-            <div className="text-start lg:px-20 px-5 pt-5 ">
-                <h1 className="text-3xl font-roboto-slab font-bold text-primeryDark">
-                    Events
-                </h1>
-                <p className="text-md text-secondaryLight">
-                    Upcoming Education Events to feed your brain.
-                </p>
-            </div>
-            <div className="text-start lg:px-20 px-5 pt-5 ">
-                {eventsArray.map(({id, day, month, title, hour, place, description, image}) => {
-                    return (<Event
+
+            <div className="text-start pt-20 flex justify-center">
+                <div className=''
+                     style={{
+                         maxWidth: "1200px"
+                     }}>
+                    <div className="text-start">
+                        <h1 className="text-custom-28 font-roboto-slab font-bold text-primeryDark">
+                            Events
+                        </h1>
+                        <p className="text-custom-15 text-secondaryLight">
+                            Upcoming Education Events to feed your brain.
+                        </p>
+                    </div>
+                    {eventsArray.map(({id, day, month, title, hour, place, description, image}) => {
+                        return (<Event
                             key={id}
                             day={day}
                             month={month}
@@ -64,18 +75,20 @@ export default function Home() {
                             description={description}
                             image={image}
                         />)
-                },)}
+                    },)}
+                </div>
             </div>
-            <div className="text-center lg:px-20 px-5 py-10 ">
-                <h1 className="text-3xl font-roboto-slab font-bold text-primeryDark">
+            <div className="text-center lg:px-20 px-5 pt-10 pb-5">
+                <h1 className="text-custom-28 font-roboto-slab font-bold text-primeryDark">
                     What People Say
                 </h1>
-                <p className="text-md text-secondaryLight">
+                <p className="text-md text-secondaryLight text-custom-15">
                     How real people said about Education WordPress Theme
                 </p>
             </div>
             <div className="text-start lg:px-20 px-5 pt-5">
                 <Reviews/>
             </div>
-        </main>)
+        </main>
+    )
 }

@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
@@ -15,8 +14,6 @@
       <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/LessonInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/LessonInfo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/PopularCourse.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/PopularCourse.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/coursesArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/coursesArray.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/popularCoursesArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/popularCoursesArray.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/reviewsArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/reviewsArray.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
@@ -78,7 +75,7 @@
       <workItem from="1715112578131" duration="4007000" />
       <workItem from="1715133987525" duration="41037000" />
       <workItem from="1715326716122" duration="1201000" />
-      <workItem from="1715403117575" duration="31471000" />
+      <workItem from="1715403117575" duration="59427000" />
     </task>
     <servers />
   </component>
