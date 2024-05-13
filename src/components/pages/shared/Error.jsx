@@ -1,5 +1,5 @@
 // Error404.jsx
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
 const Error404 = () => {
@@ -11,13 +11,16 @@ const Error404 = () => {
 
     return (
         <div className="flex flex-col items-center justify-center w-full">
-            <h1 className="text-3xl font-roboto-slab font-bold mb-4 self-start px-20 pt-7 text-primaryDark">404
+            <h1 className="text-3xl font-roboto-slab font-bold mb-4 self-start lg:px-20 max:px-5 pt-7 text-primaryDark">404
                 Page</h1>
-            <div className="flex p-20 justify-center gap-10 items-center">
-                <img className="w-[480px] h-[400px]"
+            <div className="flex py-20 mid:px-20 max:px-5 justify-center gap-10 items-center mx-[auto] mid:flex-row max:flex-col">
+                <img className="sm:w-[470px] max:w-[300px]"
+                     style={{
+                         aspectRatio: "6/5"
+                     }}
                      src="https://eduma.thimpress.com/wp-content/uploads/2022/07/404-error.png" alt=""/>
-                <div className="w-[430px]">
-                    <p className="text-7xl font-roboto-slab">
+                <div className="sm:w-[420px] max:w-[300px]">
+                    <p className="text-7xl font-roboto-slab text-primaryDark">
                         404
                         <span className="text-primary text-bold"> ERROR!</span>
                     </p>

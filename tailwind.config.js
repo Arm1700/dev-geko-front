@@ -48,11 +48,11 @@ module.exports = {
             },
         },
         screens: {
-            max: '400px',
+            max: '360px',
             sm: '640px',
             middle: '768px',
+            mid: '780px',
             max920: {'min': '400px', 'max': '920px'},
-            mid: {'min': '780px', 'max': '959px'},
             md: '992px',
             mdLg: {'min': '993px', 'max': '1279px'},
             lg: '1280px',
