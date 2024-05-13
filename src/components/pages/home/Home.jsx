@@ -51,7 +51,7 @@ export default function Home() {
                 })}
             </div>
 
-            <div className="text-start pt-20 flex justify-center">
+            <div className="text-start pt-20 px-5 flex justify-center">
                 <div className=''
                      style={{
                          maxWidth: "1200px"
