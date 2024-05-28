@@ -8,7 +8,7 @@ const PageUpScrollButton = () => {
 
   return (
     <div
-      className="fixed bottom-4 right-4 bg-secondary text-white p-2   hover:text-primary rounded-sm transition-colors duration-300 cursor-pointer "
+      className="fixed bottom-4 right-4 bg-secondary text-white p-2 z-[10000] hover:text-primary rounded-sm transition-colors duration-300 cursor-pointer"
       onClick={handleScrollUp}
     >
       <IoIosArrowUp />

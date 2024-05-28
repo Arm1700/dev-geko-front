@@ -6,6 +6,10 @@ import PageUpButton from './components/pages/shared/PageUpButton';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Error404 from "./components/pages/shared/Error";
+import CoursePage from "./components/pages/courses/[id]";
+import CourseCategoryPage from "./components/pages/shared/home/[id]";
+import Courses from "./components/pages/courses/Courses";
+
 
 function App() {
     return (
@@ -13,6 +17,8 @@ function App() {
             <PageUpButton />
             <Header />
             <Routes>
+                <Route path="/courses/:id" element={<CoursePage />} />
+                <Route path="/course-category/:id" element={<Courses />} />
                 {routesArray.map(route => (
                     <Route
                         key={route.id}

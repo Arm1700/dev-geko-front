@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../../images/logo.jpg'
+import logo from '../../../images/logo.png'
 import { Link } from 'react-router-dom'
 
 export default function Logo({ size = '50px' }) {

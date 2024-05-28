@@ -3,9 +3,11 @@ import {useNavigate} from 'react-router-dom'
 import {useState} from 'react'
 
 export default function PopularCourse({
+                                          gridStyleTF = true,
                                           image,
                                           id,
                                           title,
+                                          desc,
                                       }) {
     const nav = useNavigate()
     const [isHovered, setIsHovered] = useState(false)
@@ -17,28 +19,21 @@ export default function PopularCourse({
     const handleMouseLeave = () => {
         setIsHovered(false)
     }
-
     return (
         <article
-            className="my-5 cursor-pointer rounded-lg border  border-gray"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            style={{
-                aspectRatio: "4 / 5"
-            }}
-        >
+            className={`my-5 border-gray h-min ${gridStyleTF === true ? "none border rounded-lg" : "flex border-b"} mb-[30px]`}>
             <div
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
                 onClick={() => nav(`/courses/${id}`)}
+                className={`relative bg-no-repeat bg-cover  cursor-pointer ${gridStyleTF === true ? "w-[100%] rounded-t-lg" : "w-[260px] rounded-lg"}`}
                 style={{
                     backgroundImage: isHovered
                         ? `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${image})`
                         : `url(${image})`,
                     backgroundSize: '100% 100%',
-                    width: '100%',
-                    // height:'65%',
-                    aspectRatio: "4 / 3"
+                    aspectRatio: "4 / 3",
                 }}
-                className="w-full relative bg-no-repeat bg-cover rounded-t-lg "
             >
                 <FaExternalLinkAlt
                     style={{
@@ -52,9 +47,18 @@ export default function PopularCourse({
                     className='text-pseudo'
                 />
             </div>
-            <div className='w-[100%] h-[35%] flex justify-center items-center'>
-                <p className="text-center hover:text-primary cursor-pointer transition-colors duration-300 text-custom-15 font-medium text-primaryDark font-roboto-slab  ">
+            <div
+                className={`w-[100%] ${gridStyleTF === true ? "h-[35%] items-center" : "h-[100%] pl-10 gap-4"} py-[30px] px-[20px] flex flex-col justify-center `}>
+                <p className={`hover:text-primary cursor-pointer transition-colors duration-300 
+                ${gridStyleTF === true ? "text-custom-15 text-center" : "text-xl"} 
+                font-medium text-primaryDark font-roboto-slab`}
+                   onClick={() => nav(`/courses/${id}`)}
+                >
                     {title}
+                </p>
+                <p className={`${gridStyleTF === true ? "items-center" : ""} transition-colors duration-300 text-custom-15 font-medium text-color60 font-roboto`}
+                >
+                    {gridStyleTF === true ? "" : desc}
                 </p>
             </div>
         </article>

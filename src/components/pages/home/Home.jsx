@@ -8,27 +8,37 @@ import books from '../../../images/books.jpg'
 import eventsArray from '../../../entities/eventsArray'
 import Event from '../shared/event/Event'
 import Reviews from '../shared/home/Review'
+import {useNavigate} from "react-router-dom";
 
 export default function Home() {
+    const nav = useNavigate();
+    const handleCategoryClick = () => {
+        nav(`/course-category`);
+    };
     const url = 'https://www.shutterstock.com/shutterstock/videos/1086751859/preview/stock-footage-video-of-financial-data-processing-over-diverse-business-people-global-business-finances.webm'
 
     return (<main>
             <MainPhoto image={url} text1="The best time for" text2="education"/>
             <Course/>
-
             <div
                 className="flex content-center justify-center gap-20 py-10">
                 <div className='popularDiv mx-[auto] px-5 '>
-                    <div className="text-start">
-                        <h1 className="text-custom-28 font-roboto-slab font-bold text-primeryDark">
-                            Popular Course​s
-                        </h1>
-                        <p className="text-md text-secondaryLight text-custom-15">
-                            Limitless learning, more possibilities
-                        </p>
+                    <div className="flex justify-between">
+                        <div className="text-start">
+                            <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
+                                Popular Course​s
+                            </h1>
+                            <p className="text-md text-secondaryLight text-custom-15">
+                                Limitless learning, more possibilities
+                            </p>
+                        </div>
+                        <button className="text-sm uppercase font-light border-2 px-[20px] py-[7px] h-[50%] rounded-[4px]"
+                                onClick={() => handleCategoryClick()}>
+                            View All
+                        </button>
                     </div>
                     <div className="popular">
-                        {popularCoursesArray.map(({image, id, title, count, price}) => {
+                        {popularCoursesArray.slice(0, 8).map(({image, id, title}) => {
                             return (<PopularCourse
                                 id={id}
                                 image={image}
@@ -57,7 +67,7 @@ export default function Home() {
                          maxWidth: "1200px"
                      }}>
                     <div className="text-start">
-                        <h1 className="text-custom-28 font-roboto-slab font-bold text-primeryDark">
+                        <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
                             Events
                         </h1>
                         <p className="text-custom-15 text-secondaryLight">
@@ -79,7 +89,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="text-center lg:px-20 px-5 pt-10 pb-5">
-                <h1 className="text-custom-28 font-roboto-slab font-bold text-primeryDark">
+                <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
                     What People Say
                 </h1>
                 <p className="text-md text-secondaryLight text-custom-15">

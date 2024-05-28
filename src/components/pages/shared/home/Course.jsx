@@ -6,8 +6,10 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import {useLayoutEffect, useState} from 'react'
+import {useNavigate} from "react-router-dom";
 
 const CourseSlider = () => {
+    const nav = useNavigate()
 
     const [slidesToShow, setSlidesToShow] = useState(5)
     const [spaceBetween, setSpaceBetween] = useState(30)
@@ -36,17 +38,17 @@ const CourseSlider = () => {
         }
     }, [])
     return (
-        <div className="max:px-5 py-20 mx-auto"
-        style={{
-            maxWidth:"1200px",
-        }}>
+        <div className="max:px-5 py-16 mx-auto max-w-[1200px]">
             <Swiper
                 loop={true}
                 modules={[Pagination, A11y]}
                 spaceBetween={spaceBetween}
                 slidesPerView={slidesToShow}
                 pagination={{
+                    type:"bullets",
                     clickable: true,
+                    dynamicBullets: true,
+                    dynamicMainBullets: 2,
                     renderBullet,
                 }}
                 speed={500}
@@ -64,7 +66,8 @@ const CourseSlider = () => {
                     >
 
                         <article
-                            className="cursor-pointer img-wrapper  relative bg-primary rounded-lg  overflow-hidden md:w-[162px] max:w-[220px] flex flex-col justify-center items-center"
+                            onClick={() => nav(`/course-category/${id}`)}
+                            className="cursor-pointer img-wrapper mb-[40px] relative bg-primary rounded-lg  overflow-hidden md:w-[162px] max:w-[220px] flex flex-col justify-center items-center"
                             style={{
                                 aspectRatio: "1 / 1"
                             }}>

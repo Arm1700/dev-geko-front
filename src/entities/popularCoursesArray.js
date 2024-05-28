@@ -4,8 +4,7 @@ const popularCoursesArray = [
     image:
       'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-14-400x300.jpg',
     title: 'How to Teach English Online and Get Paid',
-    count: [6, 123],
-    price: '$223',
+    category:"1",
     features: {
       lectures: 7,
       quizzes: 0,
@@ -15,7 +14,7 @@ const popularCoursesArray = [
       students: 2,
       assessments: 'Yes',
     },
-    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
     certification:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
     outcomed: [
@@ -34,8 +33,7 @@ const popularCoursesArray = [
     image:
       'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-18-400x300.jpg',
     title: 'How to Teach English Online and Get Paid',
-    count: [7, 9],
-    price: '$39.00',
+    category:"1",
     features: {
       lectures: 7,
       quizzes: 0,
@@ -45,7 +43,7 @@ const popularCoursesArray = [
       students: 8,
       assessments: 'Yes',
     },
-    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
     certification:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
     outcomed: [
@@ -64,8 +62,7 @@ const popularCoursesArray = [
     image:
       'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-17-400x300.jpg',
     title: 'How To Create In-Demand Online Courses',
-    count: [7, 2],
-    price: '$223',
+    category:"1",
     features: {
       lectures: 5,
       quizzes: 2,
@@ -75,7 +72,7 @@ const popularCoursesArray = [
       students: 13,
       assessments: 'No',
     },
-    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
     certification:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
     outcomed: [
@@ -94,8 +91,7 @@ const popularCoursesArray = [
     image:
       'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
     title: 'Instructional Design for Learning and Development',
-    count: [6, 88],
-    price: '$50.00',
+    category:"1",
     features: {
       lectures: 7,
       quizzes: 0,
@@ -105,7 +101,7 @@ const popularCoursesArray = [
       students: 8,
       assessments: 'Yes',
     },
-    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
     certification:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
     outcomed: [
@@ -124,8 +120,7 @@ const popularCoursesArray = [
     image:
       'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-14-400x300.jpg',
     title: 'Eduma Course Creation for Passive Income',
-    count: [6, 123],
-    price: '$223',
+    category:"2",
     features: {
       lectures: 7,
       quizzes: 0,
@@ -135,7 +130,7 @@ const popularCoursesArray = [
       students: 8,
       assessments: 'Yes',
     },
-    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
     certification:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
     outcomed: [
@@ -154,8 +149,7 @@ const popularCoursesArray = [
     image:
       'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-18-400x300.jpg',
     title: 'How to Teach English Online and Get Paid',
-    count: [7, 9],
-    price: '$39.00',
+    category:"2",
     features: {
       lectures: 7,
       quizzes: 0,
@@ -165,7 +159,7 @@ const popularCoursesArray = [
       students: 8,
       assessments: 'Yes',
     },
-    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
     certification:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
     outcomed: [
@@ -184,8 +178,7 @@ const popularCoursesArray = [
     image:
       'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-17-400x300.jpg',
     title: 'How To Create In-Demand Online Courses',
-    count: [7, 2],
-    price: '$223',
+    category:"2",
     features: {
       lectures: 7,
       quizzes: 0,
@@ -195,7 +188,7 @@ const popularCoursesArray = [
       students: 8,
       assessments: 'Yes',
     },
-    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
     certification:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
     outcomed: [
@@ -214,8 +207,7 @@ const popularCoursesArray = [
     image:
       'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
     title: 'Instructional Design for Learning and Development',
-    count: [6, 88],
-    price: '$50.00',
+    category:"3",
     features: {
       lectures: 7,
       quizzes: 0,
@@ -225,7 +217,7 @@ const popularCoursesArray = [
       students: 8,
       assessments: 'Yes',
     },
-    desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
     certification:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
     outcomed: [
@@ -239,5 +231,381 @@ const popularCoursesArray = [
       'Practical learning experience with live project work and examples.',
     ],
   },
+  {
+    id: 9,
+    image:
+        'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
+    title: 'Instructional Design for Learning and Development',
+    category:"3",
+    features: {
+      lectures: 7,
+      quizzes: 0,
+      duration: '9 hour',
+      skillLevel: 'all Levels',
+      lang: 'English',
+      students: 8,
+      assessments: 'Yes',
+    },
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
+    certification:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    outcomed: [
+      'Over 37 lectures and 55.5 hours of content!',
+      'LIVE PROJECT End to End Software Testing Training Included.',
+      'Learn Software Testing and Automation basics from a professional trainer from your own desk.',
+      'Information packed practical training starting from basics to advanced testing techniques.',
+      'Best suitable for beginners to advanced level users and who learn faster when demonstrated.',
+      'Course content designed by considering current software testing technology and the job market.',
+      'Practical assignments at the end of every session.',
+      'Practical learning experience with live project work and examples.',
+    ],
+  },
+  {
+    id: 10,
+    image:
+        'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
+    title: 'Instructional Design for Learning and Development',
+    category:"3",
+    features: {
+      lectures: 7,
+      quizzes: 0,
+      duration: '9 hour',
+      skillLevel: 'all Levels',
+      lang: 'English',
+      students: 8,
+      assessments: 'Yes',
+    },
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
+    certification:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    outcomed: [
+      'Over 37 lectures and 55.5 hours of content!',
+      'LIVE PROJECT End to End Software Testing Training Included.',
+      'Learn Software Testing and Automation basics from a professional trainer from your own desk.',
+      'Information packed practical training starting from basics to advanced testing techniques.',
+      'Best suitable for beginners to advanced level users and who learn faster when demonstrated.',
+      'Course content designed by considering current software testing technology and the job market.',
+      'Practical assignments at the end of every session.',
+      'Practical learning experience with live project work and examples.',
+    ],
+  }, {
+    id: 11,
+    image:
+        'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
+    title: 'Instructional Design for Learning and Development',
+    category:"3",
+    features: {
+      lectures: 7,
+      quizzes: 0,
+      duration: '9 hour',
+      skillLevel: 'all Levels',
+      lang: 'English',
+      students: 8,
+      assessments: 'Yes',
+    },
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
+    certification:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    outcomed: [
+      'Over 37 lectures and 55.5 hours of content!',
+      'LIVE PROJECT End to End Software Testing Training Included.',
+      'Learn Software Testing and Automation basics from a professional trainer from your own desk.',
+      'Information packed practical training starting from basics to advanced testing techniques.',
+      'Best suitable for beginners to advanced level users and who learn faster when demonstrated.',
+      'Course content designed by considering current software testing technology and the job market.',
+      'Practical assignments at the end of every session.',
+      'Practical learning experience with live project work and examples.',
+    ],
+  }, {
+    id: 12,
+    image:
+        'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
+    title: 'Instructional Design for Learning and Development',
+    category:"3",
+    features: {
+      lectures: 7,
+      quizzes: 0,
+      duration: '9 hour',
+      skillLevel: 'all Levels',
+      lang: 'English',
+      students: 8,
+      assessments: 'Yes',
+    },
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
+    certification:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    outcomed: [
+      'Over 37 lectures and 55.5 hours of content!',
+      'LIVE PROJECT End to End Software Testing Training Included.',
+      'Learn Software Testing and Automation basics from a professional trainer from your own desk.',
+      'Information packed practical training starting from basics to advanced testing techniques.',
+      'Best suitable for beginners to advanced level users and who learn faster when demonstrated.',
+      'Course content designed by considering current software testing technology and the job market.',
+      'Practical assignments at the end of every session.',
+      'Practical learning experience with live project work and examples.',
+    ],
+  }, {
+    id: 13,
+    image:
+        'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
+    title: 'Instructional Design for Learning and Development',
+    category:"3",
+    features: {
+      lectures: 7,
+      quizzes: 0,
+      duration: '9 hour',
+      skillLevel: 'all Levels',
+      lang: 'English',
+      students: 8,
+      assessments: 'Yes',
+    },
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
+    certification:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    outcomed: [
+      'Over 37 lectures and 55.5 hours of content!',
+      'LIVE PROJECT End to End Software Testing Training Included.',
+      'Learn Software Testing and Automation basics from a professional trainer from your own desk.',
+      'Information packed practical training starting from basics to advanced testing techniques.',
+      'Best suitable for beginners to advanced level users and who learn faster when demonstrated.',
+      'Course content designed by considering current software testing technology and the job market.',
+      'Practical assignments at the end of every session.',
+      'Practical learning experience with live project work and examples.',
+    ],
+  }, {
+    id: 14,
+    image:
+        'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
+    title: 'Instructional Design for Learning and Development',
+    category:"3",
+    features: {
+      lectures: 7,
+      quizzes: 0,
+      duration: '9 hour',
+      skillLevel: 'all Levels',
+      lang: 'English',
+      students: 8,
+      assessments: 'Yes',
+    },
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
+    certification:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    outcomed: [
+      'Over 37 lectures and 55.5 hours of content!',
+      'LIVE PROJECT End to End Software Testing Training Included.',
+      'Learn Software Testing and Automation basics from a professional trainer from your own desk.',
+      'Information packed practical training starting from basics to advanced testing techniques.',
+      'Best suitable for beginners to advanced level users and who learn faster when demonstrated.',
+      'Course content designed by considering current software testing technology and the job market.',
+      'Practical assignments at the end of every session.',
+      'Practical learning experience with live project work and examples.',
+    ],
+  }, {
+    id: 15,
+    image:
+        'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
+    title: 'Instructional Design for Learning and Development',
+    category:"3",
+    features: {
+      lectures: 7,
+      quizzes: 0,
+      duration: '9 hour',
+      skillLevel: 'all Levels',
+      lang: 'English',
+      students: 8,
+      assessments: 'Yes',
+    },
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
+    certification:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    outcomed: [
+      'Over 37 lectures and 55.5 hours of content!',
+      'LIVE PROJECT End to End Software Testing Training Included.',
+      'Learn Software Testing and Automation basics from a professional trainer from your own desk.',
+      'Information packed practical training starting from basics to advanced testing techniques.',
+      'Best suitable for beginners to advanced level users and who learn faster when demonstrated.',
+      'Course content designed by considering current software testing technology and the job market.',
+      'Practical assignments at the end of every session.',
+      'Practical learning experience with live project work and examples.',
+    ],
+  }, {
+    id: 16,
+    image:
+        'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
+    title: 'Instructional Design for Learning and Development',
+    category:"3",
+    features: {
+      lectures: 7,
+      quizzes: 0,
+      duration: '9 hour',
+      skillLevel: 'all Levels',
+      lang: 'English',
+      students: 8,
+      assessments: 'Yes',
+    },
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
+    certification:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    outcomed: [
+      'Over 37 lectures and 55.5 hours of content!',
+      'LIVE PROJECT End to End Software Testing Training Included.',
+      'Learn Software Testing and Automation basics from a professional trainer from your own desk.',
+      'Information packed practical training starting from basics to advanced testing techniques.',
+      'Best suitable for beginners to advanced level users and who learn faster when demonstrated.',
+      'Course content designed by considering current software testing technology and the job market.',
+      'Practical assignments at the end of every session.',
+      'Practical learning experience with live project work and examples.',
+    ],
+  }, {
+    id: 17,
+    image:
+        'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
+    title: 'Instructional Design for Learning and Development',
+    category:"3",
+    features: {
+      lectures: 7,
+      quizzes: 0,
+      duration: '9 hour',
+      skillLevel: 'all Levels',
+      lang: 'English',
+      students: 8,
+      assessments: 'Yes',
+    },
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
+    certification:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    outcomed: [
+      'Over 37 lectures and 55.5 hours of content!',
+      'LIVE PROJECT End to End Software Testing Training Included.',
+      'Learn Software Testing and Automation basics from a professional trainer from your own desk.',
+      'Information packed practical training starting from basics to advanced testing techniques.',
+      'Best suitable for beginners to advanced level users and who learn faster when demonstrated.',
+      'Course content designed by considering current software testing technology and the job market.',
+      'Practical assignments at the end of every session.',
+      'Practical learning experience with live project work and examples.',
+    ],
+  }, {
+    id: 18,
+    image:
+        'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
+    title: 'Instructional Design for Learning and Development',
+    category:"3",
+    features: {
+      lectures: 7,
+      quizzes: 0,
+      duration: '9 hour',
+      skillLevel: 'all Levels',
+      lang: 'English',
+      students: 8,
+      assessments: 'Yes',
+    },
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
+    certification:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    outcomed: [
+      'Over 37 lectures and 55.5 hours of content!',
+      'LIVE PROJECT End to End Software Testing Training Included.',
+      'Learn Software Testing and Automation basics from a professional trainer from your own desk.',
+      'Information packed practical training starting from basics to advanced testing techniques.',
+      'Best suitable for beginners to advanced level users and who learn faster when demonstrated.',
+      'Course content designed by considering current software testing technology and the job market.',
+      'Practical assignments at the end of every session.',
+      'Practical learning experience with live project work and examples.',
+    ],
+  }, {
+    id: 19,
+    image:
+        'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
+    title: 'Instructional Design for Learning and Development',
+    category:"3",
+    features: {
+      lectures: 7,
+      quizzes: 0,
+      duration: '9 hour',
+      skillLevel: 'all Levels',
+      lang: 'English',
+      students: 8,
+      assessments: 'Yes',
+    },
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
+    certification:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    outcomed: [
+      'Over 37 lectures and 55.5 hours of content!',
+      'LIVE PROJECT End to End Software Testing Training Included.',
+      'Learn Software Testing and Automation basics from a professional trainer from your own desk.',
+      'Information packed practical training starting from basics to advanced testing techniques.',
+      'Best suitable for beginners to advanced level users and who learn faster when demonstrated.',
+      'Course content designed by considering current software testing technology and the job market.',
+      'Practical assignments at the end of every session.',
+      'Practical learning experience with live project work and examples.',
+    ],
+  }, {
+    id: 20,
+    image:
+        'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
+    title: 'Instructional Design for Learning and Development',
+    category:"3",
+    features: {
+      lectures: 7,
+      quizzes: 0,
+      duration: '9 hour',
+      skillLevel: 'all Levels',
+      lang: 'English',
+      students: 8,
+      assessments: 'Yes',
+    },
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
+    certification:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    outcomed: [
+      'Over 37 lectures and 55.5 hours of content!',
+      'LIVE PROJECT End to End Software Testing Training Included.',
+      'Learn Software Testing and Automation basics from a professional trainer from your own desk.',
+      'Information packed practical training starting from basics to advanced testing techniques.',
+      'Best suitable for beginners to advanced level users and who learn faster when demonstrated.',
+      'Course content designed by considering current software testing technology and the job market.',
+      'Practical assignments at the end of every session.',
+      'Practical learning experience with live project work and examples.',
+    ],
+  }, {
+    id: 21,
+    image:
+        'https://eduma.thimpress.com/wp-content/uploads/2022/06/course-16-400x300.jpg',
+    title: 'Instructional Design for Learning and Development',
+    category:"3",
+    features: {
+      lectures: 7,
+      quizzes: 0,
+      duration: '12',
+      skillLevel: 'all Levels',
+      lang: 'English',
+      students: 8,
+      assessments: 'Yes',
+    },
+    desc: 'In this course, We’ll learn how to create websites by structuring and styling your pages with HTML and CSS.',
+    certification:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+    outcomed: [
+      'Over 37 lectures and 55.5 hours of content!',
+      'LIVE PROJECT End to End Software Testing Training Included.',
+      'Learn Software Testing and Automation basics from a professional trainer from your own desk.',
+      'Information packed practical training starting from basics to advanced testing techniques.',
+      'Best suitable for beginners to advanced level users and who learn faster when demonstrated.',
+      'Course content designed by considering current software testing technology and the job market.',
+      'Practical assignments at the end of every session.',
+      'Practical learning experience with live project work and examples.',
+    ],
+  },
+
+
+
+
+
+
+
+
+
+
 ]
 export default popularCoursesArray

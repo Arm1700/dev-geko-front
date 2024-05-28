@@ -6,7 +6,7 @@ const Error404 = () => {
     const nav = useNavigate();
     const [isHovered, setIsHovered] = useState(false);
     const goBack = () => {
-        nav('');
+        nav('/');
     };
 
     return (

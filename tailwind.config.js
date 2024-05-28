@@ -18,6 +18,7 @@ module.exports = {
                 color7C: '#7C7C7C',
                 color85: '#858585',
                 color86: '#868686',
+                color66: '#666666',
                 black: '#111111',
             },
             fontFamily: {
@@ -55,6 +56,7 @@ module.exports = {
             max920: {'min': '400px', 'max': '920px'},
             md: '992px',
             mdLg: {'min': '993px', 'max': '1279px'},
+            center: '1200px',
             lg: '1280px',
             big: '1370px',
             xl: '1920px',

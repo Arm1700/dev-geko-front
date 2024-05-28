@@ -35,7 +35,7 @@ export const routesArray = [
     id: 5,
     name: 'COURSES',
     component: Courses,
-    path: '/courses',
+    path: '/course-category',
   },
   {
     id: 6,

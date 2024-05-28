@@ -11,7 +11,7 @@ export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
 
   return (
-    <div className='bg-white bg-white rounded'>
+    <div className='bg-white rounded w-[82px]'>
       {Object.keys(lngs).map((lng) => (
         <button
           key={lng}

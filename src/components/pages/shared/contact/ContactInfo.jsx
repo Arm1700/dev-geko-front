@@ -13,7 +13,7 @@ export default function ContactInfo({ Icon, title, description, color }) {
     >
       <Icon className={`text-4xl`}  style={{color}}/>
       <b className="text-bold text-xl">{title}</b>
-      <p className="text-primaryLight text-sm text-center">{description}</p>
+      <p className="text-color60 text-custom-15 text-center">{description}</p>
     </div>
   );
 }

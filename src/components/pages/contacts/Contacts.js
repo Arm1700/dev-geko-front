@@ -45,7 +45,7 @@ export default function Contacts() {
 
   return (
     <main className="flex lg:px-20 px-5 py-5 flex-col items-center">
-      <div className="flex flex-wrap justify-between">
+      <div className="grid grid-cols-3">
         {contactArray.map(({ id, color, title, description, Icon }) => (
           <ContactInfo
             key={id}
@@ -57,7 +57,7 @@ export default function Contacts() {
         ))}
       </div>
       <div className="flex mt-20 flex-col items-center flex-wrap justify-center">
-        <h1 className="text-3xl text-center font-roboto-slab font-bold text-primeryDark">
+        <h1 className="text-3xl text-center font-roboto-slab font-bold text-primaryDark">
           Fill the form below so we can get to know you and your <br /> needs
           better.
         </h1>
