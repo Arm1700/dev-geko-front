@@ -5,40 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/_favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/faviconLogo.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pages/shared/home/[id]/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/engineer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gear.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/coming/ComingSoonPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/coming/ComingSoonPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/LanguageSwitcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/LanguageSwitcher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/contacts/Contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/contacts/Contacts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/Courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/Courses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/Error.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/Error.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/Logo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/Logo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/PageUpButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/PageUpButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/about/AboutCard1.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/about/AboutCard1.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/about/AboutCard2.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/about/AboutCard2.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/contact/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/contact/Button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/contact/ContactInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/contact/ContactInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Course.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Course.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/PopularCourse.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/PopularCourse.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/popularCoursesArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/popularCoursesArray.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/routesArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/routesArray.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/_logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/reviewsArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/reviewsArray.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/tutorsArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/tutorsArray.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +65,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\project\frontend\git front\public" />
+      <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\coming" />
       <recent name="C:\Users\JS\Desktop\geko-front\src\components" />
     </key>
   </component>
@@ -114,6 +93,8 @@
       <workItem from="1716702396650" duration="23031000" />
       <workItem from="1716804247971" duration="8732000" />
       <workItem from="1716884725873" duration="28259000" />
+      <workItem from="1716927382579" duration="85000" />
+      <workItem from="1716970172848" duration="10026000" />
     </task>
     <servers />
   </component>

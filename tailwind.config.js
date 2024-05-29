@@ -19,6 +19,7 @@ module.exports = {
                 color85: '#858585',
                 color86: '#868686',
                 color66: '#666666',
+                color99: '#999999',
                 black: '#111111',
             },
             fontFamily: {

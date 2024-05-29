@@ -1,81 +1,46 @@
-import {useLayoutEffect, useState} from 'react'
 import Slider from 'react-slick'
 import aboutcard1info from '../../../entities/aboutcard1info'
 import aboutcard2info from '../../../entities/aboutcard2info'
 import AboutCard1 from '../shared/about/AboutCard1'
 import AboutCard2 from '../shared/about/AboutCard2'
 import {BiSolidQuoteLeft} from 'react-icons/bi'
-import tutorsArray from '../../../entities/tutorsArray'
-import Tutors from '../shared/about/Tutors'
+import reviewsArray from "../../../entities/reviewsArray";
 
 export default function AboutUs() {
-    const [reviewsToShow, setReviewsToShow] = useState(3)
-
-    useLayoutEffect(() => {
-        function updateSlidesToShow() {
-            const screenWidth = window.innerWidth
-            if (screenWidth >= 1200) {
-                setReviewsToShow(5)
-            } else if (screenWidth >= 768) {
-                setReviewsToShow(4)
-            } else if (screenWidth >= 576) {
-            } else if (screenWidth >= 450) {
-                setReviewsToShow(3)
-            } else {
-                setReviewsToShow(2)
-            }
-        }
-
-        updateSlidesToShow()
-        window.addEventListener('resize', updateSlidesToShow)
-        return () => {
-            window.removeEventListener('resize', updateSlidesToShow)
-        }
-    }, [])
-    const settingsForReviews = {
-        className: 'center',
-        centerMode: true,
-        infinite: true,
-        centerPadding: '60px',
-        slidesToShow: reviewsToShow,
-        speed: 500,
-        autoplay: true,
-        dots: true,
-        autoplaySpeed: 2000,
-    }
 
     return (
-        <main className="flex flex-col items-center">
-            <section >
-                <div className=" px-5 max-w-[1200px] mx-[auto]">
+        <main className="flex flex-col items-center overflow-x-hidden">
+            <section>
+                <div className="px-5 max-w-[1200px] mx-[auto]">
 
-                <h1 className="text-3xl py-4 font-roboto-slab font-bold text-primaryDark">
-                    About Us
-                </h1>
-                <div className="text-center py-2 ">
-                    <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark">
-                        Learn with passion to live with purpose.
+                    <h1 className="text-3xl py-4 font-roboto-slab font-bold text-primaryDark">
+                        About Us
                     </h1>
-                    <p className="text-md text-secondaryLight">
-                        Neque convallis a cras semper auctor. Libero id faucibus nisl
-                        tincidunt egetnvallis a cras semper auctonvallis a cras semper
-                        aucto.{' '}
-                    </p>
-                </div>
-                <div className="grid mid:grid-cols-4 grid-cols-1 gap-[15px] items-center justify-items-center py-20">
-                    {aboutcard1info.map(({id, count, color, space, title, Icon}) => {
-                        return (
-                            <AboutCard1
-                                key={id}
-                                count={count}
-                                color={color}
-                                space={space}
-                                title={title}
-                                Icon={Icon}
-                            />
-                        )
-                    })}
-                </div>
+                    <div className="text-center py-2 ">
+                        <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark">
+                            Learn with passion to live with purpose.
+                        </h1>
+                        <p className="text-md text-secondaryLight">
+                            Neque convallis a cras semper auctor. Libero id faucibus nisl
+                            tincidunt egetnvallis a cras semper auctonvallis a cras semper
+                            aucto.{' '}
+                        </p>
+                    </div>
+                    <div
+                        className="grid mid:grid-cols-4 grid-cols-1 gap-[15px] items-center justify-items-center py-20">
+                        {aboutcard1info.map(({id, count, color, space, title, Icon}) => {
+                            return (
+                                <AboutCard1
+                                    key={id}
+                                    count={count}
+                                    color={color}
+                                    space={space}
+                                    title={title}
+                                    Icon={Icon}
+                                />
+                            )
+                        })}
+                    </div>
                 </div>
             </section>
 
@@ -118,12 +83,52 @@ export default function AboutUs() {
                     Plugins your themes with even more features.
                 </p>
             </div>
-            <div className="slider-container py-20 w-[100vw] lg:px-20 px-5  ">
-                {/*<Slider {...settingsForReviews}>*/}
-                {/*    {tutorsArray.map(({id, image, name, role}) => {*/}
-                {/*        return <Tutors key={id} image={image} name={name} role={role}/>*/}
-                {/*    })}*/}
-                {/*</Slider>*/}
+            <div className="slider-container py-20 w-[100vw]">
+                <div className="max-w-[1200px] mx-[auto]  px-5">
+                <Slider
+                    slidesToShow={5}
+                    swipeToSlide={true}
+                    focusOnSelect={true}
+                    centerMode={true}
+                    initialSlide={0}
+                    centerPadding={"0"}
+                    variableWidth={false}
+                    responsive={[
+                        {
+                            breakpoint: 1020,
+                            settings: {
+                                slidesToShow: 3,
+                                initialSlide: 3,
+                            },
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 2,
+                                initialSlide: 1,
+                            },
+                        }
+                    ]}
+                >
+                    {reviewsArray.map((review, i) => (
+                        <div key={review.id} className="text-center ">
+                            <img
+                                src={review.image}
+                                className={`rounded-full mx-auto p-2 border-color86 sm:max-w-[170px] max-w-[140px]`}
+                                style={{
+                                    border:"2px rgba(0, 0, 0, 0.5)",
+                                    borderStyle: "dotted",
+                                    // maxWidth: "165px",
+                                    aspectRatio: "1 / 1",
+                                }}
+                                alt={'user ' + review.name}
+                            />
+                            <p className="text-primaryDark font-bold mt-5">{review.name}</p>
+                            <p className="text-custom-15 text-color60 mt-5">{review.desc}</p>
+                        </div>
+                    ))}
+                </Slider>
+                </div>
             </div>
         </main>
     )

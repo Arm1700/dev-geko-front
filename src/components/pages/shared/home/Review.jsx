@@ -20,7 +20,7 @@ export default function Review() {
 
     console.log()
     return (
-        <div className="mx-auto slider-container relative">
+        <div className="slider-container relative">
             <div>
                 <div className='px-5 max-w-[500px] mx-[auto]'>
                     <Slider

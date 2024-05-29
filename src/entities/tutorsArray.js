@@ -3,7 +3,7 @@ const tutorsArray = [
     id: 1,
     image: 'https://eduma.thimpress.com/wp-content/uploads/2015/11/team-1.jpg',
     name: 'Susan Jackson',
-    role: 'Frontend Developer',
+    role: 'Frontend Develoer',
   },
   {
     id: 2,
