@@ -12,11 +12,11 @@ export default function Events() {
   ]
 
   return (
-      <main className="max:px-5 max-w-[1200px] mx-auto py-20 flex flex-col ">
+      <main className="px-5 max-w-[1200px] mx-auto py-20 flex flex-col ">
           <h1 className="text-3xl font-roboto-slab font-bold text-primaryDark">
               Events
           </h1>
-          <div className="flex justify-center mb-4 border-b w-full">
+          <div className="flex justify-center mb-4 border-b w-full flex-wrap">
               {tabs.map((tab) => (
                   <button
                       key={tab.id}
@@ -31,7 +31,7 @@ export default function Events() {
                   </button>
               ))}
           </div>
-          <div className="text-start lg:px-20 px-5 pt-5 ">
+          <div className="text-start pt-5 ">
               {eventsArray.map(
                   ({
                        id,

@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/contacts/Contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/contacts/Contacts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/Courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/Courses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/events/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/Events.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/Logo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/Logo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/contact/ContactInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/contact/ContactInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/PopularCourse.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/PopularCourse.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/event/Event.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/event/Event.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,25 +33,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/project/frontend/git front/public&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.3.6\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/User/Desktop/project/frontend/git front/src/components/pages/events",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.3.6\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\events" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\public" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\src\images" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\shared\home\[id]" />
@@ -97,7 +90,8 @@
       <workItem from="1716927382579" duration="85000" />
       <workItem from="1716970172848" duration="25808000" />
       <workItem from="1717038408150" duration="3000" />
-      <workItem from="1717044223947" duration="1396000" />
+      <workItem from="1717044223947" duration="3276000" />
+      <workItem from="1717082964238" duration="4401000" />
     </task>
     <servers />
   </component>
