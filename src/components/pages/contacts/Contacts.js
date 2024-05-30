@@ -44,8 +44,8 @@ export default function Contacts() {
   }
 
   return (
-    <main className="flex lg:px-20 px-5 py-5 flex-col items-center">
-      <div className="grid grid-cols-3">
+    <main className="flex px-5 py-5 flex-col items-center">
+      <div className="grid mid:grid-cols-3 w-full md:w-[auto] grid-cols-1 gap-[15px] items-center justify-items-center">
         {contactArray.map(({ id, color, title, description, Icon }) => (
           <ContactInfo
             key={id}
@@ -57,9 +57,8 @@ export default function Contacts() {
         ))}
       </div>
       <div className="flex mt-20 flex-col items-center flex-wrap justify-center">
-        <h1 className="text-3xl text-center font-roboto-slab font-bold text-primaryDark">
-          Fill the form below so we can get to know you and your <br /> needs
-          better.
+        <h1 className="text-[22px] pb-5 sm:w-[70%] w-[100%] text-center font-roboto-slab font-bold text-primaryDark">
+          Fill the form below so we can get to know you and your needs better.
         </h1>
         <form
           onSubmit={handleSubmit(onSubmit)}

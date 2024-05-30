@@ -21,12 +21,12 @@ export default function PopularCourse({
     }
     return (
         <article
-            className={`my-5 border-gray h-min ${gridStyleTF === true ? "none border rounded-lg" : "flex border-b"} mb-[30px]`}>
+            className={`my-5 border-gray h-min ${gridStyleTF === true ? "none border rounded-lg" : "sm:flex border-b"}     `}>
             <div
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 onClick={() => nav(`/courses/${id}`)}
-                className={`relative bg-no-repeat bg-cover  cursor-pointer ${gridStyleTF === true ? "w-[100%] rounded-t-lg" : "w-[260px] rounded-lg"}`}
+                className={`relative bg-no-repeat bg-cover  cursor-pointer ${gridStyleTF === true ? "w-[100%] rounded-t-lg" : "sm:w-[260px] w-full rounded-lg"}`}
                 style={{
                     backgroundImage: isHovered
                         ? `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${image})`
@@ -48,7 +48,7 @@ export default function PopularCourse({
                 />
             </div>
             <div
-                className={`w-[100%] ${gridStyleTF === true ? "h-[35%] items-center" : "h-[100%] pl-10 gap-4"} py-[30px] px-[20px] flex flex-col justify-center `}>
+                className={`w-[100%] ${gridStyleTF === true ? "h-[35%] items-center py-[30px] px-[20px]" : "w-full py-[30px] sm:pl-10  sm:px-0 sm:py-0 h-[100%]  gap-4"} flex flex-col justify-center `}>
                 <p className={`hover:text-primary cursor-pointer transition-colors duration-300 
                 ${gridStyleTF === true ? "text-custom-15 text-center" : "text-xl"} 
                 font-medium text-primaryDark font-roboto-slab`}

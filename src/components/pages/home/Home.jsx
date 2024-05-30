@@ -15,6 +15,9 @@ export default function Home() {
     const handleCategoryClick = () => {
         nav(`/course-category`);
     };
+    const handleEventsClick = () => {
+        nav(`/events`);
+    };
     const url = 'https://www.shutterstock.com/shutterstock/videos/1086751859/preview/stock-footage-video-of-financial-data-processing-over-diverse-business-people-global-business-finances.webm'
 
     return (<main>
@@ -32,8 +35,9 @@ export default function Home() {
                                 Limitless learning, more possibilities
                             </p>
                         </div>
-                        <button className="text-sm uppercase font-light border-2 px-[20px] py-[7px] h-[50%] rounded-[4px]"
-                                onClick={() => handleCategoryClick()}>
+                        <button
+                            className="text-sm uppercase font-light border-2 px-[20px] py-[7px] h-[50%] rounded-[4px]"
+                            onClick={() => handleCategoryClick()}>
                             View All
                         </button>
                     </div>
@@ -62,17 +66,21 @@ export default function Home() {
             </div>
 
             <div className="text-start pt-20 px-5 flex justify-center">
-                <div className=''
-                     style={{
-                         maxWidth: "1200px"
-                     }}>
-                    <div className="text-start">
-                        <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
-                            Events
-                        </h1>
-                        <p className="text-custom-15 text-secondaryLight">
-                            Upcoming Education Events to feed your brain.
-                        </p>
+                <div className='max-w-[1200px] mx-[auto] px-5'>
+                    <div className="flex justify-between">
+                        <div className="text-start">
+                            <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
+                                Events
+                            </h1>
+                            <p className="text-custom-15 text-secondaryLight">
+                                Upcoming Education Events to feed your brain.
+                            </p>
+                        </div>
+                        <button
+                            className="text-sm uppercase font-light border-2 px-[20px] py-[7px] h-[50%] rounded-[4px]"
+                            onClick={() => handleEventsClick()}>
+                            View All
+                        </button>
                     </div>
                     {eventsArray.map(({id, day, month, title, hour, place, description, image}) => {
                         return (<Event

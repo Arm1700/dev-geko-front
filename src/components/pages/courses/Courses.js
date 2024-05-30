@@ -21,7 +21,7 @@ export default function Courses() {
 
     useEffect(() => {
         setCurrentPage(1); // Reset to the first page when the category changes
-        setCoursesPerPage(3)
+        setCoursesPerPage(6)
     }, [categoryId]);
 
     const startIndex = (currentPage - 1) * coursesPerPage;
@@ -53,14 +53,14 @@ export default function Courses() {
             nextClassName={currentPage === totalPages ? 'pagination__next disabled' : 'pagination__next'} // Disable next on last page
         />
     );
-    let gridStyle = gridStyleTF === true ? 'grid-cols-3' : 'grid-cols-1';
+    let gridStyle = gridStyleTF === true ? 'md:grid-cols-3 sm:grid-cols-2 grid-cols-1 ' : 'grid-cols-1';
     return (
         <main className="max:px-5 max-w-[1200px] mx-auto py-5 flex flex-col">
             <h1 className="text-3xl font-roboto-slab font-bold text-primaryDark">
                 Courses
             </h1>
-            <div className="flex gap-5 py-10">
-                <div className="w-[80%]">
+            <div className="flex mid:flex-row flex-col  gap-5 py-10">
+                <div className="mid:w-[80%] w-full">
                     <div className="flex gap-3 items-center">
                         <i
                             className={`fa fa-th-large text-xl hover:text-primary cursor-pointer ${gridStyleTF === true ? 'text-primary' : 'text-color66'}`}
@@ -95,18 +95,19 @@ export default function Courses() {
                     </div>
                     {renderPagination()}
                 </div>
-                <div className="w-[20%] h-[500px] px-[20px] border-l" style={{
+                <div className="w-[20%] h-min pl-[20px] border-l" style={{
                     position: 'sticky',
                     top: `10px`,
                 }}>
-                    <h1 className="text-lg font-roboto-slab font-bold text-primaryDark">
+                    <h1 className="min-w-max text-lg font-roboto-slab font-bold text-primaryDark">
                         ALL COURSES
                     </h1>
-                    {coursesArray.sort((a, b) => a.text.localeCompare(b.text)).map(({image, id, text}) => (
+                    {coursesArray.sort((a, b) => a.text.localeCompare(b.text)).map(({id, text}) => (
                         <p
                             onClick={() => handleCategoryClick(id)}
-                            className={`textHover cursor-pointer text-custom-15 py-[5px] ${ +categoryId === id ? "text-primary": "text-primaryDark"}`}
-                            key={id}>{text}</p>
+                            className={`min-w-max w-full textHover cursor-pointer text-custom-15 py-[5px] ${ +categoryId === id ? "text-primary": "text-primaryDark"}`}
+                            key={id}>{text}
+                        </p>
                     ))}
                 </div>
             </div>

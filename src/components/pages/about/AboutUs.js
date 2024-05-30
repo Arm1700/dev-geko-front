@@ -64,13 +64,11 @@ export default function AboutUs() {
                 </div>
             </section>
             <section
-                className="lg:px-20 my-16 gap-8 px-5 w-[70%] mid:w-[85%] sm:w-[80%] max:w-[90%]   flex items-start justify-center">
-                <BiSolidQuoteLeft className="text-[40px]  text-primary"/>
-                <p className=" py-2 font-roboto-slab font-normal flex flex-col text-2xl text-primaryDark">
-                    Cras tristique turpis justo, eu consequat sem adipiscing ut. Donec{' '}
-                    <br/>
-                    posuere bibendum metus.
-                    <span className="text-sm pt-5 font-sans text-gray">
+                className="my-16 gap-8 px-5 w-[100%] mid:w-[70%] sm:w-[100%] flex items-start mid:justify-center">
+                <BiSolidQuoteLeft className="w-[40px] h-[40px]  text-primary"/>
+                <p className=" py-2 font-roboto-slab font-normal flex flex-col mid:w-[70%] w-[100%]   text-2xl text-primaryDark">
+                    Cras tristique turpis justo, eu consequat sem adipiscing ut. Donec posuere bibendum metus.
+                    <span className="text-sm pt-5 font-sans text-color60">
             Tony Nguyen, Co-Founder
           </span>
                 </p>
@@ -85,49 +83,49 @@ export default function AboutUs() {
             </div>
             <div className="slider-container py-20 w-[100vw]">
                 <div className="max-w-[1200px] mx-[auto]  px-5">
-                <Slider
-                    slidesToShow={5}
-                    swipeToSlide={true}
-                    focusOnSelect={true}
-                    centerMode={true}
-                    initialSlide={0}
-                    centerPadding={"0"}
-                    variableWidth={false}
-                    responsive={[
-                        {
-                            breakpoint: 1020,
-                            settings: {
-                                slidesToShow: 3,
-                                initialSlide: 3,
+                    <Slider
+                        slidesToShow={5}
+                        swipeToSlide={true}
+                        focusOnSelect={true}
+                        centerMode={true}
+                        initialSlide={0}
+                        centerPadding={"0"}
+                        variableWidth={false}
+                        responsive={[
+                            {
+                                breakpoint: 1020,
+                                settings: {
+                                    slidesToShow: 3,
+                                    initialSlide: 3,
+                                },
                             },
-                        },
-                        {
-                            breakpoint: 768,
-                            settings: {
-                                slidesToShow: 2,
-                                initialSlide: 1,
-                            },
-                        }
-                    ]}
-                >
-                    {reviewsArray.map((review, i) => (
-                        <div key={review.id} className="text-center ">
-                            <img
-                                src={review.image}
-                                className={`rounded-full mx-auto p-2 border-color86 sm:max-w-[170px] max-w-[140px]`}
-                                style={{
-                                    border:"2px rgba(0, 0, 0, 0.5)",
-                                    borderStyle: "dotted",
-                                    // maxWidth: "165px",
-                                    aspectRatio: "1 / 1",
-                                }}
-                                alt={'user ' + review.name}
-                            />
-                            <p className="text-primaryDark font-bold mt-5">{review.name}</p>
-                            <p className="text-custom-15 text-color60 mt-5">{review.desc}</p>
-                        </div>
-                    ))}
-                </Slider>
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    slidesToShow: 2,
+                                    initialSlide: 1,
+                                },
+                            }
+                        ]}
+                    >
+                        {reviewsArray.map((review, i) => (
+                            <div key={review.id} className="text-center ">
+                                <img
+                                    src={review.image}
+                                    className={`rounded-full mx-auto p-2 border-color86 sm:max-w-[170px] max-w-[140px]`}
+                                    style={{
+                                        border: "2px rgba(0, 0, 0, 0.5)",
+                                        borderStyle: "dotted",
+                                        // maxWidth: "165px",
+                                        aspectRatio: "1 / 1",
+                                    }}
+                                    alt={'user ' + review.name}
+                                />
+                                <p className="text-primaryDark font-bold mt-5">{review.name}</p>
+                                <p className="text-custom-15 text-color60 mt-5">{review.desc}</p>
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
             </div>
         </main>
