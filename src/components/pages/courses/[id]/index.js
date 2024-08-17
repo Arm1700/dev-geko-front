@@ -76,7 +76,7 @@ export default function CoursePage() {
                             <img src={pickedCourse.image} alt={pickedCourse.title}/>
                             <div className="flex flex-col justify-start  items-start px-[20px] py-[20px] gap-[10px]">
                                 <button
-                                    className="self-center w-[100%] py-[10px] px-[25px] rounded-[4px] uppercase font-bold text-sm bg-primary">sign
+                                    className="self-center w-[100%] py-[10px] px-[25px] rounded-[4px] uppercase font-bold text-white text-sm bg-primary">sign
                                     up
                                 </button>
                                 <h1 className="text-xl pb-3 font-roboto-slab font-bold text-primaryDark pt-[20px]">

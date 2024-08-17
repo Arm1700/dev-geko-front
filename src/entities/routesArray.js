@@ -19,12 +19,6 @@ export const routesArray = [
     component: AboutUs,
     path: '/about-us',
   },
-  // {
-  //   id: 3,
-  //   name: 'BLOG',
-  //   component: Blog,
-  //   path: '/blog',
-  // },
   {
     id: 4,
     name: 'CONTACTS',

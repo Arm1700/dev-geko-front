@@ -82,9 +82,9 @@ export default function Home() {
                             View All
                         </button>
                     </div>
-                    {eventsArray.map(({id, day, month, title, hour, place, description, image}) => {
+                    {eventsArray.slice(0, 3).map(({id, day, month, title, hour, place, description, image}) => {
                         return (<Event
-                            key={id}
+                            id={id}
                             day={day}
                             month={month}
                             title={title}

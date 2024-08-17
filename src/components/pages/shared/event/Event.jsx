@@ -1,14 +1,29 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {MdOutlinePlace} from 'react-icons/md'
 import {TbClockHour3} from 'react-icons/tb'
+import {useNavigate} from "react-router-dom";
 
 export default function Event({
-                                  day, month, title, hour, place, description, image,
+                                  id, day, month, title, hour, place, description, image,
                               }) {
+    const nav = useNavigate();
+    const handleCategoryClick = (id) => {
+        nav(`/events/${id}`);
+    };
+    const [isMenuVisible, setMenuVisible] = useState(false);
+    const handleMouseEnter = () => {
+        setMenuVisible(true);
+    };
+
+    const handleMouseLeave = () => {
+        setMenuVisible(false);
+    };
     return (<section
-        className=" border-b-2 py-[30px] border-gray-300 flex gap-5 sm:justify-between sm:items-center sm:flex-row max:flex-col max:relative">
+        className=" border-b-2 py-[30px] border-gray-300 flex gap-5 sm:justify-between sm:items-center sm:flex-row max:flex-col max:relative"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}>
         <div
-            className="flex flex-col gap-1 sm:static w-[200px] max:w-[100px] md:mr-10 mr-0 max:bg-white max:text-center max:absolute max:top-[10%] max:left-[3%]">
+            className={`flex flex-col gap-1 sm:static w-[200px] max:w-[100px] md:mr-10 mr-0 max:bg-white max:text-center max:absolute max:top-[10%] max:left-[3%] ${isMenuVisible ? 'border-color56' : ''}`}>
         <span className="text-primary font-bold text-6xl leading-60">
           {day}
         </span>
@@ -18,10 +33,11 @@ export default function Event({
              style={{
                  maxWidth: "700px"
              }}>
-            <h5 className="text-lg font-bold hover:text-primary transition-colors duration-300 cursor-pointer ">{title}</h5>
+            <h5 className="text-lg font-bold hover:text-primary transition-colors duration-300 cursor-pointer "
+                onClick={() => handleCategoryClick(id)}
+            >{title}</h5>
             <div className="flex gap-1 items-center">
                 <TbClockHour3 className="text-primary w-[21px]"/> <span className="text-sm">{hour}</span>
-
                 <MdOutlinePlace className="text-primary "/> <span className="text-sm">{place}</span>
             </div>
             <p className="text-color60 text-custom-15">{description}</p>

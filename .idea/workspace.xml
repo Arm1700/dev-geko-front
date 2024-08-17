@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/pages/courses/CoursesMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/events/Event2.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/Courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/Courses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/events/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/Events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/event/Event.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/event/Event.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/eventsArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/eventsArray.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/routesArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/routesArray.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/User/Desktop/project/frontend/git front/src/components/pages/events",
+    "last_opened_file_path": "C:/Users/User/Desktop/project/frontend/git front/src/components/pages/events/[id]",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -48,12 +60,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\events\[id]" />
+      <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\shared\event" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\events" />
+      <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\courses" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\public" />
-      <recent name="C:\Users\User\Desktop\project\frontend\git front\src\images" />
-      <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\shared\home\[id]" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\shared\event" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\public" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\coming" />
       <recent name="C:\Users\JS\Desktop\geko-front\src\components" />
@@ -87,7 +101,18 @@
       <workItem from="1716970172848" duration="25808000" />
       <workItem from="1717038408150" duration="3000" />
       <workItem from="1717044223947" duration="3276000" />
-      <workItem from="1717082964238" duration="4631000" />
+      <workItem from="1717082964238" duration="6950000" />
+      <workItem from="1717266617880" duration="57000" />
+      <workItem from="1717748069027" duration="2664000" />
+      <workItem from="1717907529498" duration="1247000" />
+      <workItem from="1718034357071" duration="1488000" />
+      <workItem from="1718191614546" duration="609000" />
+      <workItem from="1719945700398" duration="490000" />
+      <workItem from="1719947461847" duration="215000" />
+      <workItem from="1721882330142" duration="136000" />
+      <workItem from="1721891453785" duration="692000" />
+      <workItem from="1723650827426" duration="1556000" />
+      <workItem from="1723901854936" duration="4273000" />
     </task>
     <servers />
   </component>

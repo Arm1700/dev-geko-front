@@ -12,11 +12,11 @@ const Footer = () => {
     const {t} = useTranslation()
     return (
         <footer className="bg-black text-pseudo h-[auto]">
-            <div className="flex middle:flex-row flex-col middle:items-center justify-between px-5 py-20 mx-[auto] gap-5 max-w-[1200px]">
+            <div className="flex middle:flex-row flex-col middle:items-center justify-between px-5 py-20 mx-[auto] gap-5 max-w-[1300px]">
                 <div className="flex flex-col gap-5 ">
                     <Logo/>
                     <p className="flex">
-                        <FaPhoneAlt className="mx-2 text-primary"/>
+                        <FaPhoneAlt className="mx-2 "/>
                         +374 898989889
                     </p>
                     <p className="flex">

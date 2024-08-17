@@ -47,7 +47,7 @@ export default function Events() {
                       return (
                           status === activeTab && (
                               <Event
-                                  key={id}
+                                  id={id}
                                   day={day}
                                   month={month}
                                   title={title}

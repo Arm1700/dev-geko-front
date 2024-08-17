@@ -4,6 +4,7 @@ import PopularCourse from '../shared/home/PopularCourse';
 import {useNavigate, useParams} from "react-router-dom";
 import ReactPaginate from 'react-paginate';
 import {useState, useEffect} from 'react';
+import CoursesMenu from "./CoursesMenu";
 
 export default function Courses() {
     const [gridStyleTF, setGridStyle] = useState(true);
@@ -14,7 +15,10 @@ export default function Courses() {
     const handleCategoryClick = (id) => {
         nav(`/course-category/${id}`);
     };
-
+    const [showMenu, setShowMenu] = useState(false);
+    const toggleMenu = () => {
+        setShowMenu(!showMenu);
+    };
     const filteredCourses = categoryId
         ? popularCoursesArray.filter(course => course.category.toString() === categoryId)
         : popularCoursesArray;
@@ -60,6 +64,22 @@ export default function Courses() {
                 Courses
             </h1>
             <div className="flex mid:flex-row flex-col  gap-5 py-10">
+                <div className="w-[25%] mid:flex flex-col hidden h-min border-b" style={{
+                    position: 'sticky', top: `10px`,
+                }}>
+                    <h1 className="min-w-max text-2xl font-roboto-slab font-bold text-primaryDark">
+                        Categories
+                    </h1>
+                    {coursesArray.sort((a, b) => a.text.localeCompare(b.text)).map(({id, text}) => (<p
+                        onClick={() => handleCategoryClick(id)}
+                        className={`min-w-max w-full textHover cursor-pointer py-[5px] ${+categoryId === id ? "text-primary" : "text-color66"}`}
+                        key={id}>{text}
+                    </p>))}
+                </div>
+                <button onClick={toggleMenu}
+                        className="mid:hidden flex bg-primary text-white font-roboto-slab text-sm uppercase font-bold w-min px-9 py-2">
+                    Filter
+                </button>
                 <div className="mid:w-[80%] w-full">
                     <div className="flex gap-3 items-center">
                         <i
@@ -105,12 +125,14 @@ export default function Courses() {
                     {coursesArray.sort((a, b) => a.text.localeCompare(b.text)).map(({id, text}) => (
                         <p
                             onClick={() => handleCategoryClick(id)}
-                            className={`min-w-max w-full textHover cursor-pointer text-custom-15 py-[5px] ${ +categoryId === id ? "text-primary": "text-primaryDark"}`}
+                            className={`min-w-max w-full textHover cursor-pointer text-custom-15 py-[5px] ${+categoryId === id ? "text-primary" : "text-primaryDark"}`}
                             key={id}>{text}
                         </p>
                     ))}
                 </div>
             </div>
+            <CoursesMenu isOpen={showMenu} toggleMenu={toggleMenu} categoryId={categoryId}/>
+
         </main>
     );
 }
