@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import eventsArray from '../../../entities/eventsArray'
 import Event from '../shared/event/Event'
+import { useTranslation } from 'react-i18next';
 
 export default function Events() {
   const [activeTab, setActiveTab] = useState('happening')
@@ -11,10 +12,12 @@ export default function Events() {
     { title: 'expired', id: 3 },
   ]
 
+  const { t } = useTranslation();
+
   return (
       <main className="px-5 max-w-[1200px] mx-auto py-20 flex flex-col ">
           <h1 className="text-3xl font-roboto-slab font-bold text-primaryDark">
-              Events
+              {t('EVENTS')}
           </h1>
           <div className="flex justify-center mb-4 border-b w-full flex-wrap">
               {tabs.map((tab) => (
@@ -27,7 +30,7 @@ export default function Events() {
                       } focus:outline-none font-roboto-slab font-bold text-xl mx-10 pb-2 capitalize `}
                       onClick={() => setActiveTab(tab.title)}
                   >
-                      {tab.title}
+                      {t(tab.title)}
                   </button>
               ))}
           </div>

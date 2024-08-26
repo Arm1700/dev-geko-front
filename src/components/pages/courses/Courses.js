@@ -5,8 +5,11 @@ import {useNavigate, useParams} from "react-router-dom";
 import ReactPaginate from 'react-paginate';
 import {useState, useEffect} from 'react';
 import CoursesMenu from "./CoursesMenu";
+import {useTranslation} from 'react-i18next';
 
 export default function Courses() {
+    const {t} = useTranslation();
+
     const [gridStyleTF, setGridStyle] = useState(true);
     const [coursesPerPage, setCoursesPerPage] = useState(3);
     const [currentPage, setCurrentPage] = useState(1);
@@ -61,24 +64,24 @@ export default function Courses() {
     return (
         <main className="max:px-5 max-w-[1200px] mx-auto py-5 flex flex-col">
             <h1 className="text-3xl font-roboto-slab font-bold text-primaryDark">
-                Courses
+                {t('COURSES')}
             </h1>
             <div className="flex mid:flex-row flex-col  gap-5 py-10">
                 <div className="w-[25%] mid:flex flex-col hidden h-min border-b" style={{
                     position: 'sticky', top: `10px`,
                 }}>
                     <h1 className="min-w-max text-2xl font-roboto-slab font-bold text-primaryDark">
-                        Categories
+                        {t('Categories')}
                     </h1>
                     {coursesArray.sort((a, b) => a.text.localeCompare(b.text)).map(({id, text}) => (<p
                         onClick={() => handleCategoryClick(id)}
                         className={`min-w-max w-full textHover cursor-pointer py-[5px] ${+categoryId === id ? "text-primary" : "text-color66"}`}
-                        key={id}>{text}
+                        key={id}>{t(text)}
                     </p>))}
                 </div>
                 <button onClick={toggleMenu}
                         className="mid:hidden flex bg-primary text-white font-roboto-slab text-sm uppercase font-bold w-min px-9 py-2">
-                    Filter
+                    {t('Filter')}
                 </button>
                 <div className="mid:w-[80%] w-full">
                     <div className="flex gap-3 items-center">
@@ -120,13 +123,13 @@ export default function Courses() {
                     top: `10px`,
                 }}>
                     <h1 className="min-w-max text-lg font-roboto-slab font-bold text-primaryDark">
-                        ALL COURSES
+                        {t('ALL_COURSES')}
                     </h1>
                     {coursesArray.sort((a, b) => a.text.localeCompare(b.text)).map(({id, text}) => (
                         <p
                             onClick={() => handleCategoryClick(id)}
                             className={`min-w-max w-full textHover cursor-pointer text-custom-15 py-[5px] ${+categoryId === id ? "text-primary" : "text-primaryDark"}`}
-                            key={id}>{text}
+                            key={id}>{t(text)}
                         </p>
                     ))}
                 </div>

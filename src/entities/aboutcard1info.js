@@ -8,7 +8,7 @@ const aboutcard1info =[
   id:1,
   Icon:LiaGlobeSolid,
   count:94532,
-  title:'Foreign Followers',
+  title:'Foreign_Followers',
   color:'#82d16f',
   space:''
 },
@@ -16,7 +16,7 @@ const aboutcard1info =[
   id:2,
   Icon:SiGoogleclassroom,
   count:11223,
-  title:'Classes Complete',
+  title:'Classes_Complete',
   color:'#2e67f5',
   space:'50px'
 },
@@ -24,7 +24,7 @@ const aboutcard1info =[
   id:3,
   Icon:MdOutlinePersonPin,
   count:25678,
-  title:'Students Enrolled',
+  title:'Students_Enrolled',
   color:'#ffb606',
   space:'50px'
 
@@ -33,7 +33,7 @@ const aboutcard1info =[
   id:4,
   Icon:FaChalkboardTeacher,
   count:2678,
-  title:'Certified Teachers',
+  title:'Certified_Teachers',
   color:'#dd4b39',
   space:''
 },

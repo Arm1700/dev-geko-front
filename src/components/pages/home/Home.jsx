@@ -9,8 +9,12 @@ import eventsArray from '../../../entities/eventsArray'
 import Event from '../shared/event/Event'
 import Reviews from '../shared/home/Review'
 import {useNavigate} from "react-router-dom";
+import {useTranslation} from 'react-i18next';
+
 
 export default function Home() {
+    const {t} = useTranslation()
+
     const nav = useNavigate();
     const handleCategoryClick = () => {
         nav(`/course-category`);
@@ -21,7 +25,7 @@ export default function Home() {
     const url = 'https://www.shutterstock.com/shutterstock/videos/1086751859/preview/stock-footage-video-of-financial-data-processing-over-diverse-business-people-global-business-finances.webm'
 
     return (<main>
-            <MainPhoto image={url} text1="The best time for" text2="education"/>
+            <MainPhoto image={url} text1="The_best_time_for" text2="education"/>
             <Course/>
             <div
                 className="flex content-center justify-center gap-20 py-10">
@@ -29,16 +33,16 @@ export default function Home() {
                     <div className="flex justify-between">
                         <div className="text-start">
                             <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
-                                Popular Course​s
+                               {t('popular_cours')}
                             </h1>
                             <p className="text-md text-secondaryLight text-custom-15">
-                                Limitless learning, more possibilities
+                                {t('Limitless_learning_more_possibilities')}
                             </p>
                         </div>
                         <button
                             className="text-sm uppercase font-light border-2 px-[20px] py-[7px] h-[50%] rounded-[4px]"
                             onClick={() => handleCategoryClick()}>
-                            View All
+                            {t('View_All')}
                         </button>
                     </div>
                     <div className="popular">
@@ -61,7 +65,7 @@ export default function Home() {
                 className="bg-cover bg-no-repeat lg:px-20 px-5 py-10 bg-primary flex  justify-center lg:justify-evenly flex-row middle:flex-row max:flex-col"
             >
                 {lessonInfoArray.map(({id, icon, title, count}) => {
-                    return <LessonInfo key={id} Icon={icon} title={title} count={count}/>
+                    return <LessonInfo key={id} Icon={icon} title={t(title)} count={count}/>
                 })}
             </div>
 
@@ -70,17 +74,17 @@ export default function Home() {
                     <div className="flex justify-between">
                         <div className="text-start">
                             <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
-                                Events
+                                {t('EVENTS')}
                             </h1>
                             <p className="text-custom-15 text-secondaryLight">
-                                Upcoming Education Events to feed your brain.
+                                {t('Upcoming_Education_Events_to_feed_your_brain')}
                             </p>
                         </div>
                         <button
                             className="text-sm uppercase font-light border-2 px-[20px] py-[7px] h-[50%] rounded-[4px]"
                             onClick={() => handleEventsClick()}>
-                            View All
-                        </button>
+                            {t('View_All')}
+                            </button>
                     </div>
                     {eventsArray.slice(0, 3).map(({id, day, month, title, hour, place, description, image}) => {
                         return (<Event
@@ -98,10 +102,10 @@ export default function Home() {
             </div>
             <div className="text-center lg:px-20 px-5 pt-10 pb-5">
                 <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
-                    What People Say
+                    {t('What_People_Say')}
                 </h1>
                 <p className="text-md text-secondaryLight text-custom-15">
-                    How real people said about Education WordPress Theme
+                    {t('How_real_people_said_about_Education_WordPress_Theme')}
                 </p>
             </div>
             <div className="text-start lg:px-20 px-5 pt-5">

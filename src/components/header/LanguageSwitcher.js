@@ -1,17 +1,19 @@
 import { useTranslation } from 'react-i18next';
 import arm from '../../images/Armenia-flag.jpg';
 import en from '../../images/USA-flag.png';
+import ru from '../../images/Russia-flag.png';
 
 export default function LanguageSwitcher() {
   const lngs = {
     en: { nativeName: 'English', flag: en },
     am: { nativeName: 'Armenian', flag: arm },
+    // ru: { nativeName: 'Russian', flag: ru },
   };
 
   const { i18n } = useTranslation();
 
   return (
-    <div className='bg-white rounded w-[82px]'>
+    <div className='bg-white rounded '>
       {Object.keys(lngs).map((lng) => (
         <button
           key={lng}

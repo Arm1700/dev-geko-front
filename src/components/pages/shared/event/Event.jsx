@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {MdOutlinePlace} from 'react-icons/md'
 import {TbClockHour3} from 'react-icons/tb'
 import {useNavigate} from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function Event({
                                   id, day, month, title, hour, place, description, image,
@@ -18,6 +19,8 @@ export default function Event({
     const handleMouseLeave = () => {
         setMenuVisible(false);
     };
+  const { t } = useTranslation();
+
     return (<section
         className=" border-b-2 py-[30px] border-gray-300 flex gap-5 sm:justify-between sm:items-center sm:flex-row max:flex-col max:relative"
         onMouseEnter={handleMouseEnter}
@@ -27,7 +30,7 @@ export default function Event({
         <span className="text-primary font-bold text-6xl leading-60">
           {day}
         </span>
-            <span className="text-color60 leading-[25px] font-sans-serif">{month}</span>
+            <span className="text-color60 leading-[25px] font-sans-serif">{t(month)}</span>
         </div>
         <div className="gap-2 flex middle:px-5 md:px-20 px-0 flex-col sm:order-none max:order-1 "
              style={{

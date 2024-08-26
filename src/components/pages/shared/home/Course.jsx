@@ -7,9 +7,11 @@ import 'swiper/css/pagination';
 
 import {useLayoutEffect, useState} from 'react'
 import {useNavigate} from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const CourseSlider = () => {
     const nav = useNavigate()
+    const { t } = useTranslation();
 
     const [slidesToShow, setSlidesToShow] = useState(5)
     const [spaceBetween, setSpaceBetween] = useState(30)
@@ -78,7 +80,7 @@ const CourseSlider = () => {
                                 width: '100%', // Ширина 100%
                                 height: '100%', // Высота 100%
                             }}/>
-                            <p className="absoluteP absolute font-bold text-pseudo  hover:text-primary text-base font-roboto-slab top-[50%] left-[50%] w-[90%] text-center z-50">{text}</p>
+                            <p className="absoluteP absolute font-bold text-pseudo  hover:text-primary text-base font-roboto-slab top-[50%] left-[50%] w-[90%] text-center z-50">{t(text)}</p>
                         </article>
                     </SwiperSlide>
                 ))}

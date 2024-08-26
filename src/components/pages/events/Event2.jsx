@@ -18,7 +18,7 @@ export default function Event({
         <span className="text-color56 font-bold text-6xl leading-60">
           {day}
         </span>
-            <span className="text-color60 leading-[25px] font-sans-serif">{month}</span>
+            <span className="text-color60 leading-[25px] font-sans-serif">{t(month)}</span>
         </div>
         <div className="gap-2 flex middle:px-5 md:px-20 px-0 flex-col sm:order-none max:order-1 "
              style={{

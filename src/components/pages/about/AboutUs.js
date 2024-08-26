@@ -5,8 +5,10 @@ import AboutCard1 from '../shared/about/AboutCard1'
 import AboutCard2 from '../shared/about/AboutCard2'
 import {BiSolidQuoteLeft} from 'react-icons/bi'
 import reviewsArray from "../../../entities/reviewsArray";
+import {useTranslation} from 'react-i18next';
 
 export default function AboutUs() {
+    const {t} = useTranslation();
 
     return (
         <main className="flex flex-col items-center overflow-x-hidden">
@@ -14,11 +16,11 @@ export default function AboutUs() {
                 <div className="px-5 max-w-[1200px] mx-[auto]">
 
                     <h1 className="text-3xl py-4 font-roboto-slab font-bold text-primaryDark">
-                        About Us
+                    {t('ABOUT_US')}
                     </h1>
                     <div className="text-center py-2 ">
                         <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark">
-                            Learn with passion to live with purpose.
+                            {t('learn_with_passion')}
                         </h1>
                         <p className="text-md text-secondaryLight">
                             Neque convallis a cras semper auctor. Libero id faucibus nisl
@@ -35,7 +37,7 @@ export default function AboutUs() {
                                     count={count}
                                     color={color}
                                     space={space}
-                                    title={title}
+                                    title={t(title)}
                                     Icon={Icon}
                                 />
                             )
@@ -48,7 +50,7 @@ export default function AboutUs() {
                 <div className="max-w-[1200px] mx-[auto]">
                     <div className="pt-5">
                         <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark">
-                            What Make Us Spcecial?
+                            {t('What_Make_Us_Spcecial')}
                         </h1>
                         <p className="text-md text-secondaryLight">
                             Lorem ipsum dolor sit amet, consectetur adipisc ing elit.
@@ -75,7 +77,7 @@ export default function AboutUs() {
             </section>
             <div className="text-center lg:px-20 px-5 py-2 ">
                 <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark">
-                    Meet Our Team
+                    {t('team')}
                 </h1>
                 <p className="text-md text-secondaryLight">
                     Plugins your themes with even more features.

@@ -1,8 +1,11 @@
 import {Link} from 'react-router-dom';
 import {FiX} from 'react-icons/fi';
 import {coursesArray} from "../../../entities/coursesArray";
+import {useTranslation} from 'react-i18next';
 
 export default function CoursesMenu({isOpen, toggleMenu, categoryId}) {
+    const {t} = useTranslation();
+
     return (
         <div
             className={`fixed capitalized bg-pseudo w-[50%] inset-0 z-50 overflow-y-auto transition-transform duration-300 transform ${
@@ -11,7 +14,8 @@ export default function CoursesMenu({isOpen, toggleMenu, categoryId}) {
         >
             <div className="bg-gray-400 w-full h-[60px] flex items-center justify-between pl-3 pr-5">
                 <h1 className="text-primary min-w-max text-2xl font-roboto-slab font-bold">
-                    Categories
+                {t('Categories')}
+
                 </h1>
                 <button onClick={toggleMenu}>
                     <FiX className="w-6 h-6"/>

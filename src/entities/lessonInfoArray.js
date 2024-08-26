@@ -15,7 +15,7 @@ const lessonInfoArray = [
     id:2,
     icon:TbSchool,
     count:1123,
-    title:'Inter-level education'
+    title:'Inter_level_education'
 },
 {
     id:3,
@@ -27,13 +27,13 @@ const lessonInfoArray = [
     id:4,
     icon:HiOutlineGlobeAsiaAustralia,
     count:35,
-    title:'Countries Reached'
+    title:'Countries_Reached'
 },
 {
     id:5,
     icon:MdCastForEducation,
     count:1560,
-    title:'Courses Published'
+    title:'Courses_Published'
 },
 ]
 

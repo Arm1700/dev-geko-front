@@ -1,4 +1,4 @@
-const am = {
+const ru = {
   translation: {
     part1: 'Hayeren Text',
     HOME: "Գլխավոր էջ",
@@ -60,4 +60,4 @@ const am = {
   },
 };
 
-export default am;
+export default ru;
