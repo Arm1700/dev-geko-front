@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/pages/courses/CoursesMenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pages/events/Event2.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/Courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/Courses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/events/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/Events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/event/Event.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/event/Event.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/eventsArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/eventsArray.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/routesArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/routesArray.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/LanguageSwitcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/LanguageSwitcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locale/ru.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +37,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/User/Desktop/project/frontend/git front/src/components/pages/events/[id]",
+    "last_opened_file_path": "C:/Users/User/Desktop/project/frontend/geko-front",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -113,6 +104,10 @@
       <workItem from="1721891453785" duration="692000" />
       <workItem from="1723650827426" duration="1556000" />
       <workItem from="1723901854936" duration="4273000" />
+      <workItem from="1724661124774" duration="938000" />
+      <workItem from="1724766529615" duration="299000" />
+      <workItem from="1724831765837" duration="426000" />
+      <workItem from="1724948081527" duration="728000" />
     </task>
     <servers />
   </component>
