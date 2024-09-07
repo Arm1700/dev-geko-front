@@ -48,15 +48,15 @@ export default function PopularCourse({
                 />
             </div>
             <div
-                className={`w-[100%] ${gridStyleTF === true ? "h-[35%] items-center py-[30px] px-[20px]" : "w-full py-[30px] sm:pl-10  sm:px-0 sm:py-0 h-[100%]  gap-4"} flex flex-col justify-center `}>
-                <p className={`hover:text-primary cursor-pointer transition-colors duration-300 
+                className={`w-[100%] mid:h-full md:h-[150px]   ${gridStyleTF === true ? " items-center py-[30px] px-[20px]" : "w-full py-[30px] sm:pl-10  sm:px-0 sm:py-0 h-[100%]  gap-4"} flex flex-col justify-center `}>
+                <p className={`hover:text-primary uppercase font-bold cursor-pointer transition-colors duration-300 
                 ${gridStyleTF === true ? "text-custom-15 text-center" : "text-xl"} 
                 font-medium text-primaryDark font-roboto-slab`}
                    onClick={() => nav(`/courses/${id}`)}
                 >
                     {title}
                 </p>
-                <p className={`${gridStyleTF === true ? "items-center" : ""} transition-colors duration-300 text-custom-15 font-medium text-color60 font-roboto`}
+                <p className={`${gridStyleTF === true ? "items-center" : ""}  transition-colors duration-300 text-custom-15 font-medium text-color60 font-roboto`}
                 >
                     {gridStyleTF === true ? "" : desc}
                 </p>

@@ -1,10 +1,10 @@
 import {Link} from 'react-router-dom';
 import {FiX} from 'react-icons/fi';
-import {coursesArray} from "../../../entities/coursesArray";
 import {useTranslation} from 'react-i18next';
 
 export default function CoursesMenu({isOpen, toggleMenu, categoryId}) {
     const {t} = useTranslation();
+    const coursesArray = t('coursesArray', {returnObjects: true});
 
     return (
         <div

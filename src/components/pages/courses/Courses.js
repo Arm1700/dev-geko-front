@@ -1,5 +1,3 @@
-import popularCoursesArray from '../../../entities/popularCoursesArray';
-import {coursesArray} from "../../../entities/coursesArray";
 import PopularCourse from '../shared/home/PopularCourse';
 import {useNavigate, useParams} from "react-router-dom";
 import ReactPaginate from 'react-paginate';
@@ -9,6 +7,8 @@ import {useTranslation} from 'react-i18next';
 
 export default function Courses() {
     const {t} = useTranslation();
+    const coursesArray = t('coursesArray', {returnObjects: true});
+    const popularCoursesArray = t('popularCoursesArray', { returnObjects: true });
 
     const [gridStyleTF, setGridStyle] = useState(true);
     const [coursesPerPage, setCoursesPerPage] = useState(3);

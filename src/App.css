@@ -1,4 +1,10 @@
 /* Course */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*user-select: none;*/
+}
 .inner-img {
     transition: 0.3s;
 }
@@ -87,6 +93,7 @@
 .popular {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 15px;
 }
 

@@ -18,9 +18,9 @@ export default function Header() {
                 <div className="py-[10px] text-pseudo flex items-center  justify-between max:px-5 max-w-[1200px] mx-auto">
                     <div className="w-70   flex items-center gap-3 justify-between">
                         <BsTelephone/>
-                        <span className="hidden md:block">phone number</span>
+                        <span className="hidden md:block">(+374) 98 03 33 94</span>
                         <LuMailCheck/>
-                        <span className="hidden md:block">mail@hh.com</span>
+                        <span className="hidden md:block">gekoeducation@gmail.com</span>
                     </div>
                     <LanguageSwitcher/>
                 </div>

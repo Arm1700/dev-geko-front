@@ -1,11 +1,10 @@
+import React from "react";
 import Course from '../shared/home/Course'
 import MainPhoto from './MainPhoto'
 import PopularCourse from '../shared/home/PopularCourse'
-import popularCoursesArray from '../../../entities/popularCoursesArray'
 import lessonInfoArray from '../../../entities/lessonInfoArray'
 import LessonInfo from '../shared/home/LessonInfo'
 import books from '../../../images/books.jpg'
-import eventsArray from '../../../entities/eventsArray'
 import Event from '../shared/event/Event'
 import Reviews from '../shared/home/Review'
 import {useNavigate} from "react-router-dom";
@@ -14,7 +13,6 @@ import {useTranslation} from 'react-i18next';
 
 export default function Home() {
     const {t} = useTranslation()
-
     const nav = useNavigate();
     const handleCategoryClick = () => {
         nav(`/course-category`);
@@ -23,6 +21,8 @@ export default function Home() {
         nav(`/events`);
     };
     const url = 'https://www.shutterstock.com/shutterstock/videos/1086751859/preview/stock-footage-video-of-financial-data-processing-over-diverse-business-people-global-business-finances.webm'
+    const popularCoursesArrayHome = t('popularCoursesArrayHome', {returnObjects: true});
+    const eventsArray = t('eventsArray', {returnObjects: true});
 
     return (<main>
             <MainPhoto image={url} text1="The_best_time_for" text2="education"/>
@@ -33,11 +33,11 @@ export default function Home() {
                     <div className="flex justify-between">
                         <div className="text-start">
                             <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
-                               {t('popular_cours')}
+                                {t('popular_cours')}
                             </h1>
-                            <p className="text-md text-secondaryLight text-custom-15">
-                                {t('Limitless_learning_more_possibilities')}
-                            </p>
+                            {/*<p className="text-md text-secondaryLight text-custom-15">*/}
+                            {/*    {t('Limitless_learning_more_possibilities')}*/}
+                            {/*</p>*/}
                         </div>
                         <button
                             className="text-sm uppercase font-light border-2 px-[20px] py-[7px] h-[50%] rounded-[4px]"
@@ -46,7 +46,7 @@ export default function Home() {
                         </button>
                     </div>
                     <div className="popular">
-                        {popularCoursesArray.slice(0, 8).map(({image, id, title}) => {
+                        {popularCoursesArrayHome.map(({image, id, title}) => {
                             return (<PopularCourse
                                 id={id}
                                 image={image}
@@ -84,9 +84,9 @@ export default function Home() {
                             className="text-sm uppercase font-light border-2 px-[20px] py-[7px] h-[50%] rounded-[4px]"
                             onClick={() => handleEventsClick()}>
                             {t('View_All')}
-                            </button>
+                        </button>
                     </div>
-                    {eventsArray.slice(0, 3).map(({id, day, month, title, hour, place, description, image}) => {
+                    {eventsArray.filter(event => event.status === "expired").slice(0, 3).map(({id, day, month, title, hour, place, description, image}) => {
                         return (<Event
                             id={id}
                             day={day}

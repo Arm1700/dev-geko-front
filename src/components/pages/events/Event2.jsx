@@ -2,6 +2,7 @@ import React from 'react'
 import {MdOutlinePlace} from 'react-icons/md'
 import {TbClockHour3} from 'react-icons/tb'
 import {useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 export default function Event({
                                   id, day, month, title, hour, place, description, image,
@@ -11,6 +12,7 @@ export default function Event({
     const handleCategoryClick = (id) => {
         nav(`/events/${id}`);
     };
+    const {t} = useTranslation();
     return (<section
         className=" border-t-[1px] border-colorF2 py-[30px] flex gap-5 sm:justify-between sm:items-center sm:flex-row max:flex-col max:relative">
         <div

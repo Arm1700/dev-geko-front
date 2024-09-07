@@ -32,7 +32,7 @@ export default function Event({
         </span>
             <span className="text-color60 leading-[25px] font-sans-serif">{t(month)}</span>
         </div>
-        <div className="gap-2 flex middle:px-5 md:px-20 px-0 flex-col sm:order-none max:order-1 "
+        <div className="gap-2 flex middle:px-5 md:px-20 px-0 flex-col sm:order-none max:order-1 w-full"
              style={{
                  maxWidth: "700px"
              }}>
@@ -43,7 +43,7 @@ export default function Event({
                 <TbClockHour3 className="text-primary w-[21px]"/> <span className="text-sm">{hour}</span>
                 <MdOutlinePlace className="text-primary "/> <span className="text-sm">{place}</span>
             </div>
-            <p className="text-color60 text-custom-15">{description}</p>
+            <p className="text-color60 text-custom-15 center">{description}</p>
         </div>
         <img alt={"image " + description} src={image}
              className="rounded-md md:w-[270px] sm:w-[270px] max:w-[100%]"/>

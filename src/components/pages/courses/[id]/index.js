@@ -5,22 +5,23 @@ import {IoLanguage} from 'react-icons/io5'
 import {IoPricetag} from 'react-icons/io5'
 import {PiStudentBold} from 'react-icons/pi'
 import {MdAssessment} from 'react-icons/md'
-import popularCoursesArray from '../../../../entities/popularCoursesArray'
 import Error404 from '../../shared/Error'
-import {coursesArray} from "../../../../entities/coursesArray";
 import {A11y, Pagination} from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import PopularCourse from "../../shared/home/PopularCourse";
+import {useTranslation} from "react-i18next";
 
 export default function CoursePage() {
     const {id: course,} = useParams()
     const renderBullet = (index, className) => {
         return `<span class="${className}" style="background-color: orange; "></span>`; // Установите цвет фона в orange
     };
+
     const [slidesToShow, setSlidesToShow] = useState(3)
     const [spaceBetween, setSpaceBetween] = useState(30)
+    const popularCoursesArray = t('popularCoursesArray', { returnObjects: true });
 
     const pickedCourse =
         popularCoursesArray?.find(el => el.id === +course)
@@ -48,8 +49,10 @@ export default function CoursePage() {
             window.removeEventListener('resize', updateSlidesToShow)
         }
     }, [])
+    const {t} = useTranslation();
+    const coursesArray = t('coursesArray', {returnObjects: true});
     return (
-        <section className="bgColorArticle md:before:h-[22%] before:h-[0] relative pb-5">
+        <section className="bgColorArticle md:before:h-[300px] before:h-[0] relative pb-5">
             {pickedCourse?.id ? (
                 <>
                     <article className="grid  md:grid-cols-[70%_1fr] grid-cols-1 max-w-[1200px] mx-[auto] relative">
@@ -58,12 +61,12 @@ export default function CoursePage() {
                                 <p className="text-3xl font-roboto-slab">{pickedCourse.title}</p>
                                 <p className="text-custom-15 opacity-80 ">{pickedCourse.desc}</p>
                                 <div className="flex flex-col gap-[5px]">
-                                    <p className="text-xs capitalize">categories</p>
-                                    <p className="text-custom-15">{courses.text}</p>
+                                    <p className="text-xs capitalize">{t("Categories")}</p>
+                                    <p className="text-custom-15">{t(courses.text)}</p>
                                 </div>
                             </div>
 
-                            <div className="w-[100%] h-[100%] absolute bg-primaryDark z-[-1]">
+                            <div className="w-[100%] flex md:hidden  h-[100%] absolute bg-primaryDark z-[-1]">
 
                             </div>
                         </div>
@@ -152,7 +155,7 @@ export default function CoursePage() {
                                 </ul>
                             </div>
                             <p className="like relative uppercase font-roboto-slab text-2xl pt-10 font-bold">
-                                You May Like
+                                {t("You_May_Like")}
                             </p>
                             <Swiper
                                 loop={true}

@@ -3,12 +3,13 @@ import {TbClockHour9} from 'react-icons/tb'
 import {FaFlag} from "react-icons/fa";
 import {FaMapMarkerAlt} from "react-icons/fa";
 import Error404 from '../../shared/Error'
-import eventsArray from "../../../../entities/eventsArray";
+import {t} from "i18next";
 
 export default function EventsPage() {
     const {id: envents,} = useParams()
     const nav = useNavigate();
 
+    const eventsArray = t('eventsArray', { returnObjects: true });
     const pickedEvent =
         eventsArray?.find(el => el.id === +envents)
     return (
@@ -44,7 +45,7 @@ export default function EventsPage() {
                                 <h1 className="text-2xl font-roboto-slab font-bold text-primaryDark">
                                     EVENT DESCRIPTION
                                 </h1>
-                                <p className="text-custom-15 text-color60">{pickedEvent.eventDescription}</p>
+                                <p className="text-custom-15 text-color60">{pickedEvent.description}</p>
                                 <h1 className="text-2xl font-roboto-slab font-bold text-primaryDark">
                                     EVENT CONTENT
                                 </h1>

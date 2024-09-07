@@ -19,12 +19,7 @@ export const routesArray = [
     component: AboutUs,
     path: '/about-us',
   },
-  {
-    id: 4,
-    name: 'CONTACTS',
-    component: Contacts,
-    path: '/contacts',
-  },
+
   {
     id: 5,
     name: 'COURSES',
@@ -32,10 +27,16 @@ export const routesArray = [
     path: '/course-category',
   },
   {
-    id: 6,
+    id: 4,
     name: 'EVENTS',
     component: Events,
     path: '/events',
+  },
+  {
+    id: 6,
+    name: 'CONTACTS',
+    component: Contacts,
+    path: '/contacts',
   },
   // {
   //   id: 7,

@@ -1,5 +1,5 @@
 import React from 'react';
-import {coursesArray} from '../../../../entities/coursesArray'; // Assuming correct import path
+
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Pagination, A11y} from 'swiper/modules';
 import 'swiper/css';
@@ -39,6 +39,8 @@ const CourseSlider = () => {
             window.removeEventListener('resize', updateSlidesToShow)
         }
     }, [])
+    const coursesArray = t('coursesArray', {returnObjects: true});
+
     return (
         <div className="max:px-5 py-16 mx-auto max-w-[1200px]">
             <Swiper
@@ -69,7 +71,7 @@ const CourseSlider = () => {
 
                         <article
                             onClick={() => nav(`/course-category/${id}`)}
-                            className="cursor-pointer img-wrapper mb-[40px] relative bg-primary rounded-lg  overflow-hidden md:w-[162px] max:w-[220px] flex flex-col justify-center items-center"
+                            className="cursor-pointer flex-wrap img-wrapper mb-[40px] relative bg-primary rounded-lg  overflow-hidden md:w-[162px] max:w-[220px] flex flex-col justify-center items-center"
                             style={{
                                 aspectRatio: "1 / 1"
                             }}>
@@ -80,7 +82,7 @@ const CourseSlider = () => {
                                 width: '100%', // Ширина 100%
                                 height: '100%', // Высота 100%
                             }}/>
-                            <p className="absoluteP absolute font-bold text-pseudo  hover:text-primary text-base font-roboto-slab top-[50%] left-[50%] w-[90%] text-center z-50">{t(text)}</p>
+                            <p className="absoluteP absolute font-bold text-pseudo  hover:text-primary text-base font-roboto-slab top-[50%] left-[50%] w-[90%] text-center z-50 uppercase">{t(text)}</p>
                         </article>
                     </SwiperSlide>
                 ))}
