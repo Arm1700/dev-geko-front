@@ -1,17 +1,27 @@
+import React from "react";
 import {useNavigate, useParams} from 'react-router-dom'
+import {FaMapMarkerAlt} from "react-icons/fa";
 import {TbClockHour9} from 'react-icons/tb'
 import {FaFlag} from "react-icons/fa";
-import {FaMapMarkerAlt} from "react-icons/fa";
 import Error404 from '../../shared/Error'
-import {t} from "i18next";
 
+import {Swiper, SwiperSlide} from "swiper/react";
+import {A11y, Pagination} from "swiper/modules";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import {useTranslation} from 'react-i18next';
+
+// import {t} from "i18next";
 export default function EventsPage() {
+    const {t} = useTranslation();
     const {id: envents,} = useParams()
     const nav = useNavigate();
 
-    const eventsArray = t('eventsArray', { returnObjects: true });
+    const eventsArray = t('eventsArray', {returnObjects: true});
     const pickedEvent =
         eventsArray?.find(el => el.id === +envents)
+
+    console.log(pickedEvent.image)
     return (
         <section className="md:before:h-[22%] before:h-[0] py-5 relative pb-5">
             {pickedEvent?.id ? (
@@ -20,7 +30,28 @@ export default function EventsPage() {
                         <div className="flex flex-col gap-[20px] px-5">
                             <p className="text-5xl text-primaryDark font-roboto-slab font-bold">Events</p>
                             <p className="text-2xl font-bold text-primaryDark font-roboto-slab">{pickedEvent.title}</p>
-                            <img src={pickedEvent.image} alt=""/>
+                            {/*<img src={pickedEvent.image} alt=""/>*/}
+                            <article className={'w-full '}>
+                                <Swiper
+                                    loop={true}
+                                    modules={[Pagination, A11y]}
+                                    speed={500}
+                                    onSwiper={(swiper) => console.log(swiper)}
+                                    onSlideChange={() => console.log('slide change')}
+                                >
+                                    {pickedEvent.image.map((value, index) => (
+                                        <SwiperSlide key={index}
+
+                                                     style={{
+                                                         display: 'flex',
+                                                         justifyContent: 'center',
+                                                     }}
+                                        >
+                                            <img src={pickedEvent.image[index]} alt="" className='h-full w-full object-cover]'/>
+                                        </SwiperSlide>
+                                    ))}
+                                </Swiper>
+                            </article>
                         </div>
 
                         <div
@@ -40,7 +71,7 @@ export default function EventsPage() {
                                 </h1>
                             </div>
                         </div>
-                        <div className="grid   sm:grid-cols-[75%_20%] justify-between grid-cols-1 py-5 px-5">
+                        <div className="grid sm:grid-cols-[75%_20%] justify-between grid-cols-1 py-5 px-5">
                             <div className="text-start pt-5 flex flex-col gap-3">
                                 <h1 className="text-2xl font-roboto-slab font-bold text-primaryDark">
                                     EVENT DESCRIPTION
@@ -81,7 +112,8 @@ export default function EventsPage() {
                             </div>
                             <div>
                                 <div className="flex flex-col ">
-                                    <div className="flex gap-3 text-color60 text-custom-15 border-b-[2px] border-colorF2 py-3">
+                                    <div
+                                        className="flex gap-3 text-color60 text-custom-15 border-b-[2px] border-colorF2 py-3">
                                         <TbClockHour9 className="text-primary"/>
                                         <div className="flex flex-col gap-1">
                                             <p className="text-primaryDark font-bold">Start Time</p>

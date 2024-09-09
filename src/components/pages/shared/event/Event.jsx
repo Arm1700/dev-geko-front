@@ -45,7 +45,7 @@ export default function Event({
             </div>
             <p className="text-color60 text-custom-15 center">{description}</p>
         </div>
-        <img alt={"image " + description} src={image}
+        <img alt={"image " + description} src={image[0]}
              className="rounded-md md:w-[270px] sm:w-[270px] max:w-[100%]"/>
     </section>)
 }

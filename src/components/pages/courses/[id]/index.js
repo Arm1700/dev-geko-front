@@ -14,6 +14,7 @@ import PopularCourse from "../../shared/home/PopularCourse";
 import {useTranslation} from "react-i18next";
 
 export default function CoursePage() {
+    const {t} = useTranslation();
     const {id: course,} = useParams()
     const renderBullet = (index, className) => {
         return `<span class="${className}" style="background-color: orange; "></span>`; // Установите цвет фона в orange
@@ -26,7 +27,7 @@ export default function CoursePage() {
     const pickedCourse =
         popularCoursesArray?.find(el => el.id === +course)
     const courses =
-        coursesArray?.find(el => el.id === +pickedCourse.category)
+        popularCoursesArray?.find(el => el.id === +pickedCourse.category)
 
     useLayoutEffect(() => {
         function updateSlidesToShow() {
@@ -49,8 +50,7 @@ export default function CoursePage() {
             window.removeEventListener('resize', updateSlidesToShow)
         }
     }, [])
-    const {t} = useTranslation();
-    const coursesArray = t('coursesArray', {returnObjects: true});
+    // const coursesArray = t('coursesArray', {returnObjects: true});
     return (
         <section className="bgColorArticle md:before:h-[300px] before:h-[0] relative pb-5">
             {pickedCourse?.id ? (
