@@ -24,7 +24,7 @@ i18n
         //     ru
         // },
         backend: {
-            loadPath: 'https://dev.gekoeducation.com//api/translations/{{lng}}/',
+            loadPath: 'https://dev.gekoeducation.com/api/translations/{{lng}}/',
         },
         cache: {
             enabled: true,
