@@ -5,7 +5,7 @@ import ru from '../../images/Russia-flag.png';
 
 export default function LanguageSwitcher() {
   const lngs = {
-    "en-US": { nativeName: 'English', flag: en },
+    en: { nativeName: 'English', flag: en },
     am: { nativeName: 'Armenian', flag: arm },
     ru: { nativeName: 'Russian', flag: ru },
   };

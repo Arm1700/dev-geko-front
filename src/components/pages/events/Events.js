@@ -8,7 +8,7 @@ export default function Events() {
     const tabs = [
         {title: 'happening', id: 1},
         {title: 'upcoming', id: 2},
-        {title: 'expired', id: 3},
+        {title: 'completed', id: 3},
     ]
 
     const {t} = useTranslation();

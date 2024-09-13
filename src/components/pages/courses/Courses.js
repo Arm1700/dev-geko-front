@@ -6,41 +6,73 @@ import CoursesMenu from "./CoursesMenu";
 import {useTranslation} from 'react-i18next';
 
 export default function Courses() {
-    const {t} = useTranslation();
-    const coursesArray = t('coursesArray', {returnObjects: true});
-    const popularCoursesArray = t('popularCoursesArray', { returnObjects: true });
+
+    const { t, i18n } = useTranslation();
+    const language = i18n.language;
+    const [coursesArray, setCoursesArray] = useState([]);
+    const [popularCoursesArray, setPopularCoursesArray] = useState([]);
 
     const [gridStyleTF, setGridStyle] = useState(true);
     const [coursesPerPage, setCoursesPerPage] = useState(3);
     const [currentPage, setCurrentPage] = useState(1);
     const nav = useNavigate();
-    const {id: categoryId} = useParams()
+    const {id: categoryId} = useParams();
     const handleCategoryClick = (id) => {
         nav(`/course-category/${id}`);
     };
+
     const [showMenu, setShowMenu] = useState(false);
+
+
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     };
-    const filteredCourses = categoryId
-        ? popularCoursesArray.filter(course => course.category.toString() === categoryId)
-        : popularCoursesArray;
 
     useEffect(() => {
         setCurrentPage(1); // Reset to the first page when the category changes
-        setCoursesPerPage(6)
+        setCoursesPerPage(6);
     }, [categoryId]);
 
     const startIndex = (currentPage - 1) * coursesPerPage;
-    const endIndex = Math.min(startIndex + coursesPerPage, filteredCourses.length);
-    const totalPages = Math.ceil(filteredCourses.length / coursesPerPage);
+    const endIndex = Math.min(startIndex + coursesPerPage, popularCoursesArray.length);
+    const totalPages = Math.ceil(popularCoursesArray.length / coursesPerPage);
     const paginatedCourses = () => {
-        return filteredCourses.slice(startIndex, endIndex);
+        return popularCoursesArray.slice(startIndex, endIndex);
     };
 
     const handlePageChange = (data) => {
         setCurrentPage(data.selected + 1);
     };
+
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/api/categories/?language=${language}`);
+                const data = await response.json();
+                console.log(data);
+                setCoursesArray(data); // Сохранение курсов в состояние
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+            }
+        };
+
+        fetchCourses();
+    }, [language]);
+
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/api/popular_courses/?language=${language}`);
+                const data = await response.json();
+                console.log(data);
+                setPopularCoursesArray(data); // Сохранение курсов в состояние
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+            }
+        };
+
+        fetchCourses();
+    }, [language]);
 
     const renderPagination = () => (
         <ReactPaginate
@@ -60,7 +92,9 @@ export default function Courses() {
             nextClassName={currentPage === totalPages ? 'pagination__next disabled' : 'pagination__next'} // Disable next on last page
         />
     );
+
     let gridStyle = gridStyleTF === true ? 'md:grid-cols-3 sm:grid-cols-2 grid-cols-1 ' : 'grid-cols-1';
+
     return (
         <main className="max:px-5 max-w-[1200px] mx-auto py-5 flex flex-col">
             <h1 className="text-3xl font-roboto-slab font-bold text-primaryDark">
@@ -73,10 +107,10 @@ export default function Courses() {
                     <h1 className="min-w-max text-2xl font-roboto-slab font-bold text-primaryDark">
                         {t('Categories')}
                     </h1>
-                    {coursesArray.sort((a, b) => a.text.localeCompare(b.text)).map(({id, text}) => (<p
+                    {coursesArray.sort((a, b) => a.text.localeCompare(b.text)).map(({id, translation}) => (<p
                         onClick={() => handleCategoryClick(id)}
                         className={`min-w-max w-full textHover cursor-pointer py-[5px] ${+categoryId === id ? "text-primary" : "text-color66"}`}
-                        key={id}>{t(text)}
+                        key={id}>{translation.text}
                     </p>))}
                 </div>
                 <button onClick={toggleMenu}
@@ -96,20 +130,20 @@ export default function Courses() {
                             onClick={() => setGridStyle(false)}
                         ></i>
                         <p className="text-color66 text-custom-15">
-                            {`Showing ${startIndex + 1}-${endIndex} of ${filteredCourses.length} results`}
+                            {`Showing ${startIndex + 1}-${endIndex} of ${popularCoursesArray.length} results`}
                         </p>
                     </div>
                     <div
                         className={`opacityPopularCourse content-center grid ${gridStyle} ${gridStyleTF === true ? 'gap-10' : 'gap-0'} py-6`}>
-                        {paginatedCourses().map(({image, id, title, count, desc, price}) => {
+                        {paginatedCourses().map(({image, id, translation}) => {
                             return (
                                 <PopularCourse
                                     gridStyleTF={gridStyleTF}
-                                    desc={desc}
+                                    desc={translation.desc}
                                     image={image}
-                                    title={title}
-                                    count={count}
-                                    price={price}
+                                    title={translation.title}
+                                    count={translation.count}
+                                    price={translation.price}
                                     key={id}
                                     id={id}
                                 />

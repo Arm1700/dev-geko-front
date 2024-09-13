@@ -1,11 +1,27 @@
 import {Link} from 'react-router-dom';
 import {FiX} from 'react-icons/fi';
 import {useTranslation} from 'react-i18next';
+import {useEffect, useState} from "react";
 
 export default function CoursesMenu({isOpen, toggleMenu, categoryId}) {
-    const {t} = useTranslation();
-    const coursesArray = t('coursesArray', {returnObjects: true});
+    const { t, i18n } = useTranslation();
+    const language = i18n.language;
+    const [coursesArray, setCoursesArray] = useState([])
 
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/api/categories/?language=${language}`);
+                const data = await response.json();
+                console.log(data);
+                setCoursesArray(data); // Сохранение курсов в состояние
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+            }
+        };
+
+        fetchCourses();
+    }, [language]);
     return (
         <div
             className={`fixed capitalized bg-pseudo w-[50%] inset-0 z-50 overflow-y-auto transition-transform duration-300 transform ${
@@ -22,12 +38,12 @@ export default function CoursesMenu({isOpen, toggleMenu, categoryId}) {
                 </button>
             </div>
             <div>
-                {coursesArray.sort((a, b) => a.text.localeCompare(b.text)).map(({id, text}) => (
+                {coursesArray.sort((a, b) => a.text.localeCompare(b.text)).map(({id, translation}) => (
                     <Link
                         onClick={toggleMenu}
                         className={`block px-3 py-2 rounded-md hover:text-primary font-bold ${+categoryId === id ? "text-primary" : "text-color12"}`}
                         key={id} to={`/course-category/${id}`}>
-                        {text}
+                        {translation.text}
                     </Link>
                 ))}
             </div>

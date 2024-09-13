@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Course from '../shared/home/Course'
 import MainPhoto from './MainPhoto'
 import PopularCourse from '../shared/home/PopularCourse'
@@ -12,7 +12,13 @@ import {useTranslation} from 'react-i18next';
 
 
 export default function Home() {
-    const {t} = useTranslation()
+
+    const {t, i18n} = useTranslation();
+    const language = i18n.language;
+    const [popularCoursesArray, setPopularCoursesArray] = useState([]);
+    const [eventsArray, setEventsArray] = useState([]);
+    const [reviewsArray, setReviewsArray] = useState([]);
+
     const nav = useNavigate();
     const handleCategoryClick = () => {
         nav(`/course-category`);
@@ -21,9 +27,76 @@ export default function Home() {
         nav(`/events`);
     };
     const url = 'https://www.shutterstock.com/shutterstock/videos/1086751859/preview/stock-footage-video-of-financial-data-processing-over-diverse-business-people-global-business-finances.webm'
-    const popularCoursesArrayHome = t('popularCoursesArrayHome', {returnObjects: true});
-    const eventsArray = t('eventsArray', {returnObjects: true});
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/api/popular_courses/?language=${language}`);
+                const data = await response.json();
+                console.log(data);
+                setPopularCoursesArray(data); // Сохранение курсов в состояние
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+            }
+        };
 
+        fetchCourses();
+    }, [language]);
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/api/popular_courses/?language=${language}`);
+                const data = await response.json();
+                console.log(data);
+                setPopularCoursesArray(data); // Сохранение курсов в состояние
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+            }
+        };
+
+        fetchCourses();
+    }, [language]);
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/api/events/?language=${language}`);
+                const data = await response.json();
+                console.log(data);
+                setEventsArray(data); // Сохранение курсов в состояние
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+            }
+        };
+
+        fetchCourses();
+    }, [language]);
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/api/events/?language=${language}`);
+                const data = await response.json();
+                console.log(data);
+                setEventsArray(data); // Сохранение курсов в состояние
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+            }
+        };
+
+        fetchCourses();
+    }, [language]);
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/api/events/?language=${language}`);
+                const data = await response.json();
+                console.log(data);
+                setReviewsArray(data); // Сохранение курсов в состояние
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+            }
+        };
+
+        fetchCourses();
+    }, [language]);
     return (<main>
             <MainPhoto image={url} text1="The_best_time_for" text2="education"/>
             <Course/>
@@ -35,9 +108,6 @@ export default function Home() {
                             <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
                                 {t('popular_cours')}
                             </h1>
-                            {/*<p className="text-md text-secondaryLight text-custom-15">*/}
-                            {/*    {t('Limitless_learning_more_possibilities')}*/}
-                            {/*</p>*/}
                         </div>
                         <button
                             className="text-sm uppercase font-light border-2 px-[20px] py-[7px] h-[50%] rounded-[4px]"
@@ -46,11 +116,11 @@ export default function Home() {
                         </button>
                     </div>
                     <div className="popular">
-                        {popularCoursesArrayHome.map(({image, id, title}) => {
+                        {popularCoursesArray.reverse().map(({image, id, translation}) => {
                             return (<PopularCourse
                                 id={id}
                                 image={image}
-                                title={title}
+                                title={translation.title}
                                 key={id}
                             />)
                         })}
@@ -86,8 +156,18 @@ export default function Home() {
                             {t('View_All')}
                         </button>
                     </div>
-                    {eventsArray.filter(event => event.status === "expired").slice(0, 3).map(({id, day, month, title, hour, place, description, image}) => {
+                    {eventsArray.filter(event => event.status === "completed").slice(0, 3).map(({
+                                                                                                    id,
+                                                                                                    day,
+                                                                                                    month,
+                                                                                                    title,
+                                                                                                    hour,
+                                                                                                    place,
+                                                                                                    description,
+                                                                                                    image
+                                                                                                }) => {
                         return (<Event
+                            key={id}
                             id={id}
                             day={day}
                             month={month}
@@ -100,16 +180,15 @@ export default function Home() {
                     },)}
                 </div>
             </div>
+
+
             <div className="text-center lg:px-20 px-5 pt-10 pb-5">
                 <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
                     {t('What_People_Say')}
                 </h1>
-                <p className="text-md text-secondaryLight text-custom-15">
-                    {t('How_real_people_said_about_Education_WordPress_Theme')}
-                </p>
             </div>
             <div className="text-start lg:px-20 px-5 pt-5">
-                <Reviews/>
+                <Reviews reviewsArray={reviewsArray}/>
             </div>
         </main>
     )

@@ -5,7 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/locale/am.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/locale/en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/locale/ru.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/LanguageSwitcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/LanguageSwitcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/Courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/Courses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/CoursesMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/CoursesMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/events/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/Events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/event/Event.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/event/Event.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Course.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Course.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/PopularCourse.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/PopularCourse.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/terminates/Terminates.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/reviewsArray.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,10 +51,11 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Node.js.Home.jsx.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Desktop/project/frontend/geko-front&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Desktop/project/frontend/geko-front/src/local&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -49,11 +70,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\Desktop\project\frontend\geko-front\src\local" />
       <recent name="C:\Users\HP\Desktop\project\frontend\geko-front\src\locale" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\events\[id]" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\shared\event" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\events" />
-      <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\courses" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\shared\event" />
@@ -125,7 +146,12 @@
       <workItem from="1725703927279" duration="3366000" />
       <workItem from="1725707818838" duration="5035000" />
       <workItem from="1725714644482" duration="2916000" />
-      <workItem from="1725869773122" duration="3081000" />
+      <workItem from="1725869773122" duration="5907000" />
+      <workItem from="1725953421474" duration="14628000" />
+      <workItem from="1726041900433" duration="8615000" />
+      <workItem from="1726130040540" duration="11403000" />
+      <workItem from="1726207152815" duration="4929000" />
+      <workItem from="1726241298293" duration="689000" />
     </task>
     <servers />
   </component>

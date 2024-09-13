@@ -1,8 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react';
-import reviewsArray from '../../../../entities/reviewsArray';
+// import reviewsArray from '../../../../entities/reviewsArray';
 import Slider from 'react-slick';
+import {useTranslation} from "react-i18next";
 
-export default function Review() {
+export default function Review({reviewsArray}) {
+    const {t} = useTranslation()
     const [currentIndex, setCurrentIndex] = useState(0);
     const [nav1, setNav1] = useState(null);
     const [nav2, setNav2] = useState(null);
@@ -17,8 +19,7 @@ export default function Review() {
     const onSlideChange = (index) => {
         setCurrentIndex(index);
     };
-
-    console.log()
+    console.log(reviewsArray)
     return (
         <div className="slider-container relative">
             <div>

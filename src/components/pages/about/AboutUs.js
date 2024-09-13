@@ -4,11 +4,11 @@ import aboutcard2info from '../../../entities/aboutcard2info'
 import AboutCard1 from '../shared/about/AboutCard1'
 import AboutCard2 from '../shared/about/AboutCard2'
 import {BiSolidQuoteLeft} from 'react-icons/bi'
-import reviewsArray from "../../../entities/reviewsArray";
 import {useTranslation} from 'react-i18next';
 
 export default function AboutUs() {
     const {t} = useTranslation();
+    const reviewsArray = t('reviewsArray', {returnObjects: true});
 
     return (
         <main className="flex flex-col items-center overflow-x-hidden">

@@ -19,6 +19,8 @@ export default function PopularCourse({
     const handleMouseLeave = () => {
         setIsHovered(false)
     }
+
+
     return (
         <article
             className={`my-5 border-gray h-min ${gridStyleTF === true ? "none border rounded-lg" : "sm:flex border-b"}     `}>
