@@ -160,21 +160,19 @@ export default function Home() {
                                                                                                     id,
                                                                                                     day,
                                                                                                     month,
-                                                                                                    title,
                                                                                                     hour,
-                                                                                                    place,
-                                                                                                    description,
-                                                                                                    image
+                                                                                                    image,
+                                                                                                    translation
                                                                                                 }) => {
                         return (<Event
                             key={id}
                             id={id}
                             day={day}
                             month={month}
-                            title={title}
+                            title={translation.title}
                             hour={hour}
-                            place={place}
-                            description={description}
+                            place={translation.place}
+                            description={translation.description}
                             image={image}
                         />)
                     },)}
