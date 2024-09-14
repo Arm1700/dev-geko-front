@@ -17,7 +17,7 @@ const Footer = () => {
                     <Logo/>
                     <p className="flex">
                         <FaPhoneAlt className="mx-2 "/>
-                        +374 898989889
+                        (+374) 98 03 33 94
                     </p>
                     <p className="flex">
                         <MdOutlinePlace className="mx-2 text-primary"/>
@@ -25,7 +25,7 @@ const Footer = () => {
                     </p>
                     <p className="flex">
                         <MdMarkEmailRead className="mx-2 text-primary"/>
-                        sadasd@aasd.sda
+                        gekoeducation1@gmail.com
                     </p>
                 </div>
                 <ul className='flex content-start middle:flex-row flex-col flex-wrap gap-3 middle:order-none order-2 text-color99'>

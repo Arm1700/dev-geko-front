@@ -5,10 +5,27 @@ import AboutCard1 from '../shared/about/AboutCard1'
 import AboutCard2 from '../shared/about/AboutCard2'
 import {BiSolidQuoteLeft} from 'react-icons/bi'
 import {useTranslation} from 'react-i18next';
+import {useEffect, useState} from "react";
 
 export default function AboutUs() {
-    const {t} = useTranslation();
-    const reviewsArray = t('reviewsArray', {returnObjects: true});
+    const {t, i18n} = useTranslation();
+    const language = i18n.language;
+    const [reviewsArray, setReviewsArray] = useState([]);
+    
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/api/reviews/?language=${language}`);
+                const data = await response.json();
+                console.log(data);
+                setReviewsArray(data); // Сохранение курсов в состояние
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+            }
+        };
+
+        fetchCourses();
+    }, [language]);
 
     return (
         <main className="flex flex-col items-center overflow-x-hidden">

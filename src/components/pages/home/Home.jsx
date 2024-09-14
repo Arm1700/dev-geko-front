@@ -69,24 +69,11 @@ export default function Home() {
 
         fetchCourses();
     }, [language]);
-    useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                const response = await fetch(`http://127.0.0.1:8000/api/events/?language=${language}`);
-                const data = await response.json();
-                console.log(data);
-                setEventsArray(data); // Сохранение курсов в состояние
-            } catch (error) {
-                console.error('Error fetching courses:', error);
-            }
-        };
 
-        fetchCourses();
-    }, [language]);
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/events/?language=${language}`);
+                const response = await fetch(`http://127.0.0.1:8000/api/reviews/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
                 setReviewsArray(data); // Сохранение курсов в состояние

@@ -1,10 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react';
 // import reviewsArray from '../../../../entities/reviewsArray';
 import Slider from 'react-slick';
-import {useTranslation} from "react-i18next";
+// import {useTranslation} from "react-i18next";
 
 export default function Review({reviewsArray}) {
-    const {t} = useTranslation()
+    // const {t} = useTranslation()
     const [currentIndex, setCurrentIndex] = useState(0);
     const [nav1, setNav1] = useState(null);
     const [nav2, setNav2] = useState(null);
@@ -49,7 +49,6 @@ export default function Review({reviewsArray}) {
                             <div key={review.id} className="text-center">
                                 <img
                                     src={review.image}
-
                                     className={`rounded-full mx-auto p-2 border-color86 `}
                                     style={{
                                         border: i === currentIndex ? "2px rgba(0, 0, 0, 0.5)" : "none",
@@ -71,8 +70,7 @@ export default function Review({reviewsArray}) {
                         {reviewsArray.map((review) => (
                             <div key={review.id} className="flex justify-center items-center text-center">
                                 <p className="mt-5 text-primaryDark font-bold text-lg">{review.name}</p>
-                                <p className="mb-4 text-color85">{review.developer}</p>
-                                <p className="mb-7 text-center text-color7C">{review.comment}</p>
+                                <p className="mb-7 text-center text-color7C">{review.translation.comment}</p>
                             </div>
                         ))}
                     </Slider>
