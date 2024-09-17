@@ -16,7 +16,7 @@ export default function AboutUs() {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/reviews/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/api/reviews/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
                 setReviewsArray(data); // Сохранение курсов в состояние

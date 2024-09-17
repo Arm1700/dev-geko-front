@@ -6,25 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/contacts/Contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/contacts/Contacts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/contacts/api/fetchMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/contacts/api/fetchMessage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/events/Event2.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/events/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/Events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/contact/ContactInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/contact/ContactInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/event/Event.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/event/Event.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/LessonInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/LessonInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/contactArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/contactArray.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/lessonInfoArray.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/socialsArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/socialsArray.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locale/am.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/am.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locale/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locale/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/ru.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +132,7 @@
       <workItem from="1726474318819" duration="7721000" />
       <workItem from="1726496634624" duration="65000" />
       <workItem from="1726497226232" duration="1514000" />
-      <workItem from="1726540205173" duration="7253000" />
+      <workItem from="1726540205173" duration="8157000" />
     </task>
     <servers />
   </component>

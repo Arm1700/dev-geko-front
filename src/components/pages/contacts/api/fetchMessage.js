@@ -1,6 +1,6 @@
 import axios from 'axios';
 // const api = 'https://gekoeducation.com/api/contact/';
-const api = 'http://127.0.0.1:8000/api/contact/';
+const api = 'https://dev.gekoeducation.com/api/contact/';
 
 export async function postData(data) {
   try {

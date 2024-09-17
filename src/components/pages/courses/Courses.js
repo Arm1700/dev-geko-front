@@ -47,7 +47,7 @@ export default function Courses() {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/categories/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/api/categories/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
                 setCoursesArray(data); // Сохранение курсов в состояние
@@ -62,7 +62,7 @@ export default function Courses() {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/popular_courses/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/api/popular_courses/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
                 setPopularCoursesArray(data); // Сохранение курсов в состояние
