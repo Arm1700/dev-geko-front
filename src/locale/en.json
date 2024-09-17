@@ -36,6 +36,9 @@
   "happening": "happening",
   "upcoming": "upcoming",
   "completed": "completed",
+  "confirm": "confirm",
+  "share": "share",
+  "event_description": "event description",
   "The_best_time_for": "The best time for",
   "education": "education is today",
   "Limitless_learning_more_possibilities": "Limitless learning, more possibilities",
@@ -56,5 +59,11 @@
   "October": "October",
   "November": "November",
   "December": "December",
-  "You_May_Like": "You May Like"
+  "You_May_Like": "You May Like",
+  "contact1_title": "Address Way",
+  "contact1_description": "1800 Abbot Kinney Blvd. Unit D & E Venice",
+  "contact2_title": "Contact info",
+  "contact2_description": "(+374) 98 03 33 94 (Viber, whatsapp) \n(+374) 95 51 54 53 (Viber) \n(+66) 80 084 26 42 (whatsapp)",
+  "contact3_title": "Work timer",
+  "contact3_description": "Monday - Friday: 09:00 - 20:00 \nSunday & Saturday: 10:30 - 22:00"
 }

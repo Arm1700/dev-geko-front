@@ -6,7 +6,9 @@ import Button from '../shared/contact/Button'
 import { postData } from './api/fetchMessage'
 import { useState } from 'react'
 import Notification from '../shared/contact/Notification'
+import {useTranslation} from "react-i18next";
 export default function Contacts() {
+  const {t} = useTranslation();
   const {
     register,
     handleSubmit,
@@ -46,13 +48,12 @@ export default function Contacts() {
   return (
     <main className="flex px-5 py-5 flex-col items-center">
       <div className="grid mid:grid-cols-3 w-full md:w-[auto] grid-cols-1 gap-[15px] items-center justify-items-center">
-        {contactArray.map(({ id, color, title, description, Icon }) => (
+        {contactArray.map((value,index) => (
           <ContactInfo
-            key={id}
-            color={color}
-            title={title}
-            description={description}
-            Icon={Icon}
+            key={value.id}
+            value={value}
+            index={index}
+            Icon={value.Icon}
           />
         ))}
       </div>
@@ -83,7 +84,7 @@ export default function Contacts() {
             {...register('message', { required: true })}
             error={errors.message && 'Message is required'}
           />
-          <Button type="submit" text="Submit" />
+          <Button type="submit" text = {t("confirm")} />
         </form>
       </div>
       {showNotify && (

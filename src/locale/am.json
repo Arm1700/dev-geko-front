@@ -36,6 +36,9 @@
   "happening": "տեղի ունեցող",
   "upcoming": "առաջիկայում",
   "completed": "հին",
+  "confirm": "հաստատել",
+  "share": "կիսվել",
+  "event_description": "միջոցառման Նկարագրություն",
   "The_best_time_for": "Լավագույն ժամանակը ",
   "education": "Սովորելու այսօր է…",
   "Limitless_learning_more_possibilities": "Անսահմանափակ ուսուցում, ավելի շատ հնարավորություններ",
@@ -56,5 +59,12 @@
   "October": "Հոկտեմբեր",
   "November": "Նոյեմբեր",
   "December": "Դեկտեմբեր",
-  "You_May_Like": "Դուք կարող եք հավանել"
+  "You_May_Like": "Դուք կարող եք հավանել",
+  "contact1_title": "Հասցեն՝",
+  "contact1_description": "105, 1 Տերյան փողոց, Երևան, Հայաստան Ցիտադել բիզնես կենտրոն, 509 գրասենյակ",
+  "contact2_title": "Կոնտակտային հեռախոսահամար՝",
+  "contact2_description": "(+374) 98 03 33 94 (Viber, whatsapp) \n(+374) 95 51 54 53 (Viber) \n(+66) 80 084 26 42 (whatsapp)",
+  "contact3_title": "Աշխատանքային ժամեր՝",
+  "contact3_description": "Երկուշաբի- Կիրակի 24/7"
 }
+

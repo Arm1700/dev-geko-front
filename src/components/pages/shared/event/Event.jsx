@@ -39,14 +39,14 @@ export default function Event({
              }}>
             <h5 className="text-lg font-bold hover:text-primary transition-colors duration-300 cursor-pointer "
                 onClick={() => handleCategoryClick(id)}
-            >{title}</h5>
+            >{t(title)}</h5>
             <div className="flex gap-1 items-center">
                 <TbClockHour3 className="text-primary w-[21px]"/> <span className="text-sm">{hour}</span>
-                <MdOutlinePlace className="text-primary "/> <span className="text-sm">{place}</span>
+                <MdOutlinePlace className="text-primary "/> <span className="text-sm">{t(place)}</span>
             </div>
-            <p className="text-color60 text-custom-15 center">{description}</p>
+            <p className="text-color60 text-custom-15 center">{t(description)}</p>
         </div>
-        <img alt={"image " + description} src={image[0]}
+        <img alt={"image " + t(description)} src={image[0]}
              className="rounded-md md:w-[270px] sm:w-[270px] max:w-[100%]"/>
     </section>)
 }

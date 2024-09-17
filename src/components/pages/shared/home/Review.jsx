@@ -40,10 +40,10 @@ export default function Review({reviewsArray}) {
                                 breakpoint: 768, // Adjust breakpoint for smaller screens if needed
                                 settings: {
                                     slidesToShow: 3,
-                                    initialSlide: 3, // Start at the center
+                                    initialSlide: 3,
                                 },
                             },
-                        ]} // Handle responsiveness (optional)
+                        ]}
                     >
                         {reviewsArray.map((review, i) => (
                             <div key={review.id} className="text-center">

@@ -5,13 +5,14 @@ import AboutCard1 from '../shared/about/AboutCard1'
 import AboutCard2 from '../shared/about/AboutCard2'
 import {BiSolidQuoteLeft} from 'react-icons/bi'
 import {useTranslation} from 'react-i18next';
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
+import Course from "../shared/home/Course";
 
 export default function AboutUs() {
     const {t, i18n} = useTranslation();
     const language = i18n.language;
     const [reviewsArray, setReviewsArray] = useState([]);
-    
+
     useEffect(() => {
         const fetchCourses = async () => {
             try {
@@ -33,7 +34,7 @@ export default function AboutUs() {
                 <div className="px-5 max-w-[1200px] mx-[auto]">
 
                     <h1 className="text-3xl py-4 font-roboto-slab font-bold text-primaryDark">
-                    {t('ABOUT_US')}
+                        {t('ABOUT_US')}
                     </h1>
                     <div className="text-center py-2 ">
                         <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark">
@@ -45,24 +46,24 @@ export default function AboutUs() {
                             aucto.{' '}
                         </p>
                     </div>
-                    <div
-                        className="grid mid:grid-cols-4 grid-cols-1 gap-[15px] items-center justify-items-center py-20">
-                        {aboutcard1info.map(({id, count, color, space, title, Icon}) => {
-                            return (
-                                <AboutCard1
-                                    key={id}
-                                    count={count}
-                                    color={color}
-                                    space={space}
-                                    title={t(title)}
-                                    Icon={Icon}
-                                />
-                            )
-                        })}
-                    </div>
+                    {/*<div*/}
+                    {/*    className="grid mid:grid-cols-4 grid-cols-1 gap-[15px] items-center justify-items-center py-20">*/}
+                    {/*    {aboutcard1info.map(({id, count, color, space, title, Icon}) => {*/}
+                    {/*        return (*/}
+                    {/*            <AboutCard1*/}
+                    {/*                key={id}*/}
+                    {/*                count={count}*/}
+                    {/*                color={color}*/}
+                    {/*                space={space}*/}
+                    {/*                title={t(title)}*/}
+                    {/*                Icon={Icon}*/}
+                    {/*            />*/}
+                    {/*        )*/}
+                    {/*    })}*/}
+                    {/*</div>*/}
                 </div>
+                <Course/>
             </section>
-
             <section className="text-center bg-primaryLight w-full px-5 ">
                 <div className="max-w-[1200px] mx-[auto]">
                     <div className="pt-5">

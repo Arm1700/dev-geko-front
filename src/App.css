@@ -5,6 +5,12 @@
     box-sizing: border-box;
     /*user-select: none;*/
 }
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh
+}
 .inner-img {
     transition: 0.3s;
 }

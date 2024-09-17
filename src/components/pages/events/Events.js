@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Event from '../shared/event/Event'
 import {useTranslation} from 'react-i18next';
 
@@ -11,9 +11,24 @@ export default function Events() {
         {title: 'completed', id: 3},
     ]
 
-    const {t} = useTranslation();
-    const eventsArray = t('eventsArray', {returnObjects: true});
+    const {t, i18n} = useTranslation();
+    const language = i18n.language;
+    const [eventsArray, setEventsArray] = useState([]);
 
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/api/events/?language=${language}`);
+                const data = await response.json();
+                console.log(data);
+                setEventsArray(data); // Сохранение курсов в состояние
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+            }
+        };
+
+        fetchCourses();
+    }, [language]);
     return (
         <main className="px-5 max-w-[1200px] mx-auto py-20 flex flex-col ">
             <h1 className="text-3xl font-roboto-slab font-bold text-primaryDark">
@@ -41,11 +56,9 @@ export default function Events() {
                          status,
                          day,
                          month,
-                         title,
                          hour,
-                         place,
-                         description,
                          image,
+                         translation
                      }) => {
                         return (
                             status === activeTab && (
@@ -53,10 +66,10 @@ export default function Events() {
                                     id={id}
                                     day={day}
                                     month={month}
-                                    title={title}
+                                    title={translation.title}
                                     hour={hour}
-                                    place={place}
-                                    description={description}
+                                    place={translation.place}
+                                    description={translation.description}
                                     image={image}
                                 />
                             )
