@@ -5,7 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/func/drag-on-drop/CategoryList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/contacts/api/fetchMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/contacts/api/fetchMessage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/Courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/Courses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/CoursesMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/CoursesMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/events/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/Events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/about/AboutCard2.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/about/AboutCard2.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Course.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Course.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/aboutcard2info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/aboutcard2info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/tutorsArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/tutorsArray.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locale/am.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/am.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locale/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locale/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/ru.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +153,16 @@
       <workItem from="1726474318819" duration="7721000" />
       <workItem from="1726496634624" duration="65000" />
       <workItem from="1726497226232" duration="1514000" />
-      <workItem from="1726540205173" duration="8157000" />
+      <workItem from="1726540205173" duration="15130000" />
+      <workItem from="1726634087588" duration="4787000" />
+      <workItem from="1726707796497" duration="10050000" />
+      <workItem from="1726769121121" duration="3018000" />
+      <workItem from="1726806451339" duration="5508000" />
+      <workItem from="1726935355135" duration="1894000" />
+      <workItem from="1727012779525" duration="598000" />
+      <workItem from="1727024701157" duration="4721000" />
+      <workItem from="1727079655030" duration="4098000" />
+      <workItem from="1727173810090" duration="1547000" />
     </task>
     <servers />
   </component>

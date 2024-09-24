@@ -8,20 +8,21 @@ export default function CoursesMenu({isOpen, toggleMenu, categoryId}) {
     const language = i18n.language;
     const [coursesArray, setCoursesArray] = useState([])
 
+    // Запрос для получения категорий
     useEffect(() => {
-        const fetchCourses = async () => {
+        const fetchCategories = async () => {
             try {
-                const response = await fetch(`https://dev.gekoeducation.com/api/categories/?language=${language}`);
+                const response = await fetch(`http://127.0.0.1:8000/api/categories/?language=${language}`);
                 const data = await response.json();
-                console.log(data);
-                setCoursesArray(data); // Сохранение курсов в состояние
+                setCoursesArray(data); // Сохранение категорий в состояние
             } catch (error) {
-                console.error('Error fetching courses:', error);
+                console.error('Error fetching categories:', error);
             }
         };
 
-        fetchCourses();
+        fetchCategories();
     }, [language]);
+
     return (
         <div
             className={`fixed capitalized bg-pseudo w-[50%] inset-0 z-50 overflow-y-auto transition-transform duration-300 transform ${
@@ -38,7 +39,7 @@ export default function CoursesMenu({isOpen, toggleMenu, categoryId}) {
                 </button>
             </div>
             <div>
-                {coursesArray.sort((a, b) => a.text.localeCompare(b.text)).map(({id, translation}) => (
+                {coursesArray.sort((a, b) => a.translation.text.localeCompare(b.translation.text)).map(({id, translation}) => (
                     <Link
                         onClick={toggleMenu}
                         className={`block px-3 py-2 rounded-md hover:text-primary font-bold ${+categoryId === id ? "text-primary" : "text-color12"}`}
@@ -50,3 +51,8 @@ export default function CoursesMenu({isOpen, toggleMenu, categoryId}) {
         </div>
     );
 }
+
+
+
+
+    

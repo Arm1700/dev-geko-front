@@ -1,26 +1,24 @@
-import { t } from "i18next"
-
 const aboutcard2info = [
   {
     id: 1,
     image:
       'https://eduma.thimpress.com/wp-content/uploads/2022/06/courses-7.jpg',
-    title: t('What_we_do'),
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    title: 'What_we_do',
+    desc: 'What_we_do_desc',
   },
   {
     id: 2,
     image:
       'https://eduma.thimpress.com/wp-content/uploads/2022/06/courses-4.jpg',
-    title: t('Who_we_are'),
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    title: 'Who_we_are',
+    desc: 'Who_we_are_desc',
   },
   {
     id: 3,
     image:
       'https://eduma.thimpress.com/wp-content/uploads/2022/06/courses-8.jpg',
-    title: t('How_it_work'),
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    title: 'How_it_work',
+    desc: 'How_it_work_desc',
   },
 ]
 

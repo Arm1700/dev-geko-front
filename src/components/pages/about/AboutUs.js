@@ -1,25 +1,26 @@
 import Slider from 'react-slick'
-import aboutcard1info from '../../../entities/aboutcard1info'
 import aboutcard2info from '../../../entities/aboutcard2info'
-import AboutCard1 from '../shared/about/AboutCard1'
 import AboutCard2 from '../shared/about/AboutCard2'
 import {BiSolidQuoteLeft} from 'react-icons/bi'
 import {useTranslation} from 'react-i18next';
-import React, {useEffect, useState} from "react";
+import React, {useEffect,
+    // useState
+} from "react";
 import Course from "../shared/home/Course";
+import tutorsArray from "../../../entities/tutorsArray";
 
 export default function AboutUs() {
     const {t, i18n} = useTranslation();
     const language = i18n.language;
-    const [reviewsArray, setReviewsArray] = useState([]);
+    // const [reviewsArray, setReviewsArray] = useState([]);
 
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch(`https://dev.gekoeducation.com/api/reviews/?language=${language}`);
+                const response = await fetch(`http://127.0.0.1:8000/api/reviews/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
-                setReviewsArray(data); // Сохранение курсов в состояние
+                // setReviewsArray(data); // Сохранение курсов в состояние
             } catch (error) {
                 console.error('Error fetching courses:', error);
             }
@@ -70,11 +71,11 @@ export default function AboutUs() {
                         <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark">
                             {t('What_Make_Us_Spcecial')}
                         </h1>
-                        <p className="text-md text-secondaryLight">
-                            Lorem ipsum dolor sit amet, consectetur adipisc ing elit.
-                        </p>
+                        {/*<p className="text-md text-secondaryLight">*/}
+                        {/*    Lorem ipsum dolor sit amet, consectetur adipisc ing elit.*/}
+                        {/*</p>*/}
                     </div>
-                    <div className="grid mid:grid-cols-3 grid-cols-1 gap-[15px] my-10 ">
+                    <div className="grid mid:grid-cols-3 grid-cols-1 grid-rows-1 items-start gap-[15px] my-10 ">
                         {aboutcard2info.map(({id, desc, title, image}) => {
                             return (
                                 <AboutCard2 key={id} title={title} desc={desc} image={image}/>
@@ -104,7 +105,7 @@ export default function AboutUs() {
             <div className="slider-container py-20 w-[100vw]">
                 <div className="max-w-[1200px] mx-[auto]  px-5">
                     <Slider
-                        slidesToShow={5}
+                        slidesToShow={3}
                         swipeToSlide={true}
                         focusOnSelect={true}
                         centerMode={true}
@@ -128,10 +129,10 @@ export default function AboutUs() {
                             }
                         ]}
                     >
-                        {reviewsArray.map((review, i) => (
-                            <div key={review.id} className="text-center ">
+                        {tutorsArray.map((tutors, i) => (
+                            <div key={tutors.id} className="text-center ">
                                 <img
-                                    src={review.image}
+                                    src={tutors.image}
                                     className={`rounded-full mx-auto p-2 border-color86 sm:max-w-[170px] max-w-[140px]`}
                                     style={{
                                         border: "2px rgba(0, 0, 0, 0.5)",
@@ -139,10 +140,11 @@ export default function AboutUs() {
                                         // maxWidth: "165px",
                                         aspectRatio: "1 / 1",
                                     }}
-                                    alt={'user ' + review.name}
+                                    alt={'user ' + tutors.name}
                                 />
-                                <p className="text-primaryDark font-bold mt-5">{review.name}</p>
-                                <p className="text-custom-15 text-color60 mt-5">{review.desc}</p>
+                                <p className="text-primaryDark font-bold mt-5">{t(tutors.name)}</p>
+                                <p className="text-primaryDark font-bold text-custom-15">{t(tutors.role)}</p>
+                                <p className="text-custom-15 text-color60 mt-5 px-[10px]">{t(tutors.desc)}</p>
                             </div>
                         ))}
                     </Slider>
