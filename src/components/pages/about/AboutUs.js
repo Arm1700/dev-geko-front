@@ -3,7 +3,8 @@ import aboutcard2info from '../../../entities/aboutcard2info'
 import AboutCard2 from '../shared/about/AboutCard2'
 import {BiSolidQuoteLeft} from 'react-icons/bi'
 import {useTranslation} from 'react-i18next';
-import React, {useEffect,
+import React, {
+    useEffect,
     // useState
 } from "react";
 import Course from "../shared/home/Course";
@@ -39,13 +40,13 @@ export default function AboutUs() {
                         {t('ABOUT_US')}
                     </h1>
                     <div className="text-center py-2 ">
-                        <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark">
+                        <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark px-7">
                             {t('learn_with_passion')}
                         </h1>
                         <p className="text-md text-secondaryLight">
-                            Neque convallis a cras semper auctor. Libero id faucibus nisl
-                            tincidunt egetnvallis a cras semper auctonvallis a cras semper
-                            aucto.{' '}
+
+                            {t('learn_with_passion_desc')}
+
                         </p>
                     </div>
                     {/*<div*/}

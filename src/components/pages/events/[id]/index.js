@@ -24,7 +24,7 @@ export default function EventsPage() {
         const fetchEvents = async () => {
             try {
                 // const response = await fetch(`http://127.0.0.1:8000/api/events/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/courses/${categoryId}/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/events/?language=${language}`);
                 const data = await response.json();
                 setEventsArray(data); // Сохраняем данные в состояние
             } catch (error) {
