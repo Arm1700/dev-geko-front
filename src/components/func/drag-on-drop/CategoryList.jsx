@@ -7,7 +7,8 @@ const CategoryList = () => {
     useEffect(() => {
         // Загрузка категорий из API при монтировании компонента
         const fetchCategories = async () => {
-            const response = await fetch('http://127.0.0.1:8000/api/admin/main/category/');
+            // const response = await fetchCategoriesch('http://127.0.0.1:8000/api/admin/main/category/');
+            const response = await fetchCategoriesch('https://dev.gekoeducation.com/api/admin/main/category/');
             const data = await response.json();
             setCategories(data);
         };
@@ -15,7 +16,8 @@ const CategoryList = () => {
     }, []);
 
     const updateOrder = async (newOrder) => {
-        const response = await fetch('http://127.0.0.1:8000/api/admin/main/category/update-order/', {
+        // const response = await fetch('http://127.0.0.1:8000/api/admin/main/category/update-order/', {
+        const response = await fetch('https://dev.gekoeducation.com/api/admin/main/category/update-order/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

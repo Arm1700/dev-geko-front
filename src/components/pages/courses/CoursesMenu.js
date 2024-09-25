@@ -12,7 +12,8 @@ export default function CoursesMenu({isOpen, toggleMenu, categoryId}) {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/categories/?language=${language}`);
+                // const response = await fetch(`http://127.0.0.1:8000/api/categories/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/api/categories/?language=${language}`);
                 const data = await response.json();
                 setCoursesArray(data); // Сохранение категорий в состояние
             } catch (error) {

@@ -29,7 +29,8 @@ export default function Home() {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/popular_courses/?language=${language}`);
+                // const response = await fetch(`http://127.0.0.1:8000/api/popular_courses/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/api/popular_courses/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
                 setPopularCoursesArray(data); // Сохранение курсов в состояние
@@ -43,7 +44,8 @@ export default function Home() {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/popular_courses/?language=${language}`);
+                // const response = await fetch(`http://127.0.0.1:8000/api/popular_courses/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/api/popular_courses/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
                 setPopularCoursesArray(data); // Сохранение курсов в состояние
@@ -57,7 +59,8 @@ export default function Home() {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/lesson_info/?language=${language}`);
+                // const response = await fetch(`http://127.0.0.1:8000/api/lesson_info/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/api/lesson_info/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
                 setLessonInfo(data);
@@ -71,7 +74,8 @@ export default function Home() {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/events/?language=${language}`);
+                // const response = await fetch(`http://127.0.0.1:8000/api/events/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/api/events/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
                 setEventsArray(data); // Сохранение курсов в состояние
@@ -86,7 +90,8 @@ export default function Home() {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/reviews/?language=${language}`);
+                // const response = await fetch(`http://127.0.0.1:8000/api/reviews/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/api/reviews/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
                 setReviewsArray(data); // Сохранение курсов в состояние

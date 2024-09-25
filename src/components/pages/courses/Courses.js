@@ -47,7 +47,8 @@ export default function Courses() {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/categories/?language=${language}`);
+                // const response = await fetch(`http://127.0.0.1:8000/api/categories/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/api/categories/?language=${language}`);
                 const data = await response.json();
                 setCoursesArray(data); // Сохранение категорий в состояние
             } catch (error) {
@@ -62,7 +63,8 @@ export default function Courses() {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/courses/${categoryId}/?language=${language}`);
+                // const response = await fetch(`http://127.0.0.1:8000/api/courses/${categoryId}/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/api/courses/${categoryId}/?language=${language}`);
                 const data = await response.json();
                 setPopularCoursesArray(data); // Сохранение курсов в состояние
             } catch (error) {
