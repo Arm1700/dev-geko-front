@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locale/am.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/am.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/locale/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/en.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/locale/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/ru.json" afterDir="false" />
     </list>
@@ -147,7 +143,7 @@
       <workItem from="1727024701157" duration="4721000" />
       <workItem from="1727079655030" duration="4098000" />
       <workItem from="1727173810090" duration="3789000" />
-      <workItem from="1727233637252" duration="1676000" />
+      <workItem from="1727233637252" duration="2174000" />
     </task>
     <servers />
   </component>
