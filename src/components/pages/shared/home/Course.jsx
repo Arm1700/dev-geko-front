@@ -47,8 +47,8 @@ const CourseSlider = () => {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/categories/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/categories/?language=${language}`);
+                const response = await fetch(`http://127.0.0.1:8000/api/categories/?language=${language}`);
+                // const response = await fetch(`https://dev.gekoeducation.com/api/categories/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
                 setCoursesArray(data); // Сохранение курсов в состояние
@@ -60,6 +60,7 @@ const CourseSlider = () => {
         fetchCourses();
     }, [language]);
 
+    // const imageUrl = image.startsWith('http') ? image : `http://127.0.0.1:8000${image}`;
     return (
         <div className="max:px-5 py-16 mx-auto max-w-[1200px]">
             <Swiper
@@ -92,7 +93,7 @@ const CourseSlider = () => {
                             style={{
                                 aspectRatio: "1 / 1"
                             }}>
-                            <img className="inner-img absolute inset-0 w-full  object-cover" src={image}
+                            <img className="inner-img absolute inset-0 w-full  object-cover" src={image.startsWith('https') ? image : `https://dev.gekoeducation.com${image}`}
                                  alt="Course" style={{
                                 filter: 'brightness(50%)',
                                 objectFit: 'cover', // Ресайз изображения по краям с сохранением пропорций

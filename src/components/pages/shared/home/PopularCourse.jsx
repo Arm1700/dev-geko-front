@@ -19,7 +19,9 @@ export default function PopularCourse({
     const handleMouseLeave = () => {
         setIsHovered(false)
     }
+    // const imageUrl = image.startsWith('http') ? image : `http://127.0.0.1:8000${image}`;
 
+    const imageUrl = image.startsWith('https') ? image : `https://dev.gekoeducation.com${image}`;
 
     return (
         <article
@@ -31,8 +33,8 @@ export default function PopularCourse({
                 className={`relative bg-no-repeat bg-cover  cursor-pointer ${gridStyleTF === true ? "w-[100%] rounded-t-lg" : "sm:w-[260px] w-full rounded-lg"}`}
                 style={{
                     backgroundImage: isHovered
-                        ? `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${image})`
-                        : `url(${image})`,
+                        ? `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${imageUrl})`
+                        : `url(${imageUrl})`,
                     backgroundSize: '100% 100%',
                     aspectRatio: "4 / 3",
                 }}

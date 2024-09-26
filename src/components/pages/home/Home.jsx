@@ -26,26 +26,12 @@ export default function Home() {
         nav(`/events`);
     };
     const url = 'https://www.shutterstock.com/shutterstock/videos/1086751859/preview/stock-footage-video-of-financial-data-processing-over-diverse-business-people-global-business-finances.webm'
-    useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/popular_courses/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/popular_courses/?language=${language}`);
-                const data = await response.json();
-                console.log(data);
-                setPopularCoursesArray(data); // Сохранение курсов в состояние
-            } catch (error) {
-                console.error('Error fetching courses:', error);
-            }
-        };
 
-        fetchCourses();
-    }, [language]);
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/popular_courses/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/popular_courses/?language=${language}`);
+                const response = await fetch(`http://127.0.0.1:8000/api/popular_courses/?language=${language}`);
+                // const response = await fetch(`https://dev.gekoeducation.com/api/popular_courses/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
                 setPopularCoursesArray(data); // Сохранение курсов в состояние

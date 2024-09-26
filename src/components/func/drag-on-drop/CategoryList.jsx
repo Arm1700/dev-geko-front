@@ -8,7 +8,7 @@ const CategoryList = () => {
         // Загрузка категорий из API при монтировании компонента
         const fetchCategories = async () => {
             // const response = await fetchCategoriesch('http://127.0.0.1:8000/api/admin/main/category/');
-            const response = await fetchCategoriesch('https://dev.gekoeducation.com/api/admin/main/category/');
+            const response = await fetch('https://dev.gekoeducation.com/api/admin/main/category/');
             const data = await response.json();
             setCategories(data);
         };

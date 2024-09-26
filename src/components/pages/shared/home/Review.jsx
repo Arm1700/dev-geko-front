@@ -20,6 +20,8 @@ export default function Review({reviewsArray}) {
         setCurrentIndex(index);
     };
     console.log(reviewsArray)
+    // const imageUrl = image.startsWith('http') ? image : `http://127.0.0.1:8000${image}`;
+
     return (
         <div className="slider-container relative">
             <div>
@@ -48,7 +50,7 @@ export default function Review({reviewsArray}) {
                         {reviewsArray.map((review, i) => (
                             <div key={review.id} className="text-center">
                                 <img
-                                    src={review.image}
+                                    src={review.image.startsWith('https') ? review.image : `https://dev.gekoeducation.com${review.image}`}
                                     className={`rounded-full mx-auto p-2 border-color86 `}
                                     style={{
                                         border: i === currentIndex ? "2px rgba(0, 0, 0, 0.5)" : "none",
