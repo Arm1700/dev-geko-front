@@ -22,7 +22,8 @@ export default function Event({
   const { t } = useTranslation();
     // const imageUrl = image.startsWith('http') ? image : `http://127.0.0.1:8000${image}`;
 
-    const imageUrl = image.startsWith('https') ? image : `https://dev.gekoeducation.com${image}`;
+    // const imageUrl = image.startsWith('https') ? image : `https://dev.gekoeducation.com${image}`;
+    // console.log(imageUrl)
     return (<section
 
         className=" border-b-2 py-[30px] border-gray-300 flex gap-5 sm:justify-between sm:items-center sm:flex-row max:flex-col max:relative"
@@ -48,7 +49,7 @@ export default function Event({
             </div>
             <p className="text-color60 text-custom-15 center">{t(description)}</p>
         </div>
-        <img alt={"image " + t(description)} src={imageUrl[0]}
+        <img alt={"image " + t(description)} src={image}
              className="rounded-md md:w-[270px] sm:w-[270px] max:w-[100%]"/>
     </section>)
 }

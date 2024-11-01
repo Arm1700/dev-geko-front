@@ -24,7 +24,6 @@ module.exports = {
             },
             fontFamily: {
                 sans: ['"Roboto"'],
-                // 'roboto-slab': ['"Roboto Slab"', 'serif'],
                 'sans-serif': ['sans-serif'],
                 'roboto-slab': ['Roboto Slab'],
                 'roboto-slab-sans': ['Roboto Slab', 'sans-serif'],

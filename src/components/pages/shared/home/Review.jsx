@@ -1,82 +1,102 @@
-import React, {useState, useEffect, useRef} from 'react';
-// import reviewsArray from '../../../../entities/reviewsArray';
-import Slider from 'react-slick';
-// import {useTranslation} from "react-i18next";
+import React, {useState, useEffect, useRef, useLayoutEffect} from 'react';
+import {Swiper, SwiperSlide} from "swiper/react";
+import {A11y, Navigation} from "swiper/modules";
+import 'swiper/swiper-bundle.css';
 
 export default function Review({reviewsArray}) {
-    // const {t} = useTranslation()
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [nav1, setNav1] = useState(null);
-    const [nav2, setNav2] = useState(null);
-    let sliderRef1 = useRef(null);
-    let sliderRef2 = useRef(null);
+    const [slidesToShow, setSlidesToShow] = useState(4);
+    const swiperThumbsRef = useRef(null);
+    const swiperContentRef = useRef(null);
+    const isSyncing = useRef(false);
 
-    useEffect(() => {
-        setNav1(sliderRef1.current);
-        setNav2(sliderRef2.current);
+    // Adjust slider display based on screen width
+    useLayoutEffect(() => {
+        function updateSlidesToShow() {
+            const screenWidth = window.innerWidth;
+            if (screenWidth >= 992) setSlidesToShow(3);
+            else if (screenWidth >= 480) setSlidesToShow(2);
+            else setSlidesToShow(1);
+        }
+
+        updateSlidesToShow();
+        window.addEventListener("resize", updateSlidesToShow);
+        return () => window.removeEventListener("resize", updateSlidesToShow);
     }, []);
 
-    const onSlideChange = (index) => {
-        setCurrentIndex(index);
+    // Sync slider positions without triggering an update loop
+    const onSlideChange = (swiper) => {
+        const activeIndex = swiper.activeIndex;
+        if (activeIndex !== currentIndex && !isSyncing.current) {
+            setCurrentIndex(activeIndex);
+        }
     };
-    console.log(reviewsArray)
-    // const imageUrl = image.startsWith('http') ? image : `http://127.0.0.1:8000${image}`;
+
+    useEffect(() => {
+        if (isSyncing.current) return;
+        isSyncing.current = true;
+
+        // Slide the other swiper to match the current index
+        if (swiperThumbsRef.current) swiperThumbsRef.current.slideTo(currentIndex);
+        if (swiperContentRef.current) swiperContentRef.current.slideTo(currentIndex);
+
+        isSyncing.current = false;
+    }, [currentIndex]);
 
     return (
-        <div className="slider-container relative">
-            <div>
-                <div className='px-5 max-w-[500px] mx-[auto]'>
-                    <Slider
-                        asNavFor={nav1}
-                        ref={sliderRef2}
-                        slidesToShow={5} // Dynamically adjust based on array length
-                        swipeToSlide={true}
-                        focusOnSelect={true}
-                        centerMode={true}
-                        initialSlide={0} // Start at the center
-                        centerPadding={"0"}  // Remove center padding for smaller screens
-                        variableWidth={false}  // Disable variable width for smaller screens
-                        afterChange={onSlideChange}
-                        responsive={[
-                            {
-                                breakpoint: 768, // Adjust breakpoint for smaller screens if needed
-                                settings: {
-                                    slidesToShow: 3,
-                                    initialSlide: 3,
-                                },
-                            },
-                        ]}
-                    >
-                        {reviewsArray.map((review, i) => (
-                            <div key={review.id} className="text-center">
+        <div className="flex flex-col relative">
+            {/* Thumbnail Slider */}
+            <div className='px-5 max-w-[900px] mx-auto'>
+                <Swiper
+                    loop
+                    modules={[A11y]}
+                    slidesPerView={slidesToShow}
+                    spaceBetween={20}
+                    speed={500}
+                    onSlideChange={onSlideChange}
+                    onSwiper={(swiper) => (swiperThumbsRef.current = swiper)}
+                >
+                    {reviewsArray.map((review, i) => (
+                        <SwiperSlide key={i} style={{display: "flex", justifyContent: "center"}}>
+                            <div className="w-full">
                                 <img
-                                    src={review.image.startsWith('https') ? review.image : `https://dev.gekoeducation.com${review.image}`}
-                                    className={`rounded-full mx-auto p-2 border-color86 `}
+                                    src={review.image}
+                                    className="rounded-full mx-auto p-2 border-color86"
                                     style={{
-                                        border: i === currentIndex ? "2px rgba(0, 0, 0, 0.5)" : "none",
-                                        borderStyle: i === currentIndex ? "dotted" : "none",
+                                        border: i === currentIndex ? "2px dotted rgba(0, 0, 0, 0.5)" : "none",
                                         opacity: i === currentIndex ? "1" : "0.5",
-                                        maxWidth: i === currentIndex ? "100px" : "80px",
-                                        aspectRatio: "1 / 1",
+                                        width: i === currentIndex ? "100px" : "80px",
+                                        height: i === currentIndex ? "100px" : "80px",
+                                        transition: "all 0.3s ease",
                                     }}
                                     alt={'user ' + review.name}
                                 />
                             </div>
-                        ))}
-                    </Slider>
-                </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
-            <div>
-                <div className='px-5 max-w-[900px] mx-[auto]'>
-                    <Slider asNavFor={nav2} ref={sliderRef1}>
-                        {reviewsArray.map((review) => (
-                            <div key={review.id} className="flex justify-center items-center text-center">
+
+            {/* Content Slider */}
+            <div className='px-5 max-w-[900px] mx-auto'>
+                <Swiper
+                    loop
+                    modules={[Navigation, A11y]}
+                    slidesPerView={1}
+                    spaceBetween={20}
+                    speed={500}
+                    onSlideChange={onSlideChange}
+                    onSwiper={(swiper) => (swiperContentRef.current = swiper)}
+                >
+                    {reviewsArray.map((review, i) => (
+                        <SwiperSlide key={i} style={{display: "flex", justifyContent: "center"}}>
+                            <div className="flex justify-center items-center text-center flex-col">
                                 <p className="mt-5 text-primaryDark font-bold text-lg">{review.name}</p>
-                                <p className="mb-7 text-center text-color7C">{review.translation.comment}</p>
+                                <p className="mb-7 text-center text-color7C">{review.comment}</p>
                             </div>
-                        ))}
-                    </Slider>
-                </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </div>
     );

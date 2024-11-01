@@ -6,7 +6,7 @@ import {IoPricetag} from 'react-icons/io5'
 import {PiStudentBold} from 'react-icons/pi'
 import {MdAssessment} from 'react-icons/md'
 import Error404 from '../../shared/Error'
-import {A11y, Pagination} from "swiper/modules";
+import {A11y, Autoplay, Pagination} from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import {Swiper, SwiperSlide} from 'swiper/react';
@@ -22,8 +22,9 @@ export default function CoursePage() {
         return `<span class="${className}" style="background-color: orange; "></span>`; // Установите цвет фона в orange
     };
 
+    const [autoplayTimeoutId, setAutoplayTimeoutId] = useState(null); // Для хранения идентификатора таймера
     const [slidesToShow, setSlidesToShow] = useState(3)
-    const [spaceBetween, setSpaceBetween] = useState(30)
+        const [spaceBetween, setSpaceBetween] = useState(30)
     const [pickedCourse, setPickedCourse] = useState([])
 
     useEffect(() => {
@@ -70,16 +71,32 @@ export default function CoursePage() {
             window.removeEventListener('resize', updateSlidesToShow)
         }
     }, [])
-    // const coursesArray = t('coursesArray', {returnObjects: true});
+
+    const handleInteraction = (swiper) => {
+        // Остановка автопрокрутки
+        swiper.autoplay.stop();
+
+        // Если таймер уже установлен, сбросьте его
+        if (autoplayTimeoutId) {
+            clearTimeout(autoplayTimeoutId);
+        }
+
+        // Установите новый таймер на 5 секунд
+        const timeoutId = setTimeout(() => {
+            swiper.autoplay.start(); // Возобновите автопрокрутку
+            setAutoplayTimeoutId(null); // Сбросьте идентификатор таймера
+        }, 3000);
+
+        setAutoplayTimeoutId(timeoutId);
+    };
     return (
-        <section className="bgColorArticle md:before:h-[300px] before:h-[0] relative pb-5">
+        <section className="bgColorArticle md:before:h-[250px] before:h-[0] relative pb-5">
             {pickedCourse?.id ? (
                 <>
                     <article className="grid  md:grid-cols-[70%_1fr] grid-cols-1 max-w-[1200px] mx-[auto] relative">
                         <div className="flex flex-col relative px-auto text-pseudo pt-[75px] justify-center py-10">
                             <div className="flex flex-col gap-[20px] px-5">
                                 <p className="text-3xl font-roboto-slab">{pickedCourse.translation.title}</p>
-                                <p className="text-custom-15 opacity-80 ">{pickedCourse.translation.desc}</p>
                                 <div className="flex flex-col gap-[5px]">
                                     <p className="text-xs capitalize">{t("Categories")}</p>
                                     <p className="text-custom-15">{t(pickedCourse.category.translation.text)}</p>
@@ -87,7 +104,6 @@ export default function CoursePage() {
                             </div>
 
                             <div className="w-[100%] flex md:hidden  h-[100%] absolute bg-primaryDark z-[-1]">
-
                             </div>
                         </div>
 
@@ -139,47 +155,26 @@ export default function CoursePage() {
                             </div>
                         </div>
                         <div className="pr-2 md:order-none py-10 px-5  order-2">
-                            <h2 className="text-lg uppercase w-full font-roboto-slab font-bold pb-5 pt-10 border-b text-primaryDark">
-                                Overview
-                            </h2>
-                            <div className="text-start  pt-5 ">
+                            <div className="text-start pt-5 flex flex-col gap-3">
                                 <h1 className="text-lg font-roboto-slab font-bold text-primaryDark">
-                                    COURSE DESCRIPTION
+                                    {t('COURSE_DESCRIPTION')}
                                 </h1>
                                 <p className="text-custom-15 text-color60">{pickedCourse.translation.desc}</p>
                             </div>
 
-                            <div className="text-start pt-5 ">
+                            <div className="text-start pt-5 flex flex-col gap-3">
                                 <h1 className="text-lg font-roboto-slab font-bold text-primaryDark">
-                                    CERTIFICATION
+                                    {t('CERTIFICATE')}
                                 </h1>
-                                <p className="text-custom-15 text-color60">{pickedCourse.translation.certification}</p>
+                                <p className="text-custom-15 text-color60 uppercase">{t('YES')}</p>
                             </div>
 
-                            <div className="text-start pt-5 ">
-                                <h1 className="text-lg font-roboto-slab font-bold text-primaryDark">
-                                    LEARNING OUTCOMES
-                                </h1>
-                                <ul className="list-none text-primary">
-                                    {pickedCourse.translation.outcomed?.map((el, i) => {
-                                        return (
-                                            <li
-                                                key={i}
-                                                className="text-md flex items-center text-secondaryLight"
-                                            >
-                                                <span className="w-[6px] h-[6px] bg-primary rounded-full mr-2"></span>
-                                                {el}
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
                             <p className="like relative uppercase font-roboto-slab text-2xl pt-10 font-bold">
                                 {t("You_May_Like")}
                             </p>
                             <Swiper
                                 loop={true}
-                                modules={[Pagination, A11y]}
+                                modules={[Pagination, A11y, Autoplay]}
                                 spaceBetween={spaceBetween}
                                 slidesPerView={slidesToShow}
                                 pagination={{
@@ -188,11 +183,15 @@ export default function CoursePage() {
                                     dynamicMainBullets: 2,
                                     renderBullet,
                                 }}
-
                                 speed={500}
-                                navigation
+                                autoplay={{
+                                    delay: 1500, // Задержка между переключениями (в миллисекундах)
+                                    disableOnInteraction: false, // Продолжать автопрокрутку даже после взаимодействия
+                                }}
                                 onSwiper={(swiper) => console.log(swiper)}
                                 onSlideChange={() => console.log('slide change')}
+                                onTouchStart={(swiper) => handleInteraction(swiper)} // Обработка касания
+                                onClick={(swiper) => handleInteraction(swiper)}
                             >
                                 {popularCoursesArray.slice(0, 6).map(({image, id, translation}) => (
                                     <SwiperSlide key={id}>

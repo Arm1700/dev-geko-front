@@ -8,6 +8,7 @@ import Event from '../shared/event/Event'
 import Reviews from '../shared/home/Review'
 import {useNavigate} from "react-router-dom";
 import {useTranslation} from 'react-i18next';
+import reviewsArray from "../../../entities/reviewsArray";
 
 export default function Home() {
 
@@ -16,7 +17,7 @@ export default function Home() {
     const [lessonInfoArray, setLessonInfo] = useState([]);
     const [eventsArray, setEventsArray] = useState([]);
     const [popularCoursesArray, setPopularCoursesArray] = useState([]);
-    const [reviewsArray, setReviewsArray] = useState([]);
+    // const [reviewsArray, setReviewsArray] = useState([]);
 
     const nav = useNavigate();
     const handleCategoryClick = () => {
@@ -80,7 +81,7 @@ export default function Home() {
                 const response = await fetch(`https://dev.gekoeducation.com/api/reviews/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
-                setReviewsArray(data); // Сохранение курсов в состояние
+                // setReviewsArray(data); // Сохранение курсов в состояние
             } catch (error) {
                 console.error('Error fetching courses:', error);
             }

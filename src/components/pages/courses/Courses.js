@@ -1,12 +1,12 @@
 import PopularCourse from '../shared/home/PopularCourse';
-import {useNavigate, useParams} from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ReactPaginate from 'react-paginate';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import CoursesMenu from "./CoursesMenu";
-import {useTranslation} from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 export default function Courses() {
-    const {t, i18n} = useTranslation();
+    const { t, i18n } = useTranslation();
     const language = i18n.language;
     const [coursesArray, setCoursesArray] = useState([]);
     const [popularCoursesArray, setPopularCoursesArray] = useState([]);
@@ -15,9 +15,11 @@ export default function Courses() {
     const [coursesPerPage, setCoursesPerPage] = useState(3);
     const [currentPage, setCurrentPage] = useState(1);
     const nav = useNavigate();
-    const {id: categoryId} = useParams(); // Получаем id категории
+    const { id: initialCategoryId } = useParams(); // Получаем id категории
+    const [categoryId, setCategoryId] = useState(initialCategoryId); // State for category ID
 
     const handleCategoryClick = (id) => {
+        setCategoryId(id); // Update categoryId
         nav(`/course-category/${id}`);
     };
 
@@ -51,13 +53,18 @@ export default function Courses() {
                 const response = await fetch(`https://dev.gekoeducation.com/api/categories/?language=${language}`);
                 const data = await response.json();
                 setCoursesArray(data); // Сохранение категорий в состояние
+
+                // If categoryId is empty, set it to the first category's id
+                if (!categoryId && data.length > 0) {
+                    setCategoryId(data[0].id);
+                }
             } catch (error) {
                 console.error('Error fetching categories:', error);
             }
         };
 
         fetchCategories();
-    }, [language]);
+    }, [language, categoryId]); // include categoryId to check for updates
 
     // Запрос для получения курсов по категории и языку
     useEffect(() => {
@@ -105,17 +112,14 @@ export default function Courses() {
                 </h1>
                 <div className="flex mid:flex-row flex-col  gap-5 py-10">
                     <div className="w-[20%] mid:flex flex-col hidden h-min border-b"
-                         style={{position: 'sticky', top: '10px'}}>
+                         style={{ position: 'sticky', top: '10px' }}>
                         <h1 className="min-w-max text-2xl font-roboto-slab font-bold text-primaryDark">
                             {t('Categories')}
                         </h1>
-                        {coursesArray.sort((a, b) => a.translation.text.localeCompare(b.translation.text)).map(({
-                                                                                                                    id,
-                                                                                                                    translation
-                                                                                                                }) => (
+                        {coursesArray.map(({ id, translation }) => (
                             <p
                                 onClick={() => handleCategoryClick(id)}
-                                className={`min-w-max w-full textHover cursor-pointer py-[5px] ${+categoryId === id ? "text-primary" : "text-color66"}`}
+                                className={`uppercase min-w-max w-full textHover cursor-pointer py-[5px] ${+categoryId === id ? "text-primary" : "text-color66"}`}
                                 key={id}>{translation.text}
                             </p>
                         ))}
@@ -140,7 +144,7 @@ export default function Courses() {
                         </div>
                         <div
                             className={`opacityPopularCourse content-center grid ${gridStyle} ${gridStyleTF ? 'gap-10' : 'gap-0'} py-6`}>
-                            {paginatedCourses().map(({image, id, translation}) => (
+                            {paginatedCourses().map(({ image, id, translation }) => (
                                 <PopularCourse
                                     gridStyleTF={gridStyleTF}
                                     desc={translation.desc}
@@ -156,7 +160,7 @@ export default function Courses() {
                         {renderPagination()}
                     </div>
                 </div>
-                <CoursesMenu isOpen={showMenu} toggleMenu={toggleMenu} categoryId={categoryId}/>
+                <CoursesMenu isOpen={showMenu} toggleMenu={toggleMenu} categoryId={categoryId} />
             </div>
         </main>
     );

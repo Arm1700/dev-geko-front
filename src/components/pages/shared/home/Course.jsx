@@ -1,25 +1,23 @@
-import React from 'react';
-
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Pagination, A11y} from 'swiper/modules';
+import React, { useLayoutEffect, useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, A11y, Autoplay } from 'swiper/modules'; // Импортируйте Autoplay
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import {useLayoutEffect, useState, useEffect} from 'react'
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
 const CourseSlider = () => {
     const nav = useNavigate();
-    const {  i18n } = useTranslation();
+    const { i18n } = useTranslation();
     const language = i18n.language;
     const [coursesArray, setCoursesArray] = useState([]);
-
     const [slidesToShow, setSlidesToShow] = useState(5);
     const [spaceBetween, setSpaceBetween] = useState(30);
+    const [autoplayTimeoutId, setAutoplayTimeoutId] = useState(null); // Для хранения идентификатора таймера
 
     const renderBullet = (index, className) => {
-        return `<span class="${className}" style="background-color: orange; "></span>`;
+        return `<span class="${className}" style="background-color: orange;"></span>`;
     };
 
     useLayoutEffect(() => {
@@ -47,10 +45,8 @@ const CourseSlider = () => {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/categories/?language=${language}`);
                 const response = await fetch(`https://dev.gekoeducation.com/api/categories/?language=${language}`);
                 const data = await response.json();
-                console.log(data);
                 setCoursesArray(data); // Сохранение курсов в состояние
             } catch (error) {
                 console.error('Error fetching courses:', error);
@@ -60,47 +56,66 @@ const CourseSlider = () => {
         fetchCourses();
     }, [language]);
 
-    // const imageUrl = image.startsWith('http') ? image : `http://127.0.0.1:8000${image}`;
+    const handleInteraction = (swiper) => {
+        // Остановка автопрокрутки
+        swiper.autoplay.stop();
+
+        // Если таймер уже установлен, сбросьте его
+        if (autoplayTimeoutId) {
+            clearTimeout(autoplayTimeoutId);
+        }
+
+        // Установите новый таймер на 5 секунд
+        const timeoutId = setTimeout(() => {
+            swiper.autoplay.start(); // Возобновите автопрокрутку
+            setAutoplayTimeoutId(null); // Сбросьте идентификатор таймера
+        }, 3000);
+
+        setAutoplayTimeoutId(timeoutId);
+    };
+
     return (
         <div className="max:px-5 py-16 mx-auto max-w-[1200px]">
             <Swiper
                 loop={true}
-                modules={[Pagination, A11y]}
+                modules={[Pagination, A11y,  Autoplay]} // Добавьте Autoplay
                 spaceBetween={spaceBetween}
                 slidesPerView={slidesToShow}
                 pagination={{
-                    type:"bullets",
+                    type: "bullets",
                     clickable: true,
                     dynamicBullets: true,
                     dynamicMainBullets: 2,
                     renderBullet,
                 }}
                 speed={500}
-                navigation
+                autoplay={{
+                    delay: 1500, // Задержка между переключениями (в миллисекундах)
+                    disableOnInteraction: false, // Продолжать автопрокрутку даже после взаимодействия
+                }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
+                onTouchStart={(swiper) => handleInteraction(swiper)} // Обработка касания
+                onClick={(swiper) => handleInteraction(swiper)} // Обработка клика
             >
-                {coursesArray.map(({image, id, translation}) => (
+                {coursesArray.map(({ image, id, translation }) => (
                     <SwiperSlide key={id}
-                                 style={{
-                                     display: 'flex',
-                                     justifyContent: 'center',
-                                 }}
+                                 style={{ display: 'flex', justifyContent: 'center' }}
                     >
                         <article
                             onClick={() => nav(`/course-category/${id}`)}
-                            className="cursor-pointer flex-wrap img-wrapper mb-[40px] relative bg-primary rounded-lg  overflow-hidden md:w-[162px] max:w-[220px] flex flex-col justify-center items-center"
-                            style={{
-                                aspectRatio: "1 / 1"
-                            }}>
-                            <img className="inner-img absolute inset-0 w-full  object-cover" src={image.startsWith('https') ? image : `https://dev.gekoeducation.com${image}`}
-                                 alt="Course" style={{
-                                filter: 'brightness(50%)',
-                                objectFit: 'cover', // Ресайз изображения по краям с сохранением пропорций
-                                width: '100%', // Ширина 100%
-                                height: '100%', // Высота 100%
-                            }}/>
-                            <p className="absoluteP absolute font-bold text-pseudo  hover:text-primary text-base font-roboto-slab top-[50%] left-[50%] w-[90%] text-center z-50 uppercase">
+                            className="cursor-pointer flex-wrap img-wrapper mb-[40px] relative bg-primary rounded-lg overflow-hidden md:w-[162px] max:w-[220px] flex flex-col justify-center items-center"
+                            style={{ aspectRatio: "1 / 1" }}>
+                            <img className="inner-img absolute inset-0 w-full object-cover"
+                                 src={image.startsWith('https') ? image : `https://dev.gekoeducation.com${image}`}
+                                 alt="Course"
+                                 style={{
+                                     filter: 'brightness(50%)',
+                                     objectFit: 'cover',
+                                     width: '100%',
+                                     height: '100%',
+                                 }}/>
+                            <p className="absoluteP absolute font-bold text-pseudo hover:text-primary text-base font-roboto-slab top-[50%] left-[50%] w-[90%] text-center z-50 uppercase">
                                 {translation.text}
                             </p>
                         </article>

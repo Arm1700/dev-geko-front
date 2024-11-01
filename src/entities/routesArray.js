@@ -1,9 +1,7 @@
-import AboutUs from '../components/pages/about/AboutUs'
-// import Blog from "../components/pages/blog/Blog";
 import Contacts from '../components/pages/contacts/Contacts'
 import Courses from '../components/pages/courses/Courses'
+import AboutUs from '../components/pages/about/AboutUs'
 import Events from '../components/pages/events/Events'
-// import Terminates from "../components/pages/terminates/Terminates";
 import Home from '../components/pages/home/Home'
 
 export const routesArray = [
@@ -38,10 +36,4 @@ export const routesArray = [
     component: Contacts,
     path: '/contacts',
   },
-  // {
-  //   id: 7,
-  //   name: 'TERMINATES',
-  //   component: Terminates,
-  //   path: '/terminates',
-  // },
 ]

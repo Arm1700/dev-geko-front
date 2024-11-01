@@ -102,19 +102,29 @@
     gap: 15px;
 }
 
-.popularDiv {
-    max-width: 1200px;
+.popular {
+    width: 1300px;
+}
+
+@media (max-width: 1300px) {
+    .popular {
+        width: 100%;
+    }
+
+    .popularDiv {
+        width: 90%;
+        padding: 40px 0;
+    }
 }
 
 @media (max-width: 992px) {
     .popular {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+        gap: 20px;
     }
 
     .popularDiv {
-        width: 100%;
+        width: 90%;
+        padding: 40px 0;
     }
 }
 
@@ -125,7 +135,8 @@
     }
 
     .popularDiv {
-        width: 100%;
+        width: 90%;
+        padding: 40px 0;
     }
 }
 

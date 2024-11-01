@@ -1,14 +1,17 @@
-import Slider from 'react-slick'
 import aboutcard2info from '../../../entities/aboutcard2info'
 import AboutCard2 from '../shared/about/AboutCard2'
 import {BiSolidQuoteLeft} from 'react-icons/bi'
 import {useTranslation} from 'react-i18next';
+
+import img from '../../../images/mer masin.jpg'
 import React, {
     useEffect,
     // useState
 } from "react";
 import Course from "../shared/home/Course";
 import tutorsArray from "../../../entities/tutorsArray";
+import reviewsArray from "../../../entities/reviewsArray";
+import Review from "../shared/home/Review";
 
 export default function AboutUs() {
     const {t, i18n} = useTranslation();
@@ -34,36 +37,18 @@ export default function AboutUs() {
     return (
         <main className="flex flex-col items-center overflow-x-hidden">
             <section>
-                <div className="px-5 max-w-[1200px] mx-[auto]">
-
+                <div className="px-5 max-w-[1200px] mx-[auto] flex flex-col gap-[10px]">
                     <h1 className="text-3xl py-4 font-roboto-slab font-bold text-primaryDark">
                         {t('ABOUT_US')}
                     </h1>
-                    <div className="text-center py-2 ">
-                        <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark px-7">
-                            {t('learn_with_passion')}
-                        </h1>
-                        <p className="text-md text-secondaryLight">
-
+                    <div className='w-full flex justify-center'>
+                        <img src={img} className='w-1/2' alt=""/>
+                    </div>
+                    <div className="py-2">
+                        <p className="text-md text-primaryDark text-justify">
                             {t('learn_with_passion_desc')}
-
                         </p>
                     </div>
-                    {/*<div*/}
-                    {/*    className="grid mid:grid-cols-4 grid-cols-1 gap-[15px] items-center justify-items-center py-20">*/}
-                    {/*    {aboutcard1info.map(({id, count, color, space, title, Icon}) => {*/}
-                    {/*        return (*/}
-                    {/*            <AboutCard1*/}
-                    {/*                key={id}*/}
-                    {/*                count={count}*/}
-                    {/*                color={color}*/}
-                    {/*                space={space}*/}
-                    {/*                title={t(title)}*/}
-                    {/*                Icon={Icon}*/}
-                    {/*            />*/}
-                    {/*        )*/}
-                    {/*    })}*/}
-                    {/*</div>*/}
                 </div>
                 <Course/>
             </section>
@@ -104,53 +89,8 @@ export default function AboutUs() {
                     Plugins your themes with even more features.
                 </p>
             </div>
-            <div className="slider-container py-20 w-[100vw]">
-                <div className="max-w-[1200px] mx-[auto]  px-5">
-                    <Slider
-                        slidesToShow={3}
-                        swipeToSlide={true}
-                        focusOnSelect={true}
-                        centerMode={true}
-                        initialSlide={0}
-                        centerPadding={"0"}
-                        variableWidth={false}
-                        responsive={[
-                            {
-                                breakpoint: 1020,
-                                settings: {
-                                    slidesToShow: 3,
-                                    initialSlide: 3,
-                                },
-                            },
-                            {
-                                breakpoint: 768,
-                                settings: {
-                                    slidesToShow: 2,
-                                    initialSlide: 1,
-                                },
-                            }
-                        ]}
-                    >
-                        {tutorsArray.map((tutors, i) => (
-                            <div key={tutors.id} className="text-center ">
-                                <img
-                                    src={tutors.image}
-                                    className={`rounded-full mx-auto p-2 border-color86 sm:max-w-[170px] max-w-[140px]`}
-                                    style={{
-                                        border: "2px rgba(0, 0, 0, 0.5)",
-                                        borderStyle: "dotted",
-                                        // maxWidth: "165px",
-                                        aspectRatio: "1 / 1",
-                                    }}
-                                    alt={'user ' + tutors.name}
-                                />
-                                <p className="text-primaryDark font-bold mt-5">{t(tutors.name)}</p>
-                                <p className="text-primaryDark font-bold text-custom-15">{t(tutors.role)}</p>
-                                <p className="text-custom-15 text-color60 mt-5 px-[10px]">{t(tutors.desc)}</p>
-                            </div>
-                        ))}
-                    </Slider>
-                </div>
+            <div className="text-start lg:px-20 px-5 pt-5">
+                <Review  reviewsArray={reviewsArray}/>
             </div>
         </main>
     )
