@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/pages/data/DataProvider.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Course.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Course.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/routesArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/routesArray.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,34 +30,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.Home.jsx.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/project/frontend/geko-front&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.3.6\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.Home.jsx.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/User/Desktop/project/frontend/geko-front/src/components/pages",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.3.6\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\project\frontend\geko-front\src\components\pages" />
       <recent name="C:\Users\HP\Desktop\project\frontend\geko-front\src\local" />
       <recent name="C:\Users\HP\Desktop\project\frontend\geko-front\src\locale" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\events\[id]" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\shared\event" />
-      <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\events" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\project\frontend\geko-front\src\entities" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\shared\event" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\public" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\coming" />
@@ -177,7 +174,10 @@
       <workItem from="1730113627998" duration="1724000" />
       <workItem from="1730279834907" duration="921000" />
       <workItem from="1730364619412" duration="668000" />
-      <workItem from="1730450245980" duration="60000" />
+      <workItem from="1730450303781" duration="9234000" />
+      <workItem from="1730475043559" duration="633000" />
+      <workItem from="1730484954063" duration="466000" />
+      <workItem from="1730491034568" duration="1368000" />
     </task>
     <servers />
   </component>

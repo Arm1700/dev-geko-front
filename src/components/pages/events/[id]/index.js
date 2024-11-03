@@ -15,27 +15,27 @@ import {useTranslation} from 'react-i18next';
 export default function EventsPage() {
     const { t, i18n } = useTranslation();
     const language = i18n.language; // Получаем текущий язык
-    const { id: eventId } = useParams();
     const nav = useNavigate();
-    const [eventsArray, setEventsArray] = useState([]);
-
+    const { id: eventId } = useParams();
+    const [pickedEvent, setPickedEvent] = useState([]);
+    console.log()
     // Загружаем события на основе языка
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/events/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/events/?language=${language}`);
+                // const response = await fetch(`http://127.0.0.1:8000/api/events/${eventId}/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/events/${eventId}/?language=${language}`);
                 const data = await response.json();
-                setEventsArray(data); // Сохраняем данные в состояние
+                console.log(data)
+                setPickedEvent(data); // Сохраняем данные в состояние
             } catch (error) {
                 console.error('Error fetching events:', error);
             }
         };
         fetchEvents();
-    }, [language]);
+    }, [eventId,language]);
 
-    // Находим выбранное событие
-    const pickedEvent = eventsArray?.find(el => el.id === +eventId);
+
     return (
         <section className="md:before:h-[22%] before:h-[0] py-5 relative pb-5">
             {pickedEvent?.id ? (
@@ -53,7 +53,7 @@ export default function EventsPage() {
                                     onSwiper={(swiper) => console.log(swiper)}
                                     onSlideChange={() => console.log('slide change')}
                                 >
-                                    {pickedEvent.image.map((value, index) => (
+                                    {pickedEvent.event_galleries.map((value, index) => (
                                         <SwiperSlide key={index}
 
                                                      style={{
@@ -61,7 +61,7 @@ export default function EventsPage() {
                                                          justifyContent: 'center',
                                                      }}
                                         >
-                                            <img src={pickedEvent.image[index]} alt="" className='h-full w-full object-cover]'/>
+                                            <img src={value.img} alt="" className='h-full w-full object-cover]'/>
                                         </SwiperSlide>
                                     ))}
                                 </Swiper>

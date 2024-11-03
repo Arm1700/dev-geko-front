@@ -20,10 +20,6 @@ export default function Event({
         setMenuVisible(false);
     };
   const { t } = useTranslation();
-    // const imageUrl = image.startsWith('http') ? image : `http://127.0.0.1:8000${image}`;
-
-    // const imageUrl = image.startsWith('https') ? image : `https://dev.gekoeducation.com${image}`;
-    // console.log(imageUrl)
     return (<section
 
         className=" border-b-2 py-[30px] border-gray-300 flex gap-5 sm:justify-between sm:items-center sm:flex-row max:flex-col max:relative"
