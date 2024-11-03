@@ -21,7 +21,6 @@ export default function Event({
     };
   const { t } = useTranslation();
     return (<section
-
         className=" border-b-2 py-[30px] border-gray-300 flex gap-5 sm:justify-between sm:items-center sm:flex-row max:flex-col max:relative"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}>

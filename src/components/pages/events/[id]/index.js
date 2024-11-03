@@ -18,13 +18,13 @@ export default function EventsPage() {
     const nav = useNavigate();
     const { id: eventId } = useParams();
     const [pickedEvent, setPickedEvent] = useState([]);
-    console.log()
     // Загружаем события на основе языка
+    console.log(eventId,language)
     useEffect(() => {
         const fetchEvents = async () => {
             try {
                 // const response = await fetch(`http://127.0.0.1:8000/api/events/${eventId}/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/events/${eventId}/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/api/events/${eventId}/?language=${language}`);
                 const data = await response.json();
                 console.log(data)
                 setPickedEvent(data); // Сохраняем данные в состояние
