@@ -154,7 +154,8 @@ export default function Home() {
                                                                                                 month,
                                                                                                 hour,
                                                                                                 image,
-                                                                                                translation
+                                                                                                translation,
+                                                                                                event_galleries
                                                                                             }) => {
                     return (<Event
                         key={id}
@@ -166,6 +167,7 @@ export default function Home() {
                         place={translation.place}
                         description={translation.description}
                         image={image}
+                        event_galleries={event_galleries}
                     />)
                 },)}
             </div>
