@@ -11,7 +11,7 @@ import React, {
 import Course from "../shared/home/Course";
 import tutorsArray from "../../../entities/tutorsArray";
 import reviewsArray from "../../../entities/reviewsArray";
-import Review from "../shared/home/Review";
+import Reviews from "../shared/home/Review";
 
 export default function AboutUs() {
     const {t, i18n} = useTranslation();
@@ -58,9 +58,6 @@ export default function AboutUs() {
                         <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark">
                             {t('What_Make_Us_Spcecial')}
                         </h1>
-                        {/*<p className="text-md text-secondaryLight">*/}
-                        {/*    Lorem ipsum dolor sit amet, consectetur adipisc ing elit.*/}
-                        {/*</p>*/}
                     </div>
                     <div className="grid mid:grid-cols-3 grid-cols-1 grid-rows-1 items-start gap-[15px] my-10 ">
                         {aboutcard2info.map(({id, desc, title, image}) => {
@@ -81,16 +78,18 @@ export default function AboutUs() {
           </span>
                 </p>
             </section>
-            <div className="text-center lg:px-20 px-5 py-2 ">
-                <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark">
-                    {t('team')}
-                </h1>
-                <p className="text-md text-secondaryLight">
-                    Plugins your themes with even more features.
-                </p>
-            </div>
-            <div className="text-start lg:px-20 px-5 pt-5">
-                <Review  reviewsArray={reviewsArray}/>
+            <div className='flex flex-col justify-center'>
+                <div className="text-center lg:px-20 px-5 py-2 ">
+                    <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark">
+                        {t('team')}
+                    </h1>
+                    <p className="text-md text-secondaryLight">
+                        Plugins your themes with even more features.
+                    </p>
+                </div>
+                <div className="text-start lg:px-20 px-5 pt-5 min-h-[380px]">
+                    <Reviews reviewsArray={reviewsArray}/>
+                </div>
             </div>
         </main>
     )

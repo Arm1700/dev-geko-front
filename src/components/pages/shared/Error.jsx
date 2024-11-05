@@ -35,7 +35,7 @@ const Error404 = () => {
                     </p>
                 </div>
                 {/*<button*/}
-                {/*    className="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded"*/}
+                {/*    className="bg-primary hover:bg-secondary text-white font-bold py-2 px-about_info rounded"*/}
                 {/*    onClick={goBack}*/}
                 {/*>*/}
                 {/*    Go Back*/}

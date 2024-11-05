@@ -83,7 +83,9 @@ export default function CoursePage() {
 
         // Установите новый таймер на 5 секунд
         const timeoutId = setTimeout(() => {
-            swiper.autoplay.start(); // Возобновите автопрокрутку
+            if (swiper.autoplay) {
+                swiper.autoplay.start(); // Возобновите автопрокрутку
+            }
             setAutoplayTimeoutId(null); // Сбросьте идентификатор таймера
         }, 3000);
 
@@ -112,7 +114,8 @@ export default function CoursePage() {
                             style={{
                                 gridRow: "span 2"
                             }}>
-                            <img src={pickedCourse.image} alt={pickedCourse.translation.title}/>
+
+                            <img src={pickedCourse.image && pickedCourse.image.startsWith('http') ? pickedCourse.image : pickedCourse.image ? `https://dev.gekoeducation.com${pickedCourse.image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'} alt={pickedCourse.translation.title}/>
                             <div className="flex flex-col justify-start  items-start px-[20px] py-[20px] gap-[10px]">
                                 <button
                                     className="self-center w-[100%] py-[10px] px-[25px] rounded-[4px] uppercase font-bold text-white text-sm bg-primary">sign

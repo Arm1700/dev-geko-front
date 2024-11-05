@@ -50,34 +50,25 @@ export default function Events() {
                     </button>
                 ))}
             </div>
-            <div className="text-start pt-5 ">
-                {eventsArray.map(
-                    ({
-                         id,
-                         status,
-                         day,
-                         month,
-                         hour,
-                         image,
-                         translation
-                     }) => {
-                        return (
-                            status === activeTab && (
-                                <Event
-                                    id={id}
-                                    day={day}
-                                    month={month}
-                                    title={translation.title}
-                                    hour={hour}
-                                    place={translation.place}
-                                    description={translation.description}
-                                    image={image}
-                                />
-                            )
+            {
+                eventsArray?.map(({ id, status, day, month, hour, event_galleries, translation }) => {
+                    return (
+                        status === activeTab && (
+                            <Event
+                                key={id} // Убедитесь, что вы добавляете уникальный ключ
+                                id={id}
+                                day={day}
+                                month={month}
+                                title={translation?.title || 'No Title'} // Добавьте проверку на существование
+                                hour={hour}
+                                place={translation?.place || 'No Place'} // Добавьте проверку на существование
+                                description={translation?.description || 'No Description'} // Добавьте проверку на существование
+                                event_galleries={event_galleries}
+                            />
                         )
-                    },
-                )}
-            </div>
+                    );
+                })
+            }
         </main>
     )
 }

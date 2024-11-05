@@ -8,7 +8,6 @@ import Event from '../shared/event/Event'
 import Reviews from '../shared/home/Review'
 import {useNavigate} from "react-router-dom";
 import {useTranslation} from 'react-i18next';
-import reviewsArray from "../../../entities/reviewsArray";
 
 export default function Home() {
 
@@ -17,7 +16,7 @@ export default function Home() {
     const [lessonInfoArray, setLessonInfo] = useState([]);
     const [eventsArray, setEventsArray] = useState([]);
     const [popularCoursesArray, setPopularCoursesArray] = useState([]);
-    // const [reviewsArray, setReviewsArray] = useState([]);
+    const [reviewsArray, setReviewsArray] = useState([]);
 
     const nav = useNavigate();
     const handleCategoryClick = () => {
@@ -77,11 +76,11 @@ export default function Home() {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/reviews/?language=${language}`);
+                // const response = await fetch(`http://127.0.0.1:8000/api/reviews/`);
                 const response = await fetch(`https://dev.gekoeducation.com/api/reviews/?language=${language}`);
                 const data = await response.json();
                 console.log(data);
-                // setReviewsArray(data); // Сохранение курсов в состояние
+                setReviewsArray(data); // Сохранение курсов в состояние
             } catch (error) {
                 console.error('Error fetching courses:', error);
             }
@@ -104,11 +103,11 @@ export default function Home() {
                     <button
                         className="text-sm uppercase font-light border-2 px-[20px] py-[7px] h-[50%] rounded-[4px]"
                         onClick={() => handleCategoryClick()}>
-                            {t('View_All')}
+                        {t('View_All')}
                     </button>
                 </div>
-                <div className="popular">
-                    {popularCoursesArray.reverse().map(({image, id, translation}) => {
+                <div className="popular grid md:grid-cols-4 sm500:grid-cols-2 grid-cols-1">
+                    {popularCoursesArray.map(({image, id, translation}) => {
                         return (<PopularCourse
                             id={id}
                             image={image}
@@ -134,16 +133,16 @@ export default function Home() {
         <div className="text-start pt-20 px-5 flex justify-center">
             <div className='max-w-[1200px] mx-[auto]'>
                 <div className="flex justify-between">
-                    <div className="text-start">
+                    <div className="text-start ">
                         <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
                             {t('EVENTS')}
                         </h1>
-                        <p className="text-custom-15 text-secondaryLight">
+                        <p className="text-custom-15 text-primaryDark">
                             {t('Upcoming_Education_Events_to_feed_your_brain')}
                         </p>
                     </div>
                     <button
-                        className="text-sm uppercase font-light border-2 px-[20px] py-[7px] h-[50%] rounded-[4px]"
+                        className="text-sm uppercase font-light border-2 py-[7px] px-[20px] h-[50%] rounded-[4px]"
                         onClick={() => handleEventsClick()}>
                         {t('View_All')}
                     </button>
@@ -173,14 +172,15 @@ export default function Home() {
             </div>
         </div>
 
-
-        <div className="text-center lg:px-20 px-5 pt-10 pb-5">
-            <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
-                {t('What_People_Say')}
-            </h1>
-        </div>
-        <div className="text-start lg:px-20 px-5 pt-5">
-            <Reviews reviewsArray={reviewsArray}/>
+        <div className='flex flex-col justify-center'>
+            <div className="text-center lg:px-20 px-5 pt-10 pb-5">
+                <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
+                    {t('What_People_Say')}
+                </h1>
+            </div>
+            <div className="text-start lg:px-20 px-5 pt-5 min-h-[380px]">
+                <Reviews reviewsArray={reviewsArray}/>
+            </div>
         </div>
     </main>)
 }

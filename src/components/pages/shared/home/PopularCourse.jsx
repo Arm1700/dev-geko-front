@@ -19,9 +19,7 @@ export default function PopularCourse({
     const handleMouseLeave = () => {
         setIsHovered(false)
     }
-    // const imageUrl = image.startsWith('http') ? image : `http://127.0.0.1:8000${image}`;
-
-    const imageUrl = image.startsWith('https') ? image : `https://dev.gekoeducation.com${image}`;
+    const imageUrl = image.startsWith('http') ? image : image? `https://dev.gekoeducation.com${image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png';
 
     return (
         <article
@@ -30,13 +28,13 @@ export default function PopularCourse({
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 onClick={() => nav(`/courses/${id}`)}
-                className={`relative bg-no-repeat bg-cover  cursor-pointer ${gridStyleTF === true ? "w-[100%] rounded-t-lg" : "sm:w-[260px] w-full rounded-lg"}`}
+                className={`relative bg-no-repeat bg-cover cursor-pointer ${gridStyleTF ? "w-[100%] rounded-t-lg" : "sm:w-[260px] w-full rounded-lg"}`}
                 style={{
                     backgroundImage: isHovered
                         ? `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${imageUrl})`
                         : `url(${imageUrl})`,
                     backgroundSize: '100% 100%',
-                    aspectRatio: "4 / 3",
+                    aspectRatio:'4/3'
                 }}
             >
                 <FaExternalLinkAlt
@@ -52,8 +50,8 @@ export default function PopularCourse({
                 />
             </div>
             <div
-                className={`w-[100%] mid:h-full md:h-[150px]   ${gridStyleTF === true ? " items-center py-[30px] px-[20px]" : "w-full py-[30px] sm:pl-10  sm:px-0 sm:py-0 h-[100%]  gap-4"} flex flex-col justify-center `}>
-                <p className={`hover:text-primary uppercase font-bold cursor-pointer transition-colors duration-300 
+                className={`w-[100%] mid:h-full md:h-[150px]   ${gridStyleTF === true ? " items-center py-[30px] px-[20px]" : "w-full py-[30px] sm:pl-10  sm:px-0 sm:py-0 h-[100%]  gap-about_info"} flex flex-col justify-center `}>
+                <p className={`min-w-[275px] hover:text-primary uppercase font-bold cursor-pointer transition-colors duration-300 
                 ${gridStyleTF === true ? "text-custom-15 text-center" : "text-xl"} 
                 font-medium text-primaryDark font-roboto-slab`}
                    onClick={() => nav(`/courses/${id}`)}

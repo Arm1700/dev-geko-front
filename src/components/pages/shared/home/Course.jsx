@@ -75,7 +75,7 @@ const CourseSlider = () => {
     };
 
     return (
-        <div className="max:px-5 py-16 mx-auto max-w-[1200px]">
+        <div className="popularDiv max:px-0 py-16 mx-auto max-w-[1300px] px-[20px]">
             <Swiper
                 loop={true}
                 modules={[Pagination, A11y,  Autoplay]} // Добавьте Autoplay

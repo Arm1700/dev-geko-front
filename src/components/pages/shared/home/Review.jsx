@@ -1,15 +1,16 @@
-import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { A11y, Navigation } from 'swiper/modules';
-import 'swiper/swiper-bundle.css';
+import React, { useState, useLayoutEffect, useRef } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export default function Review({ reviewsArray }) {
+    const [slidesToShow, setSlidesToShow] = useState(3);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [slidesToShow, setSlidesToShow] = useState(4);
-    const swiperThumbsRef = useRef(null);
-    const swiperContentRef = useRef(null);
 
-    // Adjust slider display based on screen width
+    // Create refs for both sliders
+    const thumbnailSliderRef = useRef(null);
+    const contentSliderRef = useRef(null);
+
     useLayoutEffect(() => {
         function updateSlidesToShow() {
             const screenWidth = window.innerWidth;
@@ -23,73 +24,71 @@ export default function Review({ reviewsArray }) {
         return () => window.removeEventListener("resize", updateSlidesToShow);
     }, []);
 
-    // Sync slider positions
-    const onSlideChange = (swiper) => {
-        const activeIndex = swiper.activeIndex;
-        if (activeIndex !== currentIndex) {
-            setCurrentIndex(activeIndex);
-        }
+    const syncSliders = (next) => {
+        setCurrentIndex(next);
+        thumbnailSliderRef.current.slickGoTo(next);
+        contentSliderRef.current.slickGoTo(next);
     };
 
-    useEffect(() => {
-        if (swiperThumbsRef.current) swiperThumbsRef.current.slideTo(currentIndex);
-        if (swiperContentRef.current) swiperContentRef.current.slideTo(currentIndex);
-    }, [currentIndex]);
+    const thumbnailSettings = {
+        autoplay: true,
+        autoplaySpeed: 2000,
+        infinite: true,
+        centerMode: true,
+        centerPadding: "20px",  // Padding to show slides on the left and right
+        slidesToShow: slidesToShow,
+        slidesToScroll: 1,
+        speed: 500,
+        beforeChange: (_, next) => syncSliders(next),
+    };
+
+    const contentSettings = {
+        autoplay: true,
+        autoplaySpeed: 2000,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 500,
+        // adaptiveHeight: true,
+        fade: true,
+        beforeChange: (_, next) => syncSliders(next),
+    };
 
     return (
-        <div className="flex flex-col relative">
-            {/* Thumbnail Slider */}
-            <div className="px-5 max-w-[900px] mx-auto">
-                <Swiper
-                    loop
-                    modules={[A11y]}
-                    slidesPerView={slidesToShow}
-                    spaceBetween={20}
-                    speed={500}
-                    onSlideChange={onSlideChange}
-                    onSwiper={(swiper) => (swiperThumbsRef.current = swiper)}
-                >
+        <div className="flex justify-center relative">
+            <div className='min-w-[1%] max-w-[60%]'>
+                <Slider ref={thumbnailSliderRef} {...thumbnailSettings}>
                     {reviewsArray.map((review, i) => (
-                        <SwiperSlide key={i} style={{ display: 'flex', justifyContent: 'center' }}>
-                            <div className="w-full">
+                        <div key={i} style={{ display: 'flex', justifyContent: 'center' }}>
+                            <div className="flex justify-center items-center w-full h-full">
                                 <img
-                                    src={review.image}
-                                    className="rounded-full mx-auto p-2 border-color86"
+                                    src={review.image && review.image.startsWith('http') ? review.image : review.image ? `https://dev.gekoeducation.com${review.image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'}
+                                    className="rounded-full p-2 border-color86"
                                     style={{
                                         border: i === currentIndex ? '2px dotted rgba(0, 0, 0, 0.5)' : 'none',
                                         opacity: i === currentIndex ? '1' : '0.5',
-                                        width: i === currentIndex ? '100px' : '80px',
-                                        height: i === currentIndex ? '100px' : '80px',
+                                        width: i === currentIndex ? '130px' : '100px',
+                                        height: i === currentIndex ? '130px' : '100px',
                                         transition: 'all 0.3s ease',
                                     }}
                                     alt={`user ${review.name}`}
                                 />
                             </div>
-                        </SwiperSlide>
+                        </div>
                     ))}
-                </Swiper>
-            </div>
+                </Slider>
 
-            {/* Content Slider */}
-            <div className="px-5 max-w-[900px] mx-auto">
-                <Swiper
-                    loop
-                    modules={[Navigation, A11y]}
-                    slidesPerView={1}
-                    spaceBetween={20}
-                    speed={500}
-                    onSlideChange={onSlideChange}
-                    onSwiper={(swiper) => (swiperContentRef.current = swiper)}
-                >
+                {/* Content Slider */}
+                <Slider ref={contentSliderRef} {...contentSettings}>
                     {reviewsArray.map((review, i) => (
-                        <SwiperSlide key={i} style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div key={i} style={{ display: 'flex', justifyContent: 'center' }}>
                             <div className="flex justify-center items-center text-center flex-col">
                                 <p className="mt-5 text-primaryDark font-bold text-lg">{review.name}</p>
-                                <p className="mb-7 text-center text-color7C">{review.comment}</p>
+                                <p className="mb-7 text-center text-primaryDark">{review.comment}</p>
                             </div>
-                        </SwiperSlide>
+                        </div>
                     ))}
-                </Swiper>
+                </Slider>
             </div>
         </div>
     );

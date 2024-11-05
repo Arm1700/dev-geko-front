@@ -96,14 +96,10 @@
     transition: color 0.2s ease;
 }
 
-.popular {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
 
 .popular {
     width: 1300px;
+    gap: 15px;
 }
 
 @media (max-width: 1300px) {
@@ -131,7 +127,6 @@
 @media (max-width: 480px) {
     .popular {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
     }
 
     .popularDiv {

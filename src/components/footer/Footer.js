@@ -18,20 +18,22 @@ const Footer = () => {
                 className="flex middle:grid middle:grid-cols-[1fr_2fr_1fr] flex-col middle:items-center justify-center items-center px-5 py-20 mx-[auto] gap-5 max-w-[1300px]">
                 <div className="flex flex-col gap-5">
                     <Logo/>
-                    <p className="flex">
+                    <div className="flex">
                         <FaPhoneAlt className="mx-2 text-primary"/>
-                        (+374) 98 03 33 94
-                    </p>
-                    <p className="flex">
+                        <p>(+374) 98 03 33 94</p>
+                    </div>
+                    <div className="flex">
                         <MdOutlinePlace className="mx-2 text-primary"/>
                         <p className=' w-[100%] middle:w-60%'>
                             {t("contact1_description")}
                         </p>
-                    </p>
-                    <p className="flex">
+                    </div>
+                    <div className="flex">
                         <MdMarkEmailRead className="mx-2 text-primary"/>
-                        gekoeducation1@gmail.com
-                    </p>
+                        <p>
+                            gekoeducation1@gmail.com
+                            </p>
+                    </div>
                 </div>
                 <ul className='flex content-start middle:flex-row flex-col justify-center flex-wrap gap-3 middle:order-none order-2 text-color99'>
                     {routesArray.map(({path, name, id}) => {
