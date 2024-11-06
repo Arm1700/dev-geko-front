@@ -5,6 +5,7 @@ import {IoLanguage} from 'react-icons/io5'
 import students_Group from '../../../../images/education.png'
 import {PiStudentBold} from 'react-icons/pi'
 import {MdAssessment} from 'react-icons/md'
+import {PiCertificate} from "react-icons/pi";
 import Error404 from '../../shared/Error'
 import {A11y, Autoplay, Pagination} from "swiper/modules";
 import 'swiper/css';
@@ -119,39 +120,64 @@ export default function CoursePage() {
                             <img
                                 src={pickedCourse.image && pickedCourse.image.startsWith('http') ? pickedCourse.image : pickedCourse.image ? `https://dev.gekoeducation.com${pickedCourse.image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'}
                                 alt={pickedCourse.translation.title}/>
-                            <div className="flex flex-col justify-start  items-start px-[20px] py-[20px] gap-[10px]">
+                            <div className="flex flex-col justify-start items-start px-[20px] py-[20px] gap-[10px] w-max">
                                 <button
                                     className="self-center w-[100%] py-[10px] px-[25px] rounded-[4px] uppercase font-bold text-white text-sm bg-primary">
                                     {t("Sign_Up")}
                                 </button>
                                 <h1 className="text-xl pb-3 font-roboto-slab font-bold text-primaryDark pt-[20px]">
-                                    <p>{t("Course_Features")}</p>
+                                    <p className='text-primaryDark'>{t("Course_Features")}</p>
                                 </h1>
-                                <div className="flex items-center gap-3 text-color60 text-custom-15">
-                                    <TbClockHour9 className="text-primary"/>
-                                    <p>{t("Duration")}</p>
-                                    {t(pickedCourse.duration)}
+                                <div className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
+                                    <div className='flex items-center justify-center gap-1'>
+                                        <TbClockHour9 className="text-primary"/>
+                                        <p className='text-primaryDark'>{t("Duration")}</p>
+                                    </div>
+                                    <p>
+                                        {t(pickedCourse.duration)}
+                                    </p>
                                 </div>
-                                <div className="flex  items-center gap-3 text-color60 text-custom-15">
-                                    <IoLanguage className="text-primary"/>
-                                    <p>{t("Language")}</p>
-                                    {t(pickedCourse.translation.lang)}
+                                <div className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
+                                    <div className='flex items-center justify-center gap-1'>
+                                        <IoLanguage className="text-primary"/>
+                                        <p className='text-primaryDark'>{t("Language")}</p>
+                                    </div>
+                                    <p>{t(pickedCourse.translation.lang)}</p>
                                 </div>
-                                <div className="flex  items-center gap-3 text-color60 text-custom-15">
-                                    <PiStudentBold className="text-primary"/>
-                                    <p>{t("Students")}</p>
-                                    {t(pickedCourse.students)}
+                                <div className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
+                                    <div className='flex items-center justify-center gap-1'>
+                                        <PiStudentBold className="text-primary"/>
+                                        <p className='text-primaryDark'>{t("Students")}</p>
+                                    </div>
+                                    <p>
+                                        {t(pickedCourse.students)}
+                                    </p>
+
                                 </div>
-                                <div className="flex  items-center gap-3 text-color60 text-custom-15">
-                                    <img src={students_Group} alt=""/>
-                                    <p>{t("StudentGroup")}</p>
-                                    {t(pickedCourse.studentGroup)}
+                                <div className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
+                                    <div className='flex items-center justify-center gap-1'>
+                                        <img src={students_Group} alt=""/>
+                                        <p className='text-primaryDark'>{t("StudentGroup")}</p>
+                                    </div>
+                                    <p>
+                                        {t(pickedCourse.studentGroup)}
+                                    </p>
                                 </div>
-                                <div className="flex  items-center gap-3 text-color60 text-custom-15">
-                                    <MdAssessment className="text-primary"/>
-                                    <p>{t("Assessments")}</p>
-                                    {t(pickedCourse.assessments)}
+                                <div className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
+                                    <div className='flex items-center justify-center gap-1'>
+                                        <MdAssessment className="text-primary"/>
+                                        <p className='text-primaryDark'>{t("Assessments")}</p>
+                                    </div>
+                                    <p> {t(pickedCourse.assessments)}</p>
                                 </div>
+                                <div className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
+                                    <div className='flex items-center justify-center gap-1'>
+                                        <PiCertificate className="text-primary"/>
+                                        <p className='text-primaryDark'>{t('CERTIFICATE')}</p>
+                                    </div>
+                                    <p>{t(pickedCourse.certification)}</p>
+                                </div>
+                                <p className="text-custom-15 text-color60 uppercase"></p>
                                 <ul className="flex px-[9px] justify-center items-center gap-3 w-full pt-3">
                                     <li className="flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50">
                                         <i className="fa fa-facebook-f"></i>
@@ -172,14 +198,6 @@ export default function CoursePage() {
                                 </h1>
                                 <p className="text-custom-15 text-color60">{pickedCourse.translation.desc}</p>
                             </div>
-
-                            <div className="text-start pt-5 flex flex-col gap-3">
-                                <h1 className="text-lg font-roboto-slab font-bold text-primaryDark">
-                                    {t(pickedCourse.certification)}
-                                </h1>
-                                <p className="text-custom-15 text-color60 uppercase">{t('YES')}</p>
-                            </div>
-
                             <p className="like relative uppercase font-roboto-slab text-2xl pt-10 font-bold">
                                 {t("You_May_Like")}
                             </p>

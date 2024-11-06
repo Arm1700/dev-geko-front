@@ -47,7 +47,7 @@ export default function AboutUs() {
         <section
             className="my-16 gap-8 px-5 w-[100%]  sm:w-[100%] flex items-start justify-center">
             <BiSolidQuoteLeft className="w-[40px] h-[40px]  text-primary"/>
-            <p className=" py-2 font-roboto-slab font-normal flex flex-col mid:w-[50%] w-[100%]   text-2xl text-primaryDark">
+            <p className=" py-2 font-roboto-slab font-normal flex flex-col mid:w-[50%] w-[100%] text-2xl text-primaryDark">
                 Cras tristique turpis justo, eu consequat sem adipiscing ut. Donec posuere bibendum metus.
                 <span className="text-sm pt-5 font-sans text-color60">
             Tony Nguyen, Co-Founder
