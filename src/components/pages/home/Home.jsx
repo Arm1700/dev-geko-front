@@ -16,7 +16,6 @@ export default function Home() {
     const [lessonInfoArray, setLessonInfo] = useState([]);
     const [eventsArray, setEventsArray] = useState([]);
     const [popularCoursesArray, setPopularCoursesArray] = useState([]);
-    const [reviewsArray, setReviewsArray] = useState([]);
 
     const nav = useNavigate();
     const handleCategoryClick = () => {
@@ -73,21 +72,7 @@ export default function Home() {
         fetchCourses();
     }, [language]);
 
-    useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/reviews/`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/reviews/?language=${language}`);
-                const data = await response.json();
-                console.log(data);
-                setReviewsArray(data); // Сохранение курсов в состояние
-            } catch (error) {
-                console.error('Error fetching courses:', error);
-            }
-        };
 
-        fetchCourses();
-    }, [language]);
     return (<main>
         <MainPhoto image={url} text1="The_best_time_for" text2="education"/>
         <Course/>
@@ -179,7 +164,7 @@ export default function Home() {
                 </h1>
             </div>
             <div className="text-start lg:px-20 px-5 pt-5 min-h-[380px]">
-                <Reviews reviewsArray={reviewsArray}/>
+                <Reviews/>
             </div>
         </div>
     </main>)

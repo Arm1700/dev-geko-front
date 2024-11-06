@@ -4,20 +4,25 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import {useTranslation} from "react-i18next";
 
-export default function Review() {
+export default function Team() {
     const [slidesToShow, setSlidesToShow] = useState(3);
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    // Create refs for both sliders
+    const thumbnailSliderRef = useRef(null);
+    const contentSliderRef = useRef(null);
     const {i18n} = useTranslation();
     const language = i18n.language;
-    const [reviewsArray, setReviewsArray] = useState([]);
+    const [teamArray, setTeamArray] = useState([]);
 
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/reviews/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/reviews/?language=${language}`);
+                // const response = await fetch(`http://127.0.0.1:8000/api/team/?language=${language}`);
+                const response = await fetch(`https://dev.gekoeducation.com/api/team/?language=${language}`);
                 const data = await response.json();
-                setReviewsArray(data); // Сохранение курсов в состояние
+                console.log(data)
+                setTeamArray(data); // Сохранение курсов в состояние
             } catch (error) {
                 console.error('Error fetching courses:', error);
             }
@@ -25,9 +30,6 @@ export default function Review() {
 
         fetchCourses();
     }, [language]);
-
-    const thumbnailSliderRef = useRef(null);
-    const contentSliderRef = useRef(null);
 
     useLayoutEffect(() => {
         function updateSlidesToShow() {
@@ -75,11 +77,11 @@ export default function Review() {
         <div className="flex justify-center relative">
             <div className='min-w-[1%] max-w-[60%]'>
                 <Slider ref={thumbnailSliderRef} {...thumbnailSettings}>
-                    {reviewsArray.map((review, i) => (
+                    {teamArray.map((team, i) => (
                         <div key={i} style={{ display: 'flex', justifyContent: 'center' }}>
                             <div className="flex justify-center items-center w-full h-full">
                                 <img
-                                    src={review.image && review.image.startsWith('http') ? review.image : review.image ? `https://dev.gekoeducation.com${review.image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'}
+                                    src={team.image && team.image.startsWith('http') ? team.image : team.image ? `https://dev.gekoeducation.com${team.image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'}
                                     className="rounded-full p-2 border-color86"
                                     style={{
                                         border: i === currentIndex ? '2px dotted rgba(0, 0, 0, 0.5)' : 'none',
@@ -88,7 +90,7 @@ export default function Review() {
                                         height: i === currentIndex ? '130px' : '100px',
                                         transition: 'all 0.3s ease',
                                     }}
-                                    alt={`user ${review.name}`}
+                                    alt={`user ${team.translation.name}`}
                                 />
                             </div>
                         </div>
@@ -97,11 +99,11 @@ export default function Review() {
 
                 {/* Content Slider */}
                 <Slider ref={contentSliderRef} {...contentSettings}>
-                    {reviewsArray.map((review, i) => (
+                    {teamArray.map((team, i) => (
                         <div key={i} style={{ display: 'flex', justifyContent: 'center' }}>
                             <div className="flex justify-center items-center text-center flex-col">
-                                <p className="mt-5 text-primaryDark font-bold text-lg">{review.name}</p>
-                                <p className="mb-7 text-center text-primaryDark">{review.comment}</p>
+                                <p className="mt-5 text-primaryDark font-bold text-lg">{team.translation.name}</p>
+                                <p className="mb-7 text-center text-primaryDark">{team.translation.desc}</p>
                             </div>
                         </div>
                     ))}
