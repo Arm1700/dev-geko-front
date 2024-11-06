@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Team.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/education.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/about/AboutUs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locale/am.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/am.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locale/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locale/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/ru.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/User/Desktop/project/frontend/geko-front/src/components/pages/shared/home",
+    "last_opened_file_path": "C:/Users/User/Desktop/project/frontend/geko-front/src/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -54,18 +55,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\project\frontend\geko-front\src\images" />
       <recent name="C:\Users\User\Desktop\project\frontend\geko-front\src\components\pages\shared\home" />
       <recent name="C:\Users\User\Desktop\project\frontend\geko-front\src\components\pages" />
       <recent name="C:\Users\HP\Desktop\project\frontend\geko-front\src\local" />
       <recent name="C:\Users\HP\Desktop\project\frontend\geko-front\src\locale" />
-      <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\events\[id]" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\project\frontend\geko-front\src\images" />
+      <recent name="C:\Users\User\Desktop\project\frontend\geko-front\src\locale" />
       <recent name="C:\Users\User\Desktop\project\frontend\geko-front\src\4" />
       <recent name="C:\Users\User\Desktop\project\frontend\geko-front\src\entities" />
       <recent name="C:\Users\User\Desktop\project\frontend\git front\src\components\pages\shared\event" />
-      <recent name="C:\Users\User\Desktop\project\frontend\git front\public" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -183,7 +184,7 @@
       <workItem from="1730491034568" duration="1368000" />
       <workItem from="1730622034158" duration="16333000" />
       <workItem from="1730795433537" duration="10364000" />
-      <workItem from="1730864724164" duration="1875000" />
+      <workItem from="1730864724164" duration="6043000" />
     </task>
     <servers />
   </component>

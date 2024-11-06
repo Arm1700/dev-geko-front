@@ -2,7 +2,7 @@ import React, {useEffect, useLayoutEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import {TbClockHour9} from 'react-icons/tb'
 import {IoLanguage} from 'react-icons/io5'
-import {IoPricetag} from 'react-icons/io5'
+import students_Group from '../../../../images/education.png'
 import {PiStudentBold} from 'react-icons/pi'
 import {MdAssessment} from 'react-icons/md'
 import Error404 from '../../shared/Error'
@@ -14,7 +14,7 @@ import PopularCourse from "../../shared/home/PopularCourse";
 import {useTranslation} from "react-i18next";
 
 export default function CoursePage() {
-    const {t,i18n} = useTranslation();
+    const {t, i18n} = useTranslation();
     const language = i18n.language;
     const [popularCoursesArray, setPopularCoursesArray] = useState([]);
     const {id: course,} = useParams()
@@ -24,7 +24,7 @@ export default function CoursePage() {
 
     const [autoplayTimeoutId, setAutoplayTimeoutId] = useState(null); // Для хранения идентификатора таймера
     const [slidesToShow, setSlidesToShow] = useState(3)
-        const [spaceBetween, setSpaceBetween] = useState(30)
+    const [spaceBetween, setSpaceBetween] = useState(30)
     const [pickedCourse, setPickedCourse] = useState([])
 
     useEffect(() => {
@@ -65,6 +65,7 @@ export default function CoursePage() {
                 setSpaceBetween(30)
             }
         }
+
         updateSlidesToShow()
         window.addEventListener('resize', updateSlidesToShow)
         return () => {
@@ -115,34 +116,41 @@ export default function CoursePage() {
                                 gridRow: "span 2"
                             }}>
 
-                            <img src={pickedCourse.image && pickedCourse.image.startsWith('http') ? pickedCourse.image : pickedCourse.image ? `https://dev.gekoeducation.com${pickedCourse.image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'} alt={pickedCourse.translation.title}/>
+                            <img
+                                src={pickedCourse.image && pickedCourse.image.startsWith('http') ? pickedCourse.image : pickedCourse.image ? `https://dev.gekoeducation.com${pickedCourse.image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'}
+                                alt={pickedCourse.translation.title}/>
                             <div className="flex flex-col justify-start  items-start px-[20px] py-[20px] gap-[10px]">
                                 <button
-                                    className="self-center w-[100%] py-[10px] px-[25px] rounded-[4px] uppercase font-bold text-white text-sm bg-primary">sign
-                                    up
+                                    className="self-center w-[100%] py-[10px] px-[25px] rounded-[4px] uppercase font-bold text-white text-sm bg-primary">
+                                    {t("Sign_Up")}
                                 </button>
                                 <h1 className="text-xl pb-3 font-roboto-slab font-bold text-primaryDark pt-[20px]">
-                                    Course Features
+                                    <p>{t("Course_Features")}</p>
                                 </h1>
                                 <div className="flex items-center gap-3 text-color60 text-custom-15">
                                     <TbClockHour9 className="text-primary"/>
-                                    Duration {pickedCourse.duration}
+                                    <p>{t("Duration")}</p>
+                                    {t(pickedCourse.duration)}
                                 </div>
                                 <div className="flex  items-center gap-3 text-color60 text-custom-15">
                                     <IoLanguage className="text-primary"/>
-                                    Language {pickedCourse.lang}
-                                </div>
-                                <div className="flex  items-center gap-3 text-color60 text-custom-15">
-                                    <IoPricetag className="text-primary"/>
-                                    Price {pickedCourse.price}
+                                    <p>{t("Language")}</p>
+                                    {t(pickedCourse.translation.lang)}
                                 </div>
                                 <div className="flex  items-center gap-3 text-color60 text-custom-15">
                                     <PiStudentBold className="text-primary"/>
-                                    Students {pickedCourse.students}
+                                    <p>{t("Students")}</p>
+                                    {t(pickedCourse.students)}
+                                </div>
+                                <div className="flex  items-center gap-3 text-color60 text-custom-15">
+                                    <img src={students_Group} alt=""/>
+                                    <p>{t("StudentGroup")}</p>
+                                    {t(pickedCourse.studentGroup)}
                                 </div>
                                 <div className="flex  items-center gap-3 text-color60 text-custom-15">
                                     <MdAssessment className="text-primary"/>
-                                    Assessments {pickedCourse.translation.assessments}
+                                    <p>{t("Assessments")}</p>
+                                    {t(pickedCourse.assessments)}
                                 </div>
                                 <ul className="flex px-[9px] justify-center items-center gap-3 w-full pt-3">
                                     <li className="flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50">
@@ -167,7 +175,7 @@ export default function CoursePage() {
 
                             <div className="text-start pt-5 flex flex-col gap-3">
                                 <h1 className="text-lg font-roboto-slab font-bold text-primaryDark">
-                                    {t('CERTIFICATE')}
+                                    {t(pickedCourse.certification)}
                                 </h1>
                                 <p className="text-custom-15 text-color60 uppercase">{t('YES')}</p>
                             </div>
