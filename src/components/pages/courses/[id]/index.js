@@ -120,64 +120,76 @@ export default function CoursePage() {
                             <img
                                 src={pickedCourse.image && pickedCourse.image.startsWith('http') ? pickedCourse.image : pickedCourse.image ? `https://dev.gekoeducation.com${pickedCourse.image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'}
                                 alt={pickedCourse.translation.title}/>
-                            <div className="flex flex-col justify-start items-start px-[20px] py-[20px] gap-[10px] w-max">
+                            <div className='w-full px-5'>
                                 <button
                                     className="self-center w-[100%] py-[10px] px-[25px] rounded-[4px] uppercase font-bold text-white text-sm bg-primary">
                                     {t("Sign_Up")}
                                 </button>
-                                <h1 className="text-xl pb-3 font-roboto-slab font-bold text-primaryDark pt-[20px]">
+                                <h1 className="text-center text-xl pb-3 font-roboto-slab font-bold text-primaryDark pt-[20px]">
                                     <p className='text-primaryDark'>{t("Course_Features")}</p>
                                 </h1>
-                                <div className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
+                            </div>
+
+                            <div
+                                className="flex flex-col justify-start items-start px-[20px]  gap-[10px] w-max">
+                                <div
+                                    className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
                                     <div className='flex items-center justify-center gap-1'>
                                         <TbClockHour9 className="text-primary"/>
-                                        <p className='text-primaryDark'>{t("Duration")}</p>
+                                        <p className='text-primaryDark capitalize'>{t("Duration")}</p>
                                     </div>
-                                    <p>
+                                    <p className='text-primaryDark capitalize'>
                                         {t(pickedCourse.duration)}
                                     </p>
                                 </div>
-                                <div className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
+                                <div
+                                    className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
                                     <div className='flex items-center justify-center gap-1'>
                                         <IoLanguage className="text-primary"/>
-                                        <p className='text-primaryDark'>{t("Language")}</p>
+                                        <p className='text-primaryDark capitalize'>{t("Language")}</p>
                                     </div>
-                                    <p>{t(pickedCourse.translation.lang)}</p>
+                                    <p className='text-primaryDark capitalize'>{t(pickedCourse.translation.lang)}</p>
                                 </div>
-                                <div className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
+                                <div
+                                    className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
                                     <div className='flex items-center justify-center gap-1'>
                                         <PiStudentBold className="text-primary"/>
-                                        <p className='text-primaryDark'>{t("Students")}</p>
+                                        <p className='text-primaryDark capitalize'>{t("Students")}</p>
                                     </div>
-                                    <p>
+                                    <p className='text-primaryDark capitalize'>
                                         {t(pickedCourse.students)}
                                     </p>
 
                                 </div>
-                                <div className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
+                                <div
+                                    className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
                                     <div className='flex items-center justify-center gap-1'>
                                         <img src={students_Group} alt=""/>
-                                        <p className='text-primaryDark'>{t("StudentGroup")}</p>
+                                        <p className='text-primaryDark capitalize'>{t("StudentGroup")}</p>
                                     </div>
-                                    <p>
+                                    <p className='text-primaryDark capitalize'>
                                         {t(pickedCourse.studentGroup)}
                                     </p>
                                 </div>
-                                <div className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
+                                <div
+                                    className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
                                     <div className='flex items-center justify-center gap-1'>
                                         <MdAssessment className="text-primary"/>
-                                        <p className='text-primaryDark'>{t("Assessments")}</p>
+                                        <p className='text-primaryDark capitalize'>{t("Assessments")}</p>
                                     </div>
-                                    <p> {t(pickedCourse.assessments)}</p>
+                                    <p className='text-primaryDark capitalize'> {t(pickedCourse.assessments)}</p>
                                 </div>
-                                <div className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
+                                <div
+                                    className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
                                     <div className='flex items-center justify-center gap-1'>
                                         <PiCertificate className="text-primary"/>
-                                        <p className='text-primaryDark'>{t('CERTIFICATE')}</p>
+                                        <p className='text-primaryDark capitalize'>{t('CERTIFICATE')}</p>
                                     </div>
-                                    <p>{t(pickedCourse.certification)}</p>
+                                    <p className='text-primaryDark capitalize'>{t(pickedCourse.certification)}</p>
                                 </div>
                                 <p className="text-custom-15 text-color60 uppercase"></p>
+                            </div>
+                            <div className='w-full px-5 pb-5'>
                                 <ul className="flex px-[9px] justify-center items-center gap-3 w-full pt-3">
                                     <li className="flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50">
                                         <i className="fa fa-facebook-f"></i>
@@ -196,7 +208,7 @@ export default function CoursePage() {
                                 <h1 className="text-lg font-roboto-slab font-bold text-primaryDark">
                                     {t('COURSE_DESCRIPTION')}
                                 </h1>
-                                <p className="text-custom-15 text-color60">{pickedCourse.translation.desc}</p>
+                                <p className="text-custom-15 text-primaryDark">{pickedCourse.translation.desc}</p>
                             </div>
                             <p className="like relative uppercase font-roboto-slab text-2xl pt-10 font-bold">
                                 {t("You_May_Like")}

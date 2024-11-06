@@ -23,7 +23,7 @@ export default function PopularCourse({
 
     return (
         <article
-            className={`my-5 border-gray h-min ${gridStyleTF === true ? "none border rounded-lg" : "sm:flex border-b"}     `}>
+            className={`my-5 border-gray h-min  ${gridStyleTF === true ? "none border rounded-lg" : "sm:flex border-b"}     `}>
             <div
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
@@ -51,14 +51,14 @@ export default function PopularCourse({
             </div>
             <div
                 className={`w-[100%] mid:h-full md:h-[150px]   ${gridStyleTF === true ? " items-center py-[30px] px-[20px]" : "w-full py-[30px] sm:pl-10  sm:px-0 sm:py-0 h-[100%]  gap-about_info"} flex flex-col justify-center `}>
-                <p className={`min-w-[275px] hover:text-primary uppercase font-bold cursor-pointer transition-colors duration-300 
-                ${gridStyleTF === true ? "text-custom-15 text-center" : "text-xl"} 
+                <p className={` hover:text-primary uppercase font-bold cursor-pointer transition-colors duration-300 
+                ${gridStyleTF === true ? "text-custom-15 text-primaryDark text-center" : "text-xl"} 
                 font-medium text-primaryDark font-roboto-slab`}
                    onClick={() => nav(`/courses/${id}`)}
                 >
                     {title}
                 </p>
-                <p className={`${gridStyleTF === true ? "items-center" : ""}  transition-colors duration-300 text-custom-15 font-medium text-color60 font-roboto`}
+                <p className={`${gridStyleTF === true ? "items-center" : ""}  transition-colors duration-300 text-custom-15 font-medium text-primaryDark font-roboto`}
                 >
                     {gridStyleTF === true ? "" : desc}
                 </p>

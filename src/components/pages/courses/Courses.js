@@ -106,7 +106,7 @@ export default function Courses() {
 
     return (
         <main className=" flex justify-center">
-            <div className="px-5 max-w-[1200px] py-5 flex flex-col">
+            <div className="px-5 max-w-[1200px] center:min-w-[1200px] w-full  py-5 flex flex-col">
                 <h1 className="text-3xl font-roboto-slab font-bold text-primaryDark">
                     {t('COURSES')}
                 </h1>
@@ -119,7 +119,7 @@ export default function Courses() {
                         {coursesArray.map(({ id, translation }) => (
                             <p
                                 onClick={() => handleCategoryClick(id)}
-                                className={`uppercase min-w-max w-full textHover cursor-pointer py-[5px] ${+categoryId === id ? "text-primary" : "text-color66"}`}
+                                className={`uppercase min-w-max w-full textHover cursor-pointer py-[5px] ${+categoryId === id ? "text-primary" : "text-primaryDark"}`}
                                 key={id}>{translation.text}
                             </p>
                         ))}
@@ -143,7 +143,7 @@ export default function Courses() {
                             </p>
                         </div>
                         <div
-                            className={`opacityPopularCourse content-center grid ${gridStyle} ${gridStyleTF ? 'gap-10' : 'gap-0'} py-6`}>
+                            className={`opacityPopularCoursecontent-center grid ${gridStyle} ${gridStyleTF ? 'gap-10' : 'gap-0'} py-6`}>
                             {paginatedCourses().map(({ image, id, translation }) => (
                                 <PopularCourse
                                     gridStyleTF={gridStyleTF}
