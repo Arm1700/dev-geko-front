@@ -131,9 +131,9 @@ export default function CoursePage() {
                             </div>
 
                             <div
-                                className="flex flex-col justify-start items-start px-[20px]  gap-[10px] w-max">
+                                className="w-full flex flex-col justify-start items-start px-[20px] gap-[10px] ">
                                 <div
-                                    className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
+                                    className="w-full flex items-center justify-between gap-3 text-primaryDark text-custom-15">
                                     <div className='flex items-center justify-center gap-1'>
                                         <TbClockHour9 className="text-primary"/>
                                         <p className='text-primaryDark capitalize'>{t("Duration")}</p>
