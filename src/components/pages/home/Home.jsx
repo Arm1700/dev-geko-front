@@ -24,7 +24,6 @@ export default function Home() {
     const handleEventsClick = () => {
         nav(`/events`);
     };
-    const url = 'https://www.shutterstock.com/shutterstock/videos/1086751859/preview/stock-footage-video-of-financial-data-processing-over-diverse-business-people-global-business-finances.webm'
 
     useEffect(() => {
         const fetchCourses = async () => {
@@ -74,7 +73,7 @@ export default function Home() {
 
 
     return (<main>
-        <MainPhoto image={url} text1="The_best_time_for" text2="education"/>
+        <MainPhoto text1="The_best_time_for" text2="education"/>
         <Course/>
         <div
             className="flex content-center justify-center gap-20 py-10">
@@ -132,28 +131,29 @@ export default function Home() {
                         {t('View_All')}
                     </button>
                 </div>
-                {eventsArray.filter(event => event.status === "completed").slice(0, 3).map(({
-                                                                                                id,
-                                                                                                day,
-                                                                                                month,
-                                                                                                hour,
-                                                                                                image,
-                                                                                                translation,
-                                                                                                event_galleries
-                                                                                            }) => {
-                    return (<Event
-                        key={id}
-                        id={id}
-                        day={day}
-                        month={month}
-                        title={translation.title}
-                        hour={hour}
-                        place={translation.place}
-                        description={translation.description}
-                        image={image}
-                        event_galleries={event_galleries}
-                    />)
-                },)}
+                {eventsArray.filter(event => event.status === "completed")
+                    .slice(0, 3).map(({
+                                          id,
+                                          day,
+                                          month,
+                                          hour,
+                                          image,
+                                          translation,
+                                          event_galleries
+                                      }) => {
+                        return (<Event
+                            key={id}
+                            id={id}
+                            day={day}
+                            month={month}
+                            title={translation.title}
+                            hour={hour}
+                            place={translation.place}
+                            description={translation.description}
+                            image={image}
+                            event_galleries={event_galleries}
+                        />)
+                    },)}
             </div>
         </div>
 

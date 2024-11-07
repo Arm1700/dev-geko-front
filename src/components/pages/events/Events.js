@@ -3,7 +3,7 @@ import Event from '../shared/event/Event'
 import {useTranslation} from 'react-i18next';
 
 export default function Events() {
-    const [activeTab, setActiveTab] = useState('happening')
+    const [activeTab, setActiveTab] = useState('completed')
 
     const tabs = [
         {title: 'happening', id: 1},
