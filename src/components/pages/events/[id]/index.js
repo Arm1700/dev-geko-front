@@ -91,24 +91,6 @@ export default function EventsPage() {
                                     {t("event_description")}
                                 </h1>
                                 <p className="text-custom-15 text-color60">{t(pickedEvent.translation.description)}</p>
-                                {/*<h1 className="text-2xl font-roboto-slab font-bold text-primaryDark">*/}
-                                {/*    EVENT CONTENT*/}
-                                {/*</h1>*/}
-                                {/*<ul className="list-none text-primary">*/}
-                                {/*    {pickedEvent.outcomed?.map((el, i) => {*/}
-                                {/*        return (*/}
-                                {/*            <li*/}
-                                {/*                key={i}*/}
-                                {/*                className="text-md flex items-center text-secondaryLight"*/}
-                                {/*            >*/}
-                                {/*                <span className="w-[6px] h-[6px] bg-primary rounded-full mr-2"></span>*/}
-                                {/*                <p className="pl-3 ">*/}
-                                {/*                    {el}*/}
-                                {/*                </p>*/}
-                                {/*            </li>*/}
-                                {/*        )*/}
-                                {/*    })}*/}
-                                {/*</ul>*/}
                                 <div className="flex items-center">
                                     <p className="text-color66 capitalize">{t("share")}:</p>
                                     <ul className="flex px-[9px] justify-center items-center gap-3">

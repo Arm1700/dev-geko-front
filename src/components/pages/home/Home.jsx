@@ -115,7 +115,7 @@ export default function Home() {
         </div>
 
         <div className="text-start pt-20 px-5 flex justify-center">
-            <div className='max-w-[1200px] mx-[auto]'>
+            <div className='center:max-w-[1200px] max-w-full'>
                 <div className="flex justify-between">
                     <div className="text-start ">
                         <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">

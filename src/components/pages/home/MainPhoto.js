@@ -1,7 +1,5 @@
-import {useTranslation} from 'react-i18next';
 import img from '../../../images/main.mp4'
 export default function MainPhoto({  text1, text2 }) {
-  const {t} = useTranslation()
 
   return (
     <section className="h-[80vh]  flex uppercase justify-center flex-col text-pseudo px-20 relative overflow-hidden">

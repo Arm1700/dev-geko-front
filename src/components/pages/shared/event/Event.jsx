@@ -57,7 +57,7 @@ export default function Event({
                 <span className="text-color60 leading-[25px] font-sans-serif">{t(month)}</span>
             </div>
 
-            <div className="gap-2 flex middle:px-5 md:px-20 px-0 flex-col sm:order-none max:order-1" style={{ maxWidth: "60%" }}>
+            <div className="gap-2 flex middle:px-5 md:px-20 px-0 flex-col sm:order-none max:order-1 sm:max-w-[60%] max-w-full" >
                 <h5 className="text-lg font-bold hover:text-primary transition-colors duration-300 cursor-pointer"
                     onClick={() => handleCategoryClick(id)}
                 >{t(title)}</h5>
@@ -68,7 +68,7 @@ export default function Event({
                 <p className=" text-primaryDark text-custom-15 center">{t(description)}</p>
             </div>
 
-            <div className='w-full md:w-[30%] sm:w-[40%] max:w-[80%]'>
+            <div className='w-full md:w-[30%] sm:w-[40%] '>
                 <Swiper
                     loop={true}
                     modules={[A11y, Autoplay]}
