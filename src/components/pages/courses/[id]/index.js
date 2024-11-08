@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useState} from 'react'
+import React, {useContext, useEffect, useLayoutEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import {TbClockHour9} from 'react-icons/tb'
 import {IoLanguage} from 'react-icons/io5'
@@ -13,45 +13,22 @@ import 'swiper/css/pagination';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import PopularCourse from "../../shared/home/PopularCourse";
 import {useTranslation} from "react-i18next";
+import {DataContext} from "../../context/DataProvider";
 
 export default function CoursePage() {
-    const {t, i18n} = useTranslation();
-    const language = i18n.language;
-    const [popularCoursesArray, setPopularCoursesArray] = useState([]);
-    const {id: course,} = useParams()
+    const {t} = useTranslation();
+    const {id: coursesID,} = useParams()
     const renderBullet = (index, className) => {
         return `<span class="${className}" style="background-color: orange; "></span>`; // Установите цвет фона в orange
     };
-
     const [autoplayTimeoutId, setAutoplayTimeoutId] = useState(null); // Для хранения идентификатора таймера
     const [slidesToShow, setSlidesToShow] = useState(3)
     const [spaceBetween, setSpaceBetween] = useState(30)
-    const [pickedCourse, setPickedCourse] = useState([])
 
-    useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/popular_courses/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/popular_courses/?language=${language}`);
-                const data = await response.json();
-                console.log(data)
-                setPopularCoursesArray(data); // Сохранение курсов в состояние
-            } catch (error) {
-                console.error('Error fetching courses:', error);
-            }
-        };
+    const {getCoursesById, courses } = useContext(DataContext);
 
-        fetchCourses();
-
-    }, [language]);
-
-    useEffect(() => {
-        if (popularCoursesArray.length > 0 && course) {
-            const selectedCourse = popularCoursesArray.find(el => el.id === +course);
-            setPickedCourse(selectedCourse);
-        }
-    }, [course, popularCoursesArray]);
-
+    let pickedCourse = getCoursesById(coursesID)
+    console.log(pickedCourse)
     useLayoutEffect(() => {
         function updateSlidesToShow() {
             const screenWidth = window.innerWidth
@@ -214,10 +191,10 @@ export default function CoursePage() {
                                 {t("You_May_Like")}
                             </p>
                             <Swiper
-                                loop={true}
                                 modules={[Pagination, A11y, Autoplay]}
                                 spaceBetween={spaceBetween}
                                 slidesPerView={slidesToShow}
+                                loop={courses.length > slidesToShow}
                                 pagination={{
                                     clickable: true,
                                     dynamicBullets: true,
@@ -234,7 +211,7 @@ export default function CoursePage() {
                                 onTouchStart={(swiper) => handleInteraction(swiper)} // Обработка касания
                                 onClick={(swiper) => handleInteraction(swiper)}
                             >
-                                {popularCoursesArray.slice(0, 6).map(({image, id, translation}) => (
+                                {courses.slice(0, 6).map(({image, id, translation}) => (
                                     <SwiperSlide key={id}>
                                         <PopularCourse
                                             id={id}

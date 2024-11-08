@@ -1,30 +1,15 @@
-import React, {useState, useLayoutEffect, useRef, useEffect} from 'react';
+import React, {useState, useLayoutEffect, useRef, useContext} from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import {useTranslation} from "react-i18next";
+import {DataContext} from "../../context/DataProvider";
 
 export default function Review() {
     const [slidesToShow, setSlidesToShow] = useState(3);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const {i18n} = useTranslation();
-    const language = i18n.language;
-    const [reviewsArray, setReviewsArray] = useState([]);
 
-    useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/reviews/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/reviews/?language=${language}`);
-                const data = await response.json();
-                setReviewsArray(data); // Сохранение курсов в состояние
-            } catch (error) {
-                console.error('Error fetching courses:', error);
-            }
-        };
+    const {reviews} = useContext(DataContext);
 
-        fetchCourses();
-    }, [language]);
 
     const thumbnailSliderRef = useRef(null);
     const contentSliderRef = useRef(null);
@@ -73,9 +58,9 @@ export default function Review() {
 
     return (
         <div className="flex justify-center relative">
-            <div className='min-w-[1%] max-w-[60%]'>
+            <div className='min-w-[1%] max-w-full md:max-w-[60%] sm:max-w-[80%]'>
                 <Slider ref={thumbnailSliderRef} {...thumbnailSettings}>
-                    {reviewsArray.map((review, i) => (
+                    {reviews.map((review, i) => (
                         <div key={i} style={{ display: 'flex', justifyContent: 'center' }}>
                             <div className="flex justify-center items-center w-full h-full">
                                 <img
@@ -97,7 +82,7 @@ export default function Review() {
 
                 {/* Content Slider */}
                 <Slider ref={contentSliderRef} {...contentSettings}>
-                    {reviewsArray.map((review, i) => (
+                    {reviews.map((review, i) => (
                         <div key={i} style={{ display: 'flex', justifyContent: 'center' }}>
                             <div className="flex justify-center items-center text-center flex-col">
                                 <p className="mt-5 text-primaryDark font-bold text-lg">{review.name}</p>

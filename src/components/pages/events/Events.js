@@ -1,74 +1,59 @@
-import React, {useEffect, useState} from 'react'
-import Event from '../shared/event/Event'
-import {useTranslation} from 'react-i18next';
+import React, { useContext, useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import Event from '../shared/event/Event';
+import { useTranslation } from 'react-i18next';
+import { DataContext } from "../context/DataProvider";
 
 export default function Events() {
-    const [activeTab, setActiveTab] = useState('completed')
+    const { t } = useTranslation();
+    const { events } = useContext(DataContext);
+    const { tab } = useParams(); // Get the active tab from the URL
+    const navigate = useNavigate(); // To update the URL when changing the tab
 
     const tabs = [
-        {title: 'happening', id: 1},
-        {title: 'upcoming', id: 2},
-        {title: 'completed', id: 3},
-    ]
-
-    const {t, i18n} = useTranslation();
-    const language = i18n.language;
-    const [eventsArray, setEventsArray] = useState([]);
-
+        { title: 'happening', id: 1 },
+        { title: 'upcoming', id: 2 },
+        { title: 'completed', id: 3 },
+    ];
+    console.log(tab)
+    // Set activeTab based on the tab in the URL or default to 'completed'
+    const [activeTab, setActiveTab] = useState(tab || 'completed');
+    console.log(activeTab)
+    // Update the URL when the activeTab changes
     useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/events/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/events/?language=${language}`);
-                const data = await response.json();
-                console.log(data);
-                setEventsArray(data); // Сохранение курсов в состояние
-            } catch (error) {
-                console.error('Error fetching courses:', error);
-            }
-        };
+        // Only update the URL if the active tab changes and is different from the current tab in the URL
+        if (tab !== activeTab) {
+            navigate(`/events/${activeTab}`, { replace: true });
+        }
+    }, [activeTab, tab, navigate]);
 
-        fetchCourses();
-    }, [language]);
     return (
-        <main className="px-5 center:max-w-[1200px] max-w-full mx-auto py-20 flex flex-col ">
+        <main className="px-5 center:max-w-[1200px] max-w-full mx-auto py-20 flex flex-col">
             <h1 className="text-3xl font-roboto-slab font-bold text-primaryDark">
                 {t('EVENTS')}
             </h1>
             <div className="flex justify-center mb-4 border-b w-full flex-wrap">
-                {tabs.map((tab) => (
+                {tabs.map((tabItem) => (
                     <button
-                        key={tab.id}
+                        key={tabItem.id}
                         className={`${
-                            activeTab === tab.title
-                                ? 'border-b-2 border-primary  text-primary'
-                                : 'text-gray-500 '
-                        } focus:outline-none font-roboto-slab font-bold text-xl mx-10 pb-2 capitalize `}
-                        onClick={() => setActiveTab(tab.title)}
+                            activeTab === tabItem.title
+                                ? 'border-b-2 border-primary text-primary'
+                                : 'text-gray-500'
+                        } focus:outline-none font-roboto-slab font-bold text-xl mx-10 pb-2 capitalize`}
+                        onClick={() => setActiveTab(tabItem.title)} // Set active tab on click
                     >
-                        {t(tab.title)}
+                        {t(tabItem.title)}
                     </button>
                 ))}
             </div>
-            {
-                eventsArray?.map(({ id, status, day, month, hour, event_galleries, translation }) => {
-                    return (
-                        status === activeTab && (
-                            <Event
-                                key={id} // Убедитесь, что вы добавляете уникальный ключ
-                                id={id}
-                                day={day}
-                                month={month}
-                                title={translation?.title || 'No Title'} // Добавьте проверку на существование
-                                hour={hour}
-                                place={translation?.place || 'No Place'} // Добавьте проверку на существование
-                                description={translation?.description || 'No Description'} // Добавьте проверку на существование
-                                event_galleries={event_galleries}
-                            />
-                        )
-                    );
-                })
-            }
+            {events?.map((pickedEvent) => {
+                return (
+                    pickedEvent.status === activeTab && (
+                        <Event key={pickedEvent.id} pickedEvent={pickedEvent} />
+                    )
+                );
+            })}
         </main>
-    )
+    );
 }

@@ -1,28 +1,14 @@
 import {Link} from 'react-router-dom';
 import {FiX} from 'react-icons/fi';
 import {useTranslation} from 'react-i18next';
-import {useEffect, useState} from "react";
+import {useContext} from "react";
+import {DataContext} from "../context/DataProvider";
 
 export default function CoursesMenu({isOpen, toggleMenu, categoryId}) {
-    const { t, i18n } = useTranslation();
-    const language = i18n.language;
-    const [coursesArray, setCoursesArray] = useState([])
+    const { t } = useTranslation();
 
-    // Запрос для получения категорий
-    useEffect(() => {
-        const fetchCategories = async () => {
-            try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/categories/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/categories/?language=${language}`);
-                const data = await response.json();
-                setCoursesArray(data); // Сохранение категорий в состояние
-            } catch (error) {
-                console.error('Error fetching categories:', error);
-            }
-        };
+    const {courses} = useContext(DataContext);
 
-        fetchCategories();
-    }, [language]);
 
     return (
         <div
@@ -40,14 +26,19 @@ export default function CoursesMenu({isOpen, toggleMenu, categoryId}) {
                 </button>
             </div>
             <div>
-                {coursesArray.sort((a, b) => a.translation.text.localeCompare(b.translation.text)).map(({id, translation}) => (
-                    <Link
-                        onClick={toggleMenu}
-                        className={`block px-3 py-2 rounded-md hover:text-primary font-bold ${+categoryId === id ? "text-primary" : "text-color12"}`}
-                        key={id} to={`/course-category/${id}`}>
-                        {translation.text}
-                    </Link>
-                ))}
+                {courses
+                    .filter(course => course.translation && course.translation.text) // фильтрация на случай отсутствующих значений
+                    .sort((a, b) => a.translation.text.localeCompare(b.translation.text))
+                    .map(({id, translation}) => (
+                        <Link
+                            onClick={toggleMenu}
+                            className={`block px-3 py-2 rounded-md hover:text-primary font-bold ${+categoryId === id ? "text-primary" : "text-color12"}`}
+                            key={id} to={`/course-category/${id}`}>
+                            {translation.text}
+                        </Link>
+                    ))
+                }
+
             </div>
         </div>
     );

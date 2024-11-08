@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext} from "react";
 import {useNavigate, useParams} from 'react-router-dom'
 import {FaMapMarkerAlt} from "react-icons/fa";
 import {TbClockHour9} from 'react-icons/tb'
@@ -10,30 +10,15 @@ import {A11y, Pagination} from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import {useTranslation} from 'react-i18next';
+import {DataContext} from "../../context/DataProvider";
 
-// import {t} from "i18next";
 export default function EventsPage() {
-    const { t, i18n } = useTranslation();
-    const language = i18n.language; // Получаем текущий язык
+    const {t} = useTranslation();
     const nav = useNavigate();
-    const { id: eventId } = useParams();
-    const [pickedEvent, setPickedEvent] = useState([]);
-    // Загружаем события на основе языка
-    console.log(eventId,language)
-    useEffect(() => {
-        const fetchEvents = async () => {
-            try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/events/${eventId}/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/events/${eventId}/?language=${language}`);
-                const data = await response.json();
-                console.log(data)
-                setPickedEvent(data); // Сохраняем данные в состояние
-            } catch (error) {
-                console.error('Error fetching events:', error);
-            }
-        };
-        fetchEvents();
-    }, [eventId,language]);
+    const {id: eventId} = useParams();
+    const {getEventById} = useContext(DataContext);
+    let pickedEvent = getEventById(eventId)
+    let slidesPerCount = 1
 
 
     return (
@@ -47,7 +32,8 @@ export default function EventsPage() {
                             {/*<img src={pickedEvent.image} alt=""/>*/}
                             <article className={'w-full '}>
                                 <Swiper
-                                    loop={true}
+                                    slidesPerView={slidesPerCount}
+                                    loop={pickedEvent.event_galleries.length > slidesPerCount}
                                     modules={[Pagination, A11y]}
                                     speed={500}
                                     onSwiper={(swiper) => console.log(swiper)}

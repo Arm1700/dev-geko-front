@@ -14,7 +14,7 @@ export async function postData(data) {
         'Server responded with error status:',
         error.response.status,
       )
-      console.error('Error response data:', error.response.data)
+      console.error('Error response context:', error.response.data)
     } else if (error.request) {
       console.error('No response received from server.')
     } else {

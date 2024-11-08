@@ -1,17 +1,14 @@
-import React, { useLayoutEffect, useState, useEffect } from 'react';
+import React, {useLayoutEffect, useState, useContext} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay } from 'swiper/modules'; // Импортируйте Autoplay
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { useNavigate } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+import {DataContext} from "../../context/DataProvider";
 
 const CourseSlider = () => {
     const nav = useNavigate();
-    const { i18n } = useTranslation();
-    const language = i18n.language;
-    const [coursesArray, setCoursesArray] = useState([]);
     const [slidesToShow, setSlidesToShow] = useState(5);
     const [spaceBetween, setSpaceBetween] = useState(30);
     const [autoplayTimeoutId, setAutoplayTimeoutId] = useState(null); // Для хранения идентификатора таймера
@@ -42,19 +39,8 @@ const CourseSlider = () => {
         };
     }, []);
 
-    useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                const response = await fetch(`https://dev.gekoeducation.com/api/categories/?language=${language}`);
-                const data = await response.json();
-                setCoursesArray(data); // Сохранение курсов в состояние
-            } catch (error) {
-                console.error('Error fetching courses:', error);
-            }
-        };
+    const {courses} = useContext(DataContext);
 
-        fetchCourses();
-    }, [language]);
 
     const handleInteraction = (swiper) => {
         // Остановка автопрокрутки
@@ -77,10 +63,10 @@ const CourseSlider = () => {
     return (
         <div className="popularDiv max:px-0 py-16 mx-auto max-w-[1300px] px-[20px]">
             <Swiper
-                loop={true}
                 modules={[Pagination, A11y,  Autoplay]} // Добавьте Autoplay
                 spaceBetween={spaceBetween}
                 slidesPerView={slidesToShow}
+                loop={courses.length > slidesToShow}
                 pagination={{
                     type: "bullets",
                     clickable: true,
@@ -98,7 +84,7 @@ const CourseSlider = () => {
                 onTouchStart={(swiper) => handleInteraction(swiper)} // Обработка касания
                 onClick={(swiper) => handleInteraction(swiper)} // Обработка клика
             >
-                {coursesArray.map(({ image, id, translation }) => (
+                {courses.map(({ image, id, translation }) => (
                     <SwiperSlide key={id}
                                  style={{ display: 'flex', justifyContent: 'center' }}
                     >

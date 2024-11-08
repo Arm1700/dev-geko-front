@@ -41,7 +41,7 @@ export default function Contacts() {
         status: 'errorr',
         message: error.message,
       })
-      console.error('Error occurred while posting data:', error)
+      console.error('Error occurred while posting context:', error)
     }
   }
 

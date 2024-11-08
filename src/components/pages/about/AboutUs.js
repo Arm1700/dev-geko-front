@@ -47,20 +47,20 @@ export default function AboutUs() {
         <section
             className="my-16 gap-8 px-5 w-[100%]  sm:w-[100%] flex items-start justify-center">
             <BiSolidQuoteLeft className="w-[40px] h-[40px]  text-primary"/>
-            <p className=" py-2 font-roboto-slab font-normal flex flex-col mid:w-[50%] w-[100%] text-2xl text-primaryDark">
-                Cras tristique turpis justo, eu consequat sem adipiscing ut. Donec posuere bibendum metus.
-                <span className="text-sm pt-5 font-sans text-color60">
-            Tony Nguyen, Co-Founder
+            <p className=" py-2 font-roboto-slab font-bold text-primaryDark flex flex-col mid:w-[50%] w-[100%] sm:text-2xl text-xl">
+                {t('PS')}
+                <span className="text-sm pt-5 font-normal text-primaryDark">
+                {t('Nelson_Mandela')}
           </span>
             </p>
         </section>
         <div className='flex flex-col justify-center'>
             <div className="text-center lg:px-20 px-5 py-2 ">
                 <h1 className="text-3xl py-2 font-roboto-slab font-bold text-primaryDark">
-                    {t('team')}
+                    {t('TEAM')}
                 </h1>
-                <p className="text-md text-secondaryLight">
-                    Plugins your themes with even more features.
+                <p className="text-md text-primaryDark">
+                    {t('TEAM_DESC')}
                 </p>
             </div>
             <div className="text-start lg:px-20 px-5 pt-5 min-h-[380px]">

@@ -23,7 +23,7 @@ export default function PopularCourse({
 
     return (
         <article
-            className={`my-5 border-gray h-min  ${gridStyleTF === true ? "none border rounded-lg" : "sm:flex border-b"}     `}>
+            className={`my-5 border-gray flex flex-col ${gridStyleTF === true ? "none border rounded-lg" : "sm:flex border-b"}`}>
             <div
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
@@ -50,7 +50,7 @@ export default function PopularCourse({
                 />
             </div>
             <div
-                className={`w-[100%] mid:h-full md:h-[150px]   ${gridStyleTF === true ? " items-center py-[30px] px-[20px]" : "w-full py-[30px] sm:pl-10  sm:px-0 sm:py-0 h-[100%]  gap-about_info"} flex flex-col justify-center `}>
+                className={`w-[100%] h-[150px] ${gridStyleTF === true ? " items-center py-[30px] px-[20px]" : "w-full py-[30px] sm:pl-10  sm:px-0 sm:py-0 h-[100%]  gap-about_info"} flex flex-col justify-center items-center`}>
                 <p className={` hover:text-primary uppercase font-bold cursor-pointer transition-colors duration-300 
                 ${gridStyleTF === true ? "text-custom-15 text-primaryDark text-center" : "text-xl"} 
                 font-medium text-primaryDark font-roboto-slab`}

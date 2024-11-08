@@ -34,7 +34,7 @@ module.exports = {
                 'black': 900,
             },
             fontSize: {
-                'xs': '0.75rem',  // Extra small 12.0px
+                'xs': '0.75rem',  // Minimal 12.0px
                 'sm': '0.875rem', // Small 14.0px
                 'base': '1rem',    // Base font size 16.0px (default)
                 'lg': '1.125rem',  // Large 18.0px

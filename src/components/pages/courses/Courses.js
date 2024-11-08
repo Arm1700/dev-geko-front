@@ -1,29 +1,28 @@
 import PopularCourse from '../shared/home/PopularCourse';
 import { useNavigate, useParams } from "react-router-dom";
 import ReactPaginate from 'react-paginate';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CoursesMenu from "./CoursesMenu";
 import { useTranslation } from 'react-i18next';
+import { DataContext } from "../context/DataProvider";
 
 export default function Courses() {
-    const { t, i18n } = useTranslation();
-    const language = i18n.language;
-    const [coursesArray, setCoursesArray] = useState([]);
-    const [popularCoursesArray, setPopularCoursesArray] = useState([]);
+    const { t } = useTranslation();
+
+    const { categories, courses, loading, error } = useContext(DataContext);
 
     const [gridStyleTF, setGridStyle] = useState(true);
     const [coursesPerPage, setCoursesPerPage] = useState(3);
     const [currentPage, setCurrentPage] = useState(1);
     const nav = useNavigate();
-    const { id: initialCategoryId } = useParams(); // Получаем id категории
-    const [categoryId, setCategoryId] = useState(initialCategoryId); // State for category ID
+    const { id: initialCategoryId } = useParams();
+    const [categoryId, setCategoryId] = useState(initialCategoryId);
+    const [showMenu, setShowMenu] = useState(false);
 
     const handleCategoryClick = (id) => {
-        setCategoryId(id); // Update categoryId
+        setCategoryId(id);
         nav(`/course-category/${id}`);
     };
-
-    const [showMenu, setShowMenu] = useState(false);
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
@@ -32,95 +31,39 @@ export default function Courses() {
     useEffect(() => {
         setCurrentPage(1);
         setCoursesPerPage(6);
-    }, [categoryId]);
+        setCategoryId(initialCategoryId);
+    }, [initialCategoryId]);
 
     const startIndex = (currentPage - 1) * coursesPerPage;
-    const endIndex = Math.min(startIndex + coursesPerPage, popularCoursesArray.length);
-    const totalPages = Math.ceil(popularCoursesArray.length / coursesPerPage);
-    const paginatedCourses = () => {
-        return popularCoursesArray.slice(startIndex, endIndex);
-    };
+    const paginatedCourses = () => courses.slice(startIndex, startIndex + coursesPerPage);
 
     const handlePageChange = (data) => {
         setCurrentPage(data.selected + 1);
     };
 
-    // Запрос для получения категорий
-    useEffect(() => {
-        const fetchCategories = async () => {
-            try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/categories/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/categories/?language=${language}`);
-                const data = await response.json();
-                setCoursesArray(data); // Сохранение категорий в состояние
+    let gridStyle = gridStyleTF ? 'md:grid-cols-3 sm500:grid-cols-2' : 'grid-cols-1';
 
-                // If categoryId is empty, set it to the first category's id
-                if (!categoryId && data.length > 0) {
-                    setCategoryId(data[0].id);
-                }
-            } catch (error) {
-                console.error('Error fetching categories:', error);
-            }
-        };
-
-        fetchCategories();
-    }, [language, categoryId]); // include categoryId to check for updates
-
-    // Запрос для получения курсов по категории и языку
-    useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/courses/${categoryId}/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/courses/${categoryId}/?language=${language}`);
-                const data = await response.json();
-                setPopularCoursesArray(data); // Сохранение курсов в состояние
-            } catch (error) {
-                console.error('Error fetching courses:', error);
-            }
-        };
-
-        if (categoryId) {
-            fetchCourses();
-        }
-    }, [categoryId, language]);
-
-    const renderPagination = () => (
-        <ReactPaginate
-            previousLabel="<"
-            nextLabel=">"
-            pageCount={totalPages}
-            onPageChange={handlePageChange}
-            breakLabel="..."
-            pageRangeDisplayed={5}
-            renderOnZeroPageCount={null}
-            className={'pagination'}
-            pageClassName={'pagination__item'}
-            pageLinkClassName={'pagination__link'}
-            activeLinkClassName={'pagination__link--active'}
-            previousClassName={'pagination__previous'}
-            nextClassName={currentPage === totalPages ? 'pagination__next disabled' : 'pagination__next'}
-        />
-    );
-
-    let gridStyle = gridStyleTF === true ? 'md:grid-cols-3 sm500:grid-cols-2' : 'grid-cols-1';
+    if (loading) return <p>{t("Loading...")}</p>;
+    if (error) return <p>{t("Error")}: {error}</p>;
+    if (courses.length === 0) return <p>{t("No courses available")}</p>;
 
     return (
-        <main className=" flex justify-center">
-            <div className="px-5 max-w-[1200px] center:min-w-[1200px] w-full  py-5 flex flex-col">
+        <main className="flex justify-center">
+            <div className="px-5 max-w-[1200px] center:min-w-[1200px] w-full py-5 flex flex-col">
                 <h1 className="text-3xl font-roboto-slab font-bold text-primaryDark">
                     {t('COURSES')}
                 </h1>
-                <div className="flex mid:flex-row flex-col  gap-5 py-10">
+                <div className="flex mid:flex-row flex-col gap-5 py-10">
                     <div className="w-[20%] mid:flex flex-col hidden h-min border-b"
                          style={{ position: 'sticky', top: '10px' }}>
                         <h1 className="min-w-max text-2xl font-roboto-slab font-bold text-primaryDark">
                             {t('Categories')}
                         </h1>
-                        {coursesArray.map(({ id, translation }) => (
+                        {categories.map(({ id, translation }) => (
                             <p
                                 onClick={() => handleCategoryClick(id)}
                                 className={`uppercase min-w-max w-full textHover cursor-pointer py-[5px] ${+categoryId === id ? "text-primary" : "text-primaryDark"}`}
-                                key={id}>{translation.text}
+                                key={id}>{translation?.text}
                             </p>
                         ))}
                     </div>
@@ -137,27 +80,42 @@ export default function Courses() {
                             <p className="text-color66 text-custom-15">
                                 {t('Showing', {
                                     start: startIndex + 1,
-                                    end: endIndex,
-                                    total: popularCoursesArray.length
+                                    end: startIndex + paginatedCourses().length,
+                                    total: courses.length
                                 })}
                             </p>
                         </div>
-                        <div
-                            className={`opacityPopularCoursecontent-center grid ${gridStyle} ${gridStyleTF ? 'gap-10' : 'gap-0'} py-6`}>
+                        <div className={`opacityPopularCoursecontent-center grid ${gridStyle} ${gridStyleTF ? 'gap-10' : 'gap-0'} py-6`}>
                             {paginatedCourses().map(({ image, id, translation }) => (
                                 <PopularCourse
                                     gridStyleTF={gridStyleTF}
-                                    desc={translation.desc}
+                                    desc={translation?.desc}
                                     image={image}
-                                    title={translation.title}
-                                    count={translation.count}
-                                    price={translation.price}
+                                    title={translation?.title}
+                                    count={translation?.count}
+                                    price={translation?.price}
                                     key={id}
                                     id={id}
                                 />
                             ))}
                         </div>
-                        {renderPagination()}
+                        {courses.length > 0 && (
+                            <ReactPaginate
+                                previousLabel="<"
+                                nextLabel=">"
+                                pageCount={Math.ceil(courses.length / coursesPerPage)}
+                                onPageChange={handlePageChange}
+                                breakLabel="..."
+                                pageRangeDisplayed={5}
+                                renderOnZeroPageCount={null}
+                                className={'pagination'}
+                                pageClassName={'pagination__item'}
+                                pageLinkClassName={'pagination__link'}
+                                activeLinkClassName={'pagination__link--active'}
+                                previousClassName={'pagination__previous'}
+                                nextClassName={currentPage === Math.ceil(courses.length / coursesPerPage) ? 'pagination__next disabled' : 'pagination__next'}
+                            />
+                        )}
                     </div>
                 </div>
                 <CoursesMenu isOpen={showMenu} toggleMenu={toggleMenu} categoryId={categoryId} />

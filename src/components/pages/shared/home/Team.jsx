@@ -1,8 +1,8 @@
-import React, {useState, useLayoutEffect, useRef, useEffect} from 'react';
+import React, {useState, useLayoutEffect, useRef, useContext} from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import {useTranslation} from "react-i18next";
+import {DataContext} from "../../context/DataProvider";
 
 export default function Team() {
     const [slidesToShow, setSlidesToShow] = useState(3);
@@ -11,25 +11,9 @@ export default function Team() {
     // Create refs for both sliders
     const thumbnailSliderRef = useRef(null);
     const contentSliderRef = useRef(null);
-    const {i18n} = useTranslation();
-    const language = i18n.language;
-    const [teamArray, setTeamArray] = useState([]);
 
-    useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                // const response = await fetch(`http://127.0.0.1:8000/api/team/?language=${language}`);
-                const response = await fetch(`https://dev.gekoeducation.com/api/team/?language=${language}`);
-                const data = await response.json();
-                console.log(data)
-                setTeamArray(data); // Сохранение курсов в состояние
-            } catch (error) {
-                console.error('Error fetching courses:', error);
-            }
-        };
+    const {teams} = useContext(DataContext);
 
-        fetchCourses();
-    }, [language]);
 
     useLayoutEffect(() => {
         function updateSlidesToShow() {
@@ -75,9 +59,9 @@ export default function Team() {
 
     return (
         <div className="flex justify-center relative">
-            <div className='min-w-[1%] max-w-[60%]'>
+            <div className='min-w-[1%] max-w-full md:max-w-[60%] sm:max-w-[80%]'>
                 <Slider ref={thumbnailSliderRef} {...thumbnailSettings}>
-                    {teamArray.map((team, i) => (
+                    {teams.map((team, i) => (
                         <div key={i} style={{ display: 'flex', justifyContent: 'center' }}>
                             <div className="flex justify-center items-center w-full h-full">
                                 <img
@@ -99,11 +83,12 @@ export default function Team() {
 
                 {/* Content Slider */}
                 <Slider ref={contentSliderRef} {...contentSettings}>
-                    {teamArray.map((team, i) => (
+                    {teams.map((team, i) => (
                         <div key={i} style={{ display: 'flex', justifyContent: 'center' }}>
                             <div className="flex justify-center items-center text-center flex-col">
-                                <p className="mt-5 text-primaryDark font-bold text-lg">{team.translation.name}</p>
-                                <p className="mb-7 text-center text-primaryDark">{team.translation.desc}</p>
+                                <p className="mt-5 text-primaryDark font-black text-xl uppercase">{team.translation.name}</p>
+                                <p className="text-primaryDark text-lg capitalize">{team.translation.role}</p>
+                                <p className="my-5 text-center text-primaryDark">{team.translation.desc}</p>
                             </div>
                         </div>
                     ))}

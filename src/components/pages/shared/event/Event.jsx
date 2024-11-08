@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import { MdOutlinePlace } from 'react-icons/md';
 import { TbClockHour3 } from 'react-icons/tb';
-import { useNavigate } from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import { A11y, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-export default function Event({
-                                  id, day, month, title, hour, place, description, event_galleries
-                              }) {
+export default function Event({pickedEvent}) {
     const nav = useNavigate();
+    const { tab } = useParams(); // Get the active tab from the URL
+
+    // Check if pickedEvent is defined
     const handleCategoryClick = (id) => {
-        nav(`/events/${id}`);
+        nav(`/events/${tab}/${id}`);
     };
 
     const [isMenuVisible, setMenuVisible] = useState(false);
-    const [autoplayTimeoutId, setAutoplayTimeoutId] = useState(null); // Для хранения идентификатора таймера
+    const [autoplayTimeoutId, setAutoplayTimeoutId] = useState(null); // For storing the autoplay timeout ID
 
     const handleMouseEnter = () => {
         setMenuVisible(true);
@@ -41,6 +42,11 @@ export default function Event({
     };
 
     const { t } = useTranslation();
+    let slidesPerCount = 1;
+
+    if (!pickedEvent) {
+        return <div>{t('Event not found')}</div>; // Fallback message when event is not found
+    }
 
     return (
         <section
@@ -52,25 +58,26 @@ export default function Event({
                 className={`flex flex-col gap-1 sm:static w-[200px] max:w-[100px] md:mr-10 mr-0 max:bg-white max:text-center max:absolute max:top-[10%] max:left-[3%] ${isMenuVisible ? 'border-color56' : ''}`}
             >
                 <span className="text-primary font-bold text-6xl leading-60">
-                    {day}
+                    {pickedEvent.day}
                 </span>
-                <span className="text-color60 leading-[25px] font-sans-serif">{t(month)}</span>
+                <span className="text-color60 leading-[25px] font-sans-serif">{t(pickedEvent.month)}</span>
             </div>
 
-            <div className="gap-2 flex middle:px-5 md:px-20 px-0 flex-col sm:order-none max:order-1 sm:max-w-[60%] max-w-full" >
+            <div className="gap-2 flex middle:px-5 md:px-20 px-0 flex-col sm:order-none max:order-1 sm:max-w-[60%] max-w-full">
                 <h5 className="text-lg font-bold hover:text-primary transition-colors duration-300 cursor-pointer"
-                    onClick={() => handleCategoryClick(id)}
-                >{t(title)}</h5>
+                    onClick={() => handleCategoryClick(pickedEvent.id)}
+                >{t(pickedEvent.translation.title)}</h5>
                 <div className="flex gap-1 items-center">
-                    <TbClockHour3 className="text-primary w-[21px]" /> <span className="text-sm">{hour}</span>
-                    <MdOutlinePlace className="text-primary " /> <span className="text-sm">{t(place)}</span>
+                    <TbClockHour3 className="text-primary w-[21px]" /> <span className="text-sm">{pickedEvent.hour}</span>
+                    <MdOutlinePlace className="text-primary" /> <span className="text-sm">{t(pickedEvent.translation.place)}</span>
                 </div>
-                <p className=" text-primaryDark text-custom-15 center">{t(description)}</p>
+                <p className=" text-primaryDark text-custom-15 center">{t(pickedEvent.translation.description)}</p>
             </div>
 
-            <div className='w-full md:w-[30%] sm:w-[40%] '>
+            <div className='w-full md:w-[30%] sm:w-[40%]'>
                 <Swiper
-                    loop={true}
+                    slidesPerView={slidesPerCount}
+                    loop={pickedEvent.event_galleries.length > slidesPerCount}
                     modules={[A11y, Autoplay]}
                     speed={500}
                     autoplay={{
@@ -82,9 +89,9 @@ export default function Event({
                     onTouchStart={(swiper) => handleInteraction(swiper)}
                     onClick={(swiper) => handleInteraction(swiper)}
                 >
-                    {event_galleries.map(({ img, id, translation }) => (
+                    {pickedEvent.event_galleries.map(({ img, id }) => (
                         <SwiperSlide key={id}>
-                            <img alt={"image " + t(description)} src={img}
+                            <img alt={"image " + t(pickedEvent.description)} src={img}
                                  className="rounded-md w-full" />
                         </SwiperSlide>
                     ))}
