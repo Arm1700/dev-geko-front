@@ -18,7 +18,6 @@ export default function EventsPage() {
     const {id: eventId} = useParams();
     const {getEventById} = useContext(DataContext);
     let pickedEvent = getEventById(eventId)
-    let slidesPerCount = 1
 
 
     return (
@@ -32,8 +31,8 @@ export default function EventsPage() {
                             {/*<img src={pickedEvent.image} alt=""/>*/}
                             <article className={'w-full '}>
                                 <Swiper
-                                    slidesPerView={slidesPerCount}
-                                    loop={pickedEvent.event_galleries.length > slidesPerCount}
+                                    slidesPerView={1}
+                                    loop={pickedEvent.event_galleries.length > 1}
                                     modules={[Pagination, A11y]}
                                     speed={500}
                                     onSwiper={(swiper) => console.log(swiper)}

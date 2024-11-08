@@ -42,7 +42,6 @@ export default function Event({pickedEvent}) {
     };
 
     const { t } = useTranslation();
-    let slidesPerCount = 1;
 
     if (!pickedEvent) {
         return <div>{t('Event not found')}</div>; // Fallback message when event is not found
@@ -76,8 +75,8 @@ export default function Event({pickedEvent}) {
 
             <div className='w-full md:w-[30%] sm:w-[40%]'>
                 <Swiper
-                    slidesPerView={slidesPerCount}
-                    loop={pickedEvent.event_galleries.length > slidesPerCount}
+                    slidesPerView={1}
+                    loop={pickedEvent.event_galleries.length > 1}
                     modules={[A11y, Autoplay]}
                     speed={500}
                     autoplay={{

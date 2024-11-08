@@ -39,7 +39,7 @@ const CourseSlider = () => {
         };
     }, []);
 
-    const {courses} = useContext(DataContext);
+    const {categories} = useContext(DataContext);
 
 
     const handleInteraction = (swiper) => {
@@ -59,14 +59,14 @@ const CourseSlider = () => {
 
         setAutoplayTimeoutId(timeoutId);
     };
-
+    const shouldLoop = categories.length > slidesToShow;
     return (
         <div className="popularDiv max:px-0 py-16 mx-auto max-w-[1300px] px-[20px]">
             <Swiper
                 modules={[Pagination, A11y,  Autoplay]} // Добавьте Autoplay
                 spaceBetween={spaceBetween}
                 slidesPerView={slidesToShow}
-                loop={courses.length > slidesToShow}
+                loop={shouldLoop}
                 pagination={{
                     type: "bullets",
                     clickable: true,
@@ -84,7 +84,7 @@ const CourseSlider = () => {
                 onTouchStart={(swiper) => handleInteraction(swiper)} // Обработка касания
                 onClick={(swiper) => handleInteraction(swiper)} // Обработка клика
             >
-                {courses.map(({ image, id, translation }) => (
+                {categories.map(({ image, id, translation }) => (
                     <SwiperSlide key={id}
                                  style={{ display: 'flex', justifyContent: 'center' }}
                     >

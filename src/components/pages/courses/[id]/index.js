@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useLayoutEffect, useState} from 'react'
+import React, {useContext, useLayoutEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import {TbClockHour9} from 'react-icons/tb'
 import {IoLanguage} from 'react-icons/io5'
@@ -28,7 +28,6 @@ export default function CoursePage() {
     const {getCoursesById, courses } = useContext(DataContext);
 
     let pickedCourse = getCoursesById(coursesID)
-    console.log(pickedCourse)
     useLayoutEffect(() => {
         function updateSlidesToShow() {
             const screenWidth = window.innerWidth
@@ -70,6 +69,8 @@ export default function CoursePage() {
 
         setAutoplayTimeoutId(timeoutId);
     };
+    const shouldLoop = courses.length > slidesToShow;
+
     return (
         <section className="bgColorArticle md:before:h-[250px] before:h-[0] relative pb-5">
             {pickedCourse?.id ? (
@@ -194,7 +195,7 @@ export default function CoursePage() {
                                 modules={[Pagination, A11y, Autoplay]}
                                 spaceBetween={spaceBetween}
                                 slidesPerView={slidesToShow}
-                                loop={courses.length > slidesToShow}
+                                loop={shouldLoop}
                                 pagination={{
                                     clickable: true,
                                     dynamicBullets: true,
