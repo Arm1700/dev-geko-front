@@ -109,26 +109,10 @@ export default function Home() {
                         ))
                     ) : (
                         events.filter(event => event.status === "completed")
-                            .slice(0, 3).map(({
-                                                  id,
-                                                  day,
-                                                  month,
-                                                  hour,
-                                                  image,
-                                                  translation,
-                                                  event_galleries
-                                              }) => (
+                            .slice(0, 3).map((pickedEvent) => (
                             <Event
-                                key={id}
-                                id={id}
-                                day={day}
-                                month={month}
-                                title={translation.title}
-                                hour={hour}
-                                place={translation.place}
-                                description={translation.description}
-                                image={image}
-                                event_galleries={event_galleries}
+                                key={pickedEvent.id}
+                                pickedEvent={pickedEvent}
                             />
                         ))
                     )}

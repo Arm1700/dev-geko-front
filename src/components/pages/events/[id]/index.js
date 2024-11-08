@@ -24,7 +24,7 @@ export default function EventsPage() {
         <section className="md:before:h-[22%] before:h-[0] py-5 relative pb-5">
             {pickedEvent?.id ? (
                 <>
-                    <article className="grid  md:grid-cols-[75%_1fr] grid-cols-1 max-w-[1300px] mx-[auto] relative">
+                    <article className="grid  md:grid-cols-[70%_1fr] grid-cols-1 max-w-[1300px] mx-[auto] relative">
                         <div className="flex flex-col gap-[20px] px-5">
                             <p className="text-5xl text-primaryDark font-roboto-slab font-bold">{t("EVENTS")}</p>
                             <p className="text-2xl font-bold text-primaryDark font-roboto-slab">{t(pickedEvent.translation.title)}</p>

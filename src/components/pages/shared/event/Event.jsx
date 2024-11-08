@@ -1,18 +1,16 @@
 import React, {useState} from 'react';
 import { MdOutlinePlace } from 'react-icons/md';
 import { TbClockHour3 } from 'react-icons/tb';
-import {useNavigate, useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import { A11y, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function Event({pickedEvent}) {
     const nav = useNavigate();
-    const { tab } = useParams(); // Get the active tab from the URL
 
-    // Check if pickedEvent is defined
     const handleCategoryClick = (id) => {
-        nav(`/events/${tab}/${id}`);
+        nav(`/events/${pickedEvent.status}/${id}`);
     };
 
     const [isMenuVisible, setMenuVisible] = useState(false);
@@ -27,6 +25,8 @@ export default function Event({pickedEvent}) {
     };
 
     const handleInteraction = (swiper) => {
+        if (!swiper || !swiper.autoplay) return; // Safeguard for undefined swiper or autoplay
+
         swiper.autoplay.stop();
 
         if (autoplayTimeoutId) {
@@ -40,6 +40,8 @@ export default function Event({pickedEvent}) {
 
         setAutoplayTimeoutId(timeoutId);
     };
+
+
 
     const { t } = useTranslation();
 

@@ -51,24 +51,22 @@ export default function CoursePage() {
     }, [])
 
     const handleInteraction = (swiper) => {
-        // Остановка автопрокрутки
+        if (!swiper || !swiper.autoplay) return; // Safeguard for undefined swiper or autoplay
+
         swiper.autoplay.stop();
 
-        // Если таймер уже установлен, сбросьте его
         if (autoplayTimeoutId) {
             clearTimeout(autoplayTimeoutId);
         }
 
-        // Установите новый таймер на 5 секунд
         const timeoutId = setTimeout(() => {
-            if (swiper.autoplay) {
-                swiper.autoplay.start(); // Возобновите автопрокрутку
-            }
-            setAutoplayTimeoutId(null); // Сбросьте идентификатор таймера
+            swiper.autoplay.start();
+            setAutoplayTimeoutId(null);
         }, 3000);
 
         setAutoplayTimeoutId(timeoutId);
     };
+
     const shouldLoop = courses.length > slidesToShow;
 
     return (
