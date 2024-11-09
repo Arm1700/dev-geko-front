@@ -8,6 +8,7 @@ import {Link} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
 import FacebookBox from "../pages/shared/home/FacebookBox";
 import InstagramPost from "../pages/shared/home/InstagramPost";
+import FacebookPageData from "../pages/shared/home/FacebookPageData";
 
 const Footer = () => {
     const {t} = useTranslation()
@@ -48,11 +49,12 @@ const Footer = () => {
                     })}
                 </ul>
                 <div className='column-start-3 row-span-2'>
-                    <FacebookBox pageUrl="https://www.facebook.com/GekoOnlineEducation"/>
+                    <FacebookBox pageUrl="https://www.facebook.com/GekoOnlineEducation" />
+                    {/*<FacebookPageData token='EAAMFlZBU1aocBO4BL2kRqzv5tjW9ZAKxYp1ny23Ip8lwIswHZBS6hrhlyKE7KmIglS4NxZBr1ZCglJAP7e8MdldmQZBOXIWt2MiJ6lc2BeXuwJ4dKz7JhZBefFAkalOeTrwdC0o8jniVZB2ZCO2MVWm2ViI9taXOaBHIZBHos4hvWEyPC7avHeYrC1338vyeZBK394KuZCvcl9XyZBubVkMjzLmPAykF2YTCOfyD9L6jNlKPmeGF5Til4Lzj0' pageId="GekoOnlineEducation" />*/}
                 </div>
-                <div className='column-start-4 row-span-2'>
-                    <InstagramPost />
-                </div>
+                {/*<div className='column-start-4 row-span-2'>*/}
+                {/*    <InstagramPost />*/}
+                {/*</div>*/}
             </div>
         </footer>
     );

@@ -8,7 +8,7 @@ const FacebookBox = ({ pageUrl }) => {
     }, [pageUrl]);
 
     return (
-        <div className="facebook-box">
+        <div className="facebook-box" >
             {/* Facebook Page plugin with Like button inside */}
             <div className="fb-page-container" style={{ position: 'relative' }}>
                 {/* Facebook Page plugin */}
