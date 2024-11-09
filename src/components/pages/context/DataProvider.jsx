@@ -67,6 +67,9 @@ export const DataProvider = ({ children }) => {
 
     const getCategoriesById = (id) => categories.find(course => course.id === parseInt(id));
     const getCoursesById = (id) => courses.find(course => course.id === parseInt(id));
+    // Modify getCoursesById to filter courses by category ID
+    const getCoursesByCategory = (id) => courses.filter(course => course.category.id === parseInt(id));
+
     const getEventById = (id) => events.find(event => event.id === parseInt(id));
 
     if (loading) {
@@ -81,6 +84,7 @@ export const DataProvider = ({ children }) => {
 
     return (
         <DataContext.Provider value={{
+            getCoursesByCategory,
             getCategoriesById,
             getCoursesById,
             getEventById,

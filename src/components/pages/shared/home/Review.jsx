@@ -61,7 +61,7 @@ export default function Review() {
             <div className='min-w-[1%] max-w-full md:max-w-[60%] sm:max-w-[80%]'>
                 <Slider ref={thumbnailSliderRef} {...thumbnailSettings}>
                     {reviews.map((review, i) => (
-                        <div key={i} style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div key={i} className='flex justify-center h-[200px]'>
                             <div className="flex justify-center items-center w-full h-full">
                                 <img
                                     src={review.image && review.image.startsWith('http') ? review.image : review.image ? `https://dev.gekoeducation.com${review.image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'}

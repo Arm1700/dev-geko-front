@@ -6,25 +6,26 @@ import {MdMarkEmailRead} from 'react-icons/md';
 import {routesArray} from '../../entities/routesArray';
 import {Link} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
-import socialsArray from '../../entities/socialsArray';
+import FacebookBox from "../pages/shared/home/FacebookBox";
+import InstagramPost from "../pages/shared/home/InstagramPost";
 
 const Footer = () => {
     const {t} = useTranslation()
     return (
-        <footer className="bg-black text-pseudo h-[auto]">
+        <footer className="flex bg-black text-pseudo h-[auto]">
             {/*<div*/}
             {/*    className="flex middle:flex-row flex-col middle:items-center justify-between px-5 py-20 mx-[auto] gap-5 max-w-[1300px]">*/}
             <div
-                className="flex middle:grid middle:grid-cols-[1fr_2fr_1fr] flex-col middle:items-center justify-center items-center px-5 py-20 mx-[auto] gap-5 max-w-[1300px]">
-                <div className="flex flex-col gap-5">
-                    <Logo/>
+                className="middle:grid middle:grid-cols-[1fr_10%_1fr_1fr]  grid-rows-[20%_1fr] justify-center px-5 py-20 mx-[auto] gap-5 max-w-[1300px]">
+                <Logo/>
+                <div className="flex flex-col gap-5 row-start-2">
                     <div className="flex">
                         <FaPhoneAlt className="mx-2 text-primary"/>
                         <p>(+374) 98 03 33 94</p>
                     </div>
                     <div className="flex">
                         <MdOutlinePlace className="mx-2 text-primary"/>
-                        <p className=' w-[100%] middle:w-60%'>
+                        <p className=' w-[80%] middle:w-60%'>
                             {t("contact1_description")}
                         </p>
                     </div>
@@ -32,13 +33,13 @@ const Footer = () => {
                         <MdMarkEmailRead className="mx-2 text-primary"/>
                         <p>
                             gekoeducation1@gmail.com
-                            </p>
+                        </p>
                     </div>
                 </div>
-                <ul className='flex content-start middle:flex-row flex-col justify-center flex-wrap gap-3 middle:order-none order-2 text-color99'>
+                <ul className='flex flex-col items-center content-start flex-wrap gap-3 middle:order-none order-2 row-start-2'>
                     {routesArray.map(({path, name, id}) => {
                         return (
-                            <li className='' key={id}>
+                            <li className='flex justify-start w-full font-bold' key={id}>
                                 <Link to={path}>
                                     {t(name)}
                                 </Link>
@@ -46,15 +47,12 @@ const Footer = () => {
                         )
                     })}
                 </ul>
-                <ul className='flex gap-3 middle:justify-center'>
-                    {
-                        socialsArray.map(({id, name, Icon}) => {
-                            return (
-                                <Icon title={name} key={id} className='text-primary text-3xl'/>
-                            )
-                        })
-                    }
-                </ul>
+                <div className='column-start-3 row-span-2'>
+                    <FacebookBox pageUrl="https://www.facebook.com/GekoOnlineEducation"/>
+                </div>
+                <div className='column-start-4 row-span-2'>
+                    <InstagramPost />
+                </div>
             </div>
         </footer>
     );
