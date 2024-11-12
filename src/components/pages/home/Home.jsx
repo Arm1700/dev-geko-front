@@ -11,6 +11,7 @@ import Reviews from '../shared/home/Review';
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import { DataContext } from "../context/DataProvider";
+import RegisterForm from "./RegisterForm";
 
 export default function Home() {
     const { t } = useTranslation();
@@ -27,7 +28,12 @@ export default function Home() {
 
     return (
         <main>
-            <MainPhoto text1="The_best_time_for" text2="education" />
+            <div className='relative md:flex grid grid-rows-2 md:justify-end justify-center items-center p-5'>
+                <MainPhoto text1="The_best_time_for" text2="education" />
+                <RegisterForm/>
+            </div>
+
+
             <Course />
 
             <div className="flex content-center justify-center gap-20 py-10">
@@ -70,7 +76,7 @@ export default function Home() {
                 style={{
                     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${books})`,
                 }}
-                className="bg-cover bg-no-repeat lg:px-20 px-5 py-10 bg-primary flex justify-center lg:justify-evenly flex-row middle:flex-row max:flex-col"
+                className="bg-cover gap-5 bg-no-repeat lg:px-20 px-5 py-10 bg-primary flex justify-center lg:justify-evenly flex-row middle:flex-row max:flex-col"
             >
                 {loading ? (
                     // Skeleton-заполнитель для информации о курсах
@@ -81,8 +87,8 @@ export default function Home() {
                         </div>
                     ))
                 ) : (
-                    lessonInfo.map(({ id, icon, count, translation }) => (
-                        <LessonInfo key={id} Icon={icon} title={t(translation.title)} count={count} />
+                    lessonInfo.map(({ id, icon, translation }) => (
+                        <LessonInfo key={id} Icon={icon} title={translation.title} />
                     ))
                 )}
             </div>

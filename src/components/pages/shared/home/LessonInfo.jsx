@@ -4,7 +4,7 @@ import {PiStudentBold} from "react-icons/pi";
 import {HiOutlineGlobeAsiaAustralia} from "react-icons/hi2";
 import {MdCastForEducation} from "react-icons/md";
 
-export default function LessonInfo({Icon, title, count}) {
+export default function LessonInfo({Icon, title}) {
     const iconMap = {
         TfiWrite: TfiWrite,
         TbSchool: TbSchool,
@@ -21,9 +21,8 @@ export default function LessonInfo({Icon, title, count}) {
 
     return (
         <article
-            className="flex-container-content flex p-5 hover:text-secondary hover:border-secondary  transition-colors duration-300 gap-2 border-b text-white flex-col items-center middle:border-b max:border-0">
+            className="flex-container-content flex py-5 hover:text-secondary hover:border-secondary  transition-colors duration-300 gap-2 border-b text-white flex-col items-center middle:border-b max:border-0">
             <IconComponent className="text-custom-80"/>
-            <span className="text-custom-28 font-bold">{count}</span>
             <span className="text-lg">{title}</span>
         </article>
     )

@@ -1,13 +1,13 @@
 import axios from 'axios';
-// const api = 'http://127.0.0.1:8000/api/contact/';
-const api = 'https://gekoeducation.com/api/contact/';
+const api = 'http://127.0.0.1:8000/api/contact/';
+// const api = 'https://gekoeducation.com/api/contact/';
+// const api = 'https://dev.gekoeducation.com/api/contact/';
 
 export async function postData(data) {
   try {
     const response = await axios.post(api, data)
-
     console.log('Response from API:', response.data)
-    return response.data 
+    return response.data
   } catch (error) {
     if (error.response) {
       console.error(

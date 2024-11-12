@@ -6,13 +6,13 @@ export default function MainPhoto({text1, text2}) {
     const [videoLoaded, setVideoLoaded] = useState(false);
 
     return (
-        <section className="h-[80vh] flex uppercase justify-center flex-col text-pseudo px-20 relative overflow-hidden">
+        <section className="flex uppercase justify-center flex-col text-pseudo overflow-hidden">
             <video
                 autoPlay
                 muted
                 loop
                 preload="auto"
-                className="absolute top-0 left-0 min-w-full min-h-full object-cover pointer-events-none"
+                className="absolute top-0 left-0 min-w-full md:h-full object-cover pointer-events-none"
                 poster={loader}
                 onLoadedData={() => setVideoLoaded(true)}
             >

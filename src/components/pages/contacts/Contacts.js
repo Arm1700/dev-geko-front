@@ -9,6 +9,7 @@ import Notification from '../shared/contact/Notification'
 import {useTranslation} from "react-i18next";
 export default function Contacts() {
   const {t} = useTranslation();
+
   const {
     register,
     handleSubmit,

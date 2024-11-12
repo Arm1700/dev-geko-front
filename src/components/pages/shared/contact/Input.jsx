@@ -18,7 +18,7 @@ const Input = React.forwardRef(({ type = 'text', placeholder = '', error, ...res
     <div>
       <textarea
         placeholder={placeholder + ' *'}
-        className={`appearance-none min-h-[15vh] my-1 block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${
+        className={`appearance-none min-h-[5.75vh] max-h-[15vh] my-1 block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${
           error ? 'border-red-500' : ''
         }`}
         ref={ref} // Pass the ref provided by react-hook-form
