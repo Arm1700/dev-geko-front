@@ -29,6 +29,7 @@ export default function EventsPage() {
                             <p className="text-5xl text-primaryDark font-roboto-slab font-bold">{t("EVENTS")}</p>
                             <p className="text-2xl font-bold text-primaryDark font-roboto-slab">{t(pickedEvent.translation.title)}</p>
                             {/*<img src={pickedEvent.image} alt=""/>*/}
+
                             <article className={'w-full '}>
                                 <Swiper
                                     slidesPerView={1}
@@ -62,12 +63,9 @@ export default function EventsPage() {
                             <div className="flex flex-col justify-start items-start px-[20px] py-[20px] gap-[20px]">
                                 <button
                                     onClick={() => nav(`/contacts`)}
-                                    className="self-center w-[100%] py-[10px] px-[25px] text-white rounded-[4px] uppercase font-bold text-sm bg-primary">sign
-                                    up
+                                    className="self-center w-[100%] py-[10px] px-[25px] text-white rounded-[4px] uppercase font-bold text-sm bg-primary">
+                                    {t('Sign_Up')}
                                 </button>
-                                <h1 className="text-center pb-3 font-roboto-slab text-color66">
-                                    Register and take part in the events!
-                                </h1>
                             </div>
                         </div>
                         <div className="grid sm:grid-cols-[75%_20%] justify-between grid-cols-1 py-5 px-5">
@@ -79,12 +77,19 @@ export default function EventsPage() {
                                 <div className="flex items-center">
                                     <p className="text-color66 capitalize">{t("share")}:</p>
                                     <ul className="flex px-[9px] justify-center items-center gap-3">
-                                        <li className="flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50">
-                                            <i className="fa fa-facebook-f"></i>
+                                        <li className="cursor-pointer flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50">
+                                            <a href="https://www.facebook.com/GekoOnlineEducation/" target="_blank"
+                                               rel="noopener noreferrer">
+                                                <i className="fa-brands fa-facebook"></i>
+                                            </a>
                                         </li>
-                                        <li className="flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50">
-                                            <i className="fa fa-instagram"></i>
+                                        <li className="cursor-pointer flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50">
+                                            <a href="https://www.instagram.com/geko_education/#" target="_blank"
+                                               rel="noopener noreferrer">
+                                                <i className="fa-brands fa-instagram"></i>
+                                            </a>
                                         </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -94,9 +99,8 @@ export default function EventsPage() {
                                         className="flex gap-3 text-color60 text-custom-15 border-b-[2px] border-colorF2 py-3">
                                         <TbClockHour9 className="text-primary"/>
                                         <div className="flex flex-col gap-1">
-                                            <p className="text-primaryDark font-bold">Start Time</p>
-                                            <p>8:00 am</p>
-                                            <p>30/07/2021</p>
+                                        <p className="text-primaryDark font-bold">Start Time</p>
+                                            <p>17/11/2024</p>
                                         </div>
                                     </div>
                                     <div
@@ -104,8 +108,7 @@ export default function EventsPage() {
                                         <FaFlag className="text-primary"/>
                                         <div className="flex flex-col gap-1 ">
                                             <p className="text-primaryDark font-bold">Finish Time</p>
-                                            <p>8:00 am</p>
-                                            <p>30/07/2021</p>
+                                            <p>17/02/2025</p>
                                         </div>
                                     </div>
                                     <div className="flex gap-3 text-color60 text-custom-15 py-3">
@@ -113,7 +116,7 @@ export default function EventsPage() {
                                         <div className="flex flex-col gap-1">
                                             <p className="text-primaryDark font-bold">Address</p>
                                             <p>
-                                                Venice, Italy
+                                                Online
                                             </p>
                                         </div>
                                     </div>

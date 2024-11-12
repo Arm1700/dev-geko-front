@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, {useContext} from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css"; // Импорт стилей skeleton
 import Course from '../shared/home/Course';
@@ -8,14 +8,14 @@ import LessonInfo from '../shared/home/LessonInfo';
 import books from '../../../images/books.jpg';
 import Event from '../shared/event/Event';
 import Reviews from '../shared/home/Review';
-import { useNavigate } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
-import { DataContext } from "../context/DataProvider";
+import {useNavigate} from "react-router-dom";
+import {useTranslation} from 'react-i18next';
+import {DataContext} from "../context/DataProvider";
 import RegisterForm from "./RegisterForm";
 
 export default function Home() {
-    const { t } = useTranslation();
-    const { events, courses, lessonInfo, loading } = useContext(DataContext);
+    const {t} = useTranslation();
+    const {events, courses, lessonInfo, loading} = useContext(DataContext);
     const nav = useNavigate();
 
     const handleCategoryClick = () => {
@@ -29,12 +29,15 @@ export default function Home() {
     return (
         <main>
             <div className='relative md:flex grid grid-rows-2 md:justify-end justify-center items-center p-5'>
-                <MainPhoto text1="The_best_time_for" text2="education" />
-                <RegisterForm/>
+                <MainPhoto text1="The_best_time_for" text2="education"/>
+                <div
+                    className="relative top-0 h-auto flex flex-col justify-center items-center z-30 overflow-hidden border-[1px] rounded-[20px]">
+                    <RegisterForm check={false}/>
+                </div>
             </div>
 
 
-            <Course />
+            <Course/>
 
             <div className="flex content-center justify-center gap-20 py-10">
                 <div className='popularDiv mx-[auto] px-5'>
@@ -52,14 +55,14 @@ export default function Home() {
                     <div className="popular grid md:grid-cols-4 sm500:grid-cols-2 grid-cols-1">
                         {loading ? (
                             // Skeleton-заполнитель для популярных курсов
-                            Array.from({ length: 4 }).map((_, index) => (
+                            Array.from({length: 4}).map((_, index) => (
                                 <div key={index} className="p-4">
-                                    <Skeleton height={200} />
-                                    <Skeleton height={20} width={`80%`} style={{ margin: '10px 0' }} />
+                                    <Skeleton height={200}/>
+                                    <Skeleton height={20} width={`80%`} style={{margin: '10px 0'}}/>
                                 </div>
                             ))
                         ) : (
-                            courses.map(({ image, id, translation }) => (
+                            courses.map(({image, id, translation}) => (
                                 <PopularCourse
                                     id={id}
                                     image={image}
@@ -76,19 +79,19 @@ export default function Home() {
                 style={{
                     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${books})`,
                 }}
-                className="bg-cover gap-5 bg-no-repeat lg:px-20 px-5 py-10 bg-primary flex justify-center lg:justify-evenly flex-row middle:flex-row max:flex-col"
+                className="bg-cover gap-5 bg-no-repeat lg:px-20 px-5 py-10 bg-primary grid grid-cols-5 lg:justify-evenly items-end max:flex-col"
             >
                 {loading ? (
                     // Skeleton-заполнитель для информации о курсах
-                    Array.from({ length: 3 }).map((_, index) => (
+                    Array.from({length: 3}).map((_, index) => (
                         <div key={index} className="p-4">
-                            <Skeleton circle={true} height={50} width={50} />
-                            <Skeleton height={20} width={`60%`} style={{ margin: '10px 0' }} />
+                            <Skeleton circle={true} height={50} width={50}/>
+                            <Skeleton height={20} width={`60%`} style={{margin: '10px 0'}}/>
                         </div>
                     ))
                 ) : (
-                    lessonInfo.map(({ id, icon, translation }) => (
-                        <LessonInfo key={id} Icon={icon} title={translation.title} />
+                    lessonInfo.map(({id, image, translation}) => (
+                        <LessonInfo key={id} image={image} title={translation.title}/>
                     ))
                 )}
             </div>
@@ -107,10 +110,10 @@ export default function Home() {
                     </div>
                     {loading ? (
                         // Skeleton-заполнитель для событий
-                        Array.from({ length: 3 }).map((_, index) => (
+                        Array.from({length: 3}).map((_, index) => (
                             <div key={index} className="p-4">
-                                <Skeleton height={150} />
-                                <Skeleton height={20} width={`80%`} style={{ margin: '10px 0' }} />
+                                <Skeleton height={150}/>
+                                <Skeleton height={20} width={`80%`} style={{margin: '10px 0'}}/>
                             </div>
                         ))
                     ) : (
@@ -133,9 +136,9 @@ export default function Home() {
                 </div>
                 <div className="text-start lg:px-20 px-5 pt-5 min-h-[380px]">
                     {loading ? (
-                        <Skeleton height={200} width={`100%`} />
+                        <Skeleton height={200} width={`100%`}/>
                     ) : (
-                        <Reviews />
+                        <Reviews/>
                     )}
                 </div>
             </div>

@@ -99,5 +99,12 @@
   "tutors4_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   "tutors5_name": "Anthony",
   "tutors5_role": "Data Scientist",
-  "tutors5_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  "tutors5_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  "fullName": "Full name",
+  "country": "country",
+  "WhatsApp_Number": "WhatsApp Number",
+  "Email": "email",
+  "Category": "category",
+  "Message": "Message",
+  "free_trail": "A free trial class registration"
 }
