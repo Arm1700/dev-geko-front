@@ -10,7 +10,7 @@ export default function MainPhoto({text1, text2}) {
                 muted
                 loop
                 preload="auto"
-                className="absolute top-0 left-0 min-w-full md:h-full object-cover pointer-events-none"
+                className="md:absolute top-0 left-0 min-w-full md:h-full object-cover pointer-events-none"
                 poster={'images/mainLoad.png'}
                 onLoadedData={() => setVideoLoaded(true)}
             >

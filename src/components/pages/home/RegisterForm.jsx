@@ -57,7 +57,7 @@ export default function RegisterForm({check = true}) {
 
         <form
             onSubmit={handleSubmit(onSubmit)}
-            className={` w-full flex flex-col gap-5 relative bg-white p-8 rounded-lg  z-10 ${check ? "shadow-lg max-w-md" : ''}`}
+            className={`w-full flex flex-col gap-5 relative bg-white p-8 rounded-lg z-10 ${check ? "shadow-lg max-w-md" : ''}`}
         >
             {check ? <div
                 className="absolute w-[140%] max-h-full top-[-80%] left-[-20%] inset-0 bg-primary z-10 rounded-full"></div> : ''}

@@ -27,10 +27,10 @@ export default function Home() {
 
     return (
         <main>
-            <div className='relative md:flex grid grid-rows-2 md:justify-end justify-center items-center p-5'>
+            <div className='relative md:flex grid grid-rows-2 md:justify-end justify-center items-center py-5 md:px-5'>
                 <MainPhoto text1="The_best_time_for" text2="education"/>
                 <div
-                    className="relative top-0 h-auto flex flex-col justify-center items-center z-30 overflow-hidden border-[1px] rounded-[20px]">
+                    className="relative top-0 mx-auto md:mx-0 h-auto flex flex-col justify-center items-center z-30 overflow-hidden border-[1px] rounded-[20px]">
                     <RegisterForm check={false}/>
                 </div>
             </div>
