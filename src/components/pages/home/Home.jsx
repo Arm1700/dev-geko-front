@@ -90,7 +90,7 @@ export default function Home() {
                             </div>
                         ))
                     ) : (
-                        lessonInfo.map(({id, image, translation}) => (
+                        lessonInfo.reverse().map(({id, image, translation}) => (
                             <LessonInfo key={id} image={image} title={translation.title}/>
                         ))
                     )}
