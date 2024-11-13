@@ -1,5 +1,3 @@
-import img from '../../../images/main.mp4';
-import loader from '../../../images/mainLoad.png';
 import {useState} from "react";
 
 export default function MainPhoto({text1, text2}) {
@@ -13,10 +11,10 @@ export default function MainPhoto({text1, text2}) {
                 loop
                 preload="auto"
                 className="absolute top-0 left-0 min-w-full md:h-full object-cover pointer-events-none"
-                poster={loader}
+                poster={'images/mainLoad.png'}
                 onLoadedData={() => setVideoLoaded(true)}
             >
-                <source src={img} type="video/mp4"/>
+                <source src={'images/main.mp4'} type="video/mp4"/>
             </video>
 
             {!videoLoaded && (

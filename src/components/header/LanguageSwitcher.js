@@ -1,13 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import arm from '../../images/Armenia-flag.jpg';
-import en from '../../images/USA-flag.png';
-import ru from '../../images/Russia-flag.png';
 
 export default function LanguageSwitcher() {
   const lngs = {
-    en: { nativeName: 'English', flag: en },
-    am: { nativeName: 'Armenian', flag: arm },
-    ru: { nativeName: 'Russian', flag: ru },
+    en: { nativeName: 'English', flag: './images/USA-flag.png' },
+    am: { nativeName: 'Armenian', flag: './images/Armenia-flag.jpg' },
+    ru: { nativeName: 'Russian', flag: './images/Russia-flag.png' },
   };
 
   const { i18n } = useTranslation();

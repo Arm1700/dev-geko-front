@@ -1,23 +1,19 @@
-import What_we_do from './../images/about_info/Image20241103173450.png'
-import Who_we_are from './../images/about_info/Image20241103173501.png'
-import How_it_work from './../images/about_info/Image20241103173455.png'
-
 const aboutcard2info = [
   {
     id: 1,
-    image:What_we_do,
+    image:'images/about_info/Image20241103173450.png',
     title: 'What_we_do',
     desc: 'What_we_do_desc',
   },
   {
     id: 2,
-    image:Who_we_are,
+    image:'images/about_info/Image20241103173501.png',
     title: 'Who_we_are',
     desc: 'Who_we_are_desc',
   },
   {
     id: 3,
-    image:How_it_work,
+    image:'images/about_info/Image20241103173455.png',
     title: 'How_it_work',
     desc: 'How_it_work_desc',
   },

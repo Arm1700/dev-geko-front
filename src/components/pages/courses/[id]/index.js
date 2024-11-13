@@ -2,7 +2,6 @@ import React, {useContext, useLayoutEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import {TbClockHour9} from 'react-icons/tb'
 import {IoLanguage} from 'react-icons/io5'
-import students_Group from '../../../../images/education.png'
 import {PiStudentBold} from 'react-icons/pi'
 import {MdAssessment} from 'react-icons/md'
 import {PiCertificate} from "react-icons/pi";
@@ -140,7 +139,7 @@ export default function CoursePage() {
                                 <div
                                     className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
                                     <div className='flex items-center justify-center gap-1'>
-                                        <img src={students_Group} alt=""/>
+                                        <img src={'images/education.png'} alt=""/>
                                         <p className='text-primaryDark capitalize'>{t("StudentGroup")}</p>
                                     </div>
                                     <p className='text-primaryDark capitalize'>

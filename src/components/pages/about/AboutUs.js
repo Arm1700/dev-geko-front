@@ -3,7 +3,6 @@ import AboutCard2 from '../shared/about/AboutCard2'
 import {BiSolidQuoteLeft} from 'react-icons/bi'
 import {useTranslation} from 'react-i18next';
 
-import img from '../../../images/mer masin.jpg'
 import React, {
 } from "react";
 import Course from "../shared/home/Course";
@@ -20,7 +19,7 @@ export default function AboutUs() {
                     {t('ABOUT_US')}
                 </h1>
                 <div className='w-full flex justify-center'>
-                    <img src={img} className='w-1/2' alt=""/>
+                    <img src={'images/mer masin.jpg'} className='w-1/2' alt=""/>
                 </div>
                 <div className="py-2">
                     <p className="text-md text-primaryDark text-justify">

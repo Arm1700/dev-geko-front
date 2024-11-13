@@ -5,19 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/pages/home/RegisterForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/contacts/Contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/contacts/Contacts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/contacts/api/fetchMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/contacts/api/fetchMessage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home/MainPhoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/MainPhoto.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/contact/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/contact/Button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/contact/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/contact/Input.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/FacebookPageData.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/LessonInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/LessonInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/LanguageSwitcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/LanguageSwitcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/home/MainPhoto.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/MainPhoto.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/Logo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/Logo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/Armenia-flag.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/Armenia-flag.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/Image20241112140150.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/Image20241112140150.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/Russia-flag.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/Russia-flag.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/USA-flag.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/USA-flag.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/_logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/_logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/about_info/Image20241103173450.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/about_info/Image20241103173450.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/about_info/Image20241103173455.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/about_info/Image20241103173455.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/about_info/Image20241103173501.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/about_info/Image20241103173501.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/about_info/Image20241103173507.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/about_info/Image20241103173507.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/books.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/books.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/education.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/education.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/main.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/main.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/mainLoad.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/mainLoad.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/mer masin.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/mer masin.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/sample-5s.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/sample-5s.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,6 +210,7 @@
       <workItem from="1731243958069" duration="3000" />
       <workItem from="1731253540931" duration="595000" />
       <workItem from="1731313201640" duration="11512000" />
+      <workItem from="1731471663109" duration="3544000" />
     </task>
     <servers />
   </component>

@@ -5,7 +5,6 @@ import Course from '../shared/home/Course';
 import MainPhoto from './MainPhoto';
 import PopularCourse from '../shared/home/PopularCourse';
 import LessonInfo from '../shared/home/LessonInfo';
-import books from '../../../images/books.jpg';
 import Event from '../shared/event/Event';
 import Reviews from '../shared/home/Review';
 import {useNavigate} from "react-router-dom";
@@ -77,7 +76,7 @@ export default function Home() {
 
             <div
                 style={{
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${books})`,
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${'images/books.jpg'})`,
                 }}
                 className="bg-cover gap-5 bg-no-repeat lg:px-20 px-5 py-10 bg-primary grid grid-cols-5 lg:justify-evenly items-end max:flex-col"
             >
