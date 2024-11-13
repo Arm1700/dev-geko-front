@@ -51,7 +51,7 @@ export default function Event({pickedEvent}) {
 
     return (
         <section
-            className="border-b-2 py-8 border-gray-300 flex gap-5 sm:justify-between sm:items-center sm:flex-row flex-col max:relative"
+            className="border-b-[1px] py-8 border-gray-300 flex gap-5 sm:justify-between sm:items-center sm:flex-row flex-col max:relative"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >

@@ -28,7 +28,7 @@ export default function Events() {
     }, [activeTab, tab, navigate]);
 
     return (
-        <main className="px-5 center:max-w-[1200px] max-w-full mx-auto py-20 flex flex-col">
+        <main className=" lg:px-20 px-5 center:max-w-[1300px] max-w-full mx-auto py-20 flex flex-col">
             <h1 className="text-3xl font-roboto-slab font-bold text-primaryDark">
                 {t('EVENTS')}
             </h1>

@@ -61,7 +61,7 @@ const CourseSlider = () => {
     };
     const shouldLoop = categories.length > slidesToShow;
     return (
-        <div className="popularDiv max:px-0 py-16 mx-auto max-w-[1300px] px-[20px]">
+        <div className="popularDiv max-w-[1300px] mx-auto max:px-0 py-16 px-[5px]">
             <Swiper
                 modules={[Pagination, A11y,  Autoplay]} // Добавьте Autoplay
                 spaceBetween={spaceBetween}

@@ -16,7 +16,7 @@ export default function Home() {
     const {t} = useTranslation();
     const {events, courses, lessonInfo, loading} = useContext(DataContext);
     const nav = useNavigate();
-
+    console.log(lessonInfo)
     const handleCategoryClick = () => {
         nav(`/course-category`);
     };
@@ -27,11 +27,13 @@ export default function Home() {
 
     return (
         <main>
-            <div className='relative md:flex grid grid-rows-[min-content_1fr] md:justify-end justify-center items-center py-5 md:px-5'>
+            <div
+                className='relative md:flex gap-5 grid grid-rows-[min-content_1fr] md:justify-end justify-center items-center py-5 md:px-5'>
                 <MainPhoto text1="The_best_time_for" text2="education"/>
                 <div
                     className="relative top-0 mx-auto md:mx-0 h-auto flex flex-col justify-center items-center z-30 overflow-hidden border-[1px] rounded-[20px]">
-                    <RegisterForm check={false}/>
+                    <div className="absolute w-[100%] h-[100%] bg-primary rounded-full z-10"></div>
+                    <RegisterForm/>
                 </div>
             </div>
 
@@ -74,29 +76,28 @@ export default function Home() {
                 </div>
             </div>
 
-            <div
-                style={{
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${'images/books.jpg'})`,
-                }}
-                className="bg-cover gap-5 bg-no-repeat lg:px-20 px-5 py-10 bg-primary grid grid-cols-5 lg:justify-evenly items-end max:flex-col"
-            >
-                {loading ? (
-                    // Skeleton-заполнитель для информации о курсах
-                    Array.from({length: 3}).map((_, index) => (
-                        <div key={index} className="p-4">
-                            <Skeleton circle={true} height={50} width={50}/>
-                            <Skeleton height={20} width={`60%`} style={{margin: '10px 0'}}/>
-                        </div>
-                    ))
-                ) : (
-                    lessonInfo.map(({id, image, translation}) => (
-                        <LessonInfo key={id} image={image} title={translation.title}/>
-                    ))
-                )}
+            <div className=" gap-20 py-10" style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${'images/books.jpg'})`,
+            }}>
+                <div
+                    className='popularDiv max-w-[1300px] mx-[auto] bg-cover gap-5 bg-no-repeat md:grid grid-cols-5 flex lg:justify-center items-center flex-col'>
+                    {loading ? (
+                        // Skeleton-заполнитель для информации о курсах
+                        Array.from({length: 3}).map((_, index) => (
+                            <div key={index} className="p-4">
+                                <Skeleton circle={true} height={50} width={50}/>
+                                <Skeleton height={20} width={`60%`} style={{margin: '10px 0'}}/>
+                            </div>
+                        ))
+                    ) : (
+                        lessonInfo.map(({id, image, translation}) => (
+                            <LessonInfo key={id} image={image} title={translation.title}/>
+                        ))
+                    )}
+                </div>
             </div>
-
-            <div className="text-start pt-20 px-5 flex justify-center">
-                <div className='center:max-w-[1200px] max-w-full'>
+            <div className="text-start pt-20  flex justify-center">
+                <div className='popularDiv max-w-[1300px] px-10 lg:px-0 '>
                     <div className="flex justify-between">
                         <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
                             {t('EVENTS')}
