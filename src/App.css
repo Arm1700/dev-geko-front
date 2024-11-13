@@ -1,17 +1,18 @@
 /* Course */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     /*user-select: none;*/
 }
 
-.App{
+.App {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh
 }
+
 .inner-img {
     transition: 0.3s;
 }
@@ -79,6 +80,7 @@
     cursor: pointer;
     font-weight: 700;
 }
+
 .pagination__previous:hover,
 .pagination__next:hover,
 .pagination__link:hover {
@@ -140,6 +142,7 @@
     background: #1c2f38; /* Use a darker shade or different color for the scrollbar handle */
     border-radius: 6px;
 }
+
 .bgColorArticle::before {
     content: "";
     position: absolute;
@@ -151,7 +154,7 @@
     z-index: -1; /* Ensure it doesn't cover the content */
 }
 
-.like::after{
+.like::after {
     content: "";
     height: 1px;
     position: absolute;
@@ -160,9 +163,16 @@
     width: 35px;
     background: #000;
 }
+
 /* slider */
+.hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Добавляем плавный переход для фильтров */
+}
 
-
-
-
+/* Эффект при наведении */
+.hover-effect:hover {
+    transform: scale(1.1); /* Увеличение изображения */
+    box-shadow: 0 10px 14px 7px #FFB606; /* Добавление тени */
+    /*filter: hue-rotate(180deg); !* Изменение оттенка изображения *!*/
+}
 

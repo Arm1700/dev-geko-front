@@ -10,12 +10,14 @@ export default function MainPhoto({text1, text2}) {
                 muted
                 loop
                 preload="auto"
+                playsInline
                 className="md:absolute top-0 left-0 min-w-full md:h-full object-cover pointer-events-none"
                 poster={'images/mainLoad.png'}
                 onLoadedData={() => setVideoLoaded(true)}
             >
                 <source src={'images/main.mp4'} type="video/mp4"/>
             </video>
+
 
             {!videoLoaded && (
                 <div

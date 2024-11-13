@@ -62,7 +62,7 @@ export default function Team() {
             <div className='min-w-[1%] max-w-full md:max-w-[60%] sm:max-w-[80%]'>
                 <Slider ref={thumbnailSliderRef} {...thumbnailSettings}>
                     {teams.map((team, i) => (
-                        <div key={i} style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div key={i} className='flex justify-center h-[150px]'>
                             <div className="flex justify-center items-center w-full h-full">
                                 <img
                                     src={team.image && team.image.startsWith('http') ? team.image : team.image ? `https://dev.gekoeducation.com${team.image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'}
@@ -84,7 +84,7 @@ export default function Team() {
                 {/* Content Slider */}
                 <Slider ref={contentSliderRef} {...contentSettings}>
                     {teams.map((team, i) => (
-                        <div key={i} style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div key={i} style={{display: 'flex', justifyContent: 'center'}}>
                             <div className="flex justify-center items-center text-center flex-col">
                                 <p className="mt-5 text-primaryDark font-black text-xl uppercase">{team.translation.name}</p>
                                 <p className="text-primaryDark text-lg capitalize">{team.translation.role}</p>
