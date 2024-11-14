@@ -55,6 +55,11 @@ export default function RegisterForm({check = true}) {
         }
     };
 
+    const handleCategorySelect = (categoryId) => {
+        setSelectedCategory(categoryId);
+        setValue("category", categoryId, {shouldValidate: true});
+        setIsDropdownOpen(false);
+    };
 
     return (
         <div>
