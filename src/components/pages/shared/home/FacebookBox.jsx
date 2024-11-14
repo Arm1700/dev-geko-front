@@ -12,7 +12,7 @@ const FacebookBox = ({pageUrl}) => {
             script.async = true;
             script.onload = () => {
                 window.FB.init({
-                    appId: 'GekoOnlineEducation', // Replace with your Facebook app ID
+                    appId: 850574873815687, // Replace with your Facebook app ID
                     xfbml: true,
                     version: 'v12.0',
                 });
