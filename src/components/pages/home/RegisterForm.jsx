@@ -24,36 +24,29 @@ export default function RegisterForm({check = true}) {
         setShowNotify(true)
         setTimeout(() => setShowNotify(false), 3000)
     }
-    const onSubmit = async (data) => {
-        console.log(data);
+    const onSubmit = async data => {
+        console.log(data)
         try {
-            // Send data to your API
-            const response = await postData(data);
+            const response = await postData(data,setSelectedCategory ,setSelectedCountry)
 
-            // Trigger notification after submission
-            triggerNotification();
+            triggerNotification()
             setStatus({
                 status: 'success',
                 message: 'Message was sent successfully',
-            });
+            })
 
-            // Reset form fields and manually clear the dropdown states
-            reset(); // Reset all form fields
-            setSelectedCategory(""); // Reset category dropdown state
-            setSelectedCountry("");  // Reset country dropdown state
-
-            console.log('Data posted successfully:', response);
+            reset()
+            console.log('Data posted successfully:', response)
         } catch (error) {
-            // Handle error
-            reset();  // Reset form fields
-            triggerNotification();
+            reset()
+            triggerNotification()
             setStatus({
-                status: 'error',
+                status: 'errorr',
                 message: error.message,
-            });
-            console.error('Error occurred while posting context:', error);
+            })
+            console.error('Error occurred while posting context:', error)
         }
-    };
+    }
 
     const handleCategorySelect = (categoryId) => {
         setSelectedCategory(categoryId);

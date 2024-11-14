@@ -4,7 +4,7 @@ import axios from 'axios';
 const api = 'https://dev.gekoeducation.com/api/contact/';
 // const api = 'http://127.0.0.1:8000/api/contact/';
 
-export async function postData(data) {
+export async function postData(data,setSelectedCategory,setSelectedCountry) {
   try {
     // Log data being sent
     console.log('Data being sent to the API:', data);
@@ -17,6 +17,8 @@ export async function postData(data) {
     });
 
     console.log('Response from API:', response.data); // Log success
+    setSelectedCategory(""); // Reset category dropdown state
+    setSelectedCountry("");  // Reset country dropdown state
     return response.data;
   } catch (error) {
     if (error.response) {
