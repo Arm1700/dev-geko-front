@@ -31,7 +31,7 @@ export default function Home() {
                 className='relative md:flex gap-5 grid grid-rows-[min-content_1fr] md:justify-end justify-center items-center py-5 md:px-5'>
                 <MainPhoto text1="The_best_time_for" text2="education"/>
                 <div
-                    className="relative top-0 mx-auto md:mx-0 h-auto flex flex-col justify-center items-center z-30 overflow-hidden border-[1px] rounded-[20px]">
+                    className="relative top-0 mx-auto md:mx-0 h-auto flex flex-col justify-center items-center z-20 overflow-hidden border-[1px] rounded-[20px]">
                     <div className="absolute w-[100%] h-[100%] bg-primary rounded-full z-10"></div>
                     <RegisterForm/>
                 </div>

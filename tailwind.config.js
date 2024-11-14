@@ -47,6 +47,9 @@ module.exports = {
                 'custom-28': '1.75rem',   // Custom 28px
                 'custom-80': '5rem',   // Custom 28px
             },
+            zIndex: {
+                '60': '60', // добавляем кастомный z-index
+            },
         },
         screens: {
             max: '360px',

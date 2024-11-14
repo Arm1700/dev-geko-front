@@ -41,7 +41,7 @@ export default function RegisterForm({check = true}) {
             reset()
             triggerNotification()
             setStatus({
-                status: 'errorr',
+                status: 'error',
                 message: error.message,
             })
             console.error('Error occurred while posting context:', error)
@@ -106,7 +106,7 @@ export default function RegisterForm({check = true}) {
                                     <li
                                         key={category.id}
                                         onClick={() => handleCategorySelect(category.id)}
-                                        className="p-3 cursor-pointer hover:bg-gray-200"
+                                        className="p-3 cursor-pointer hover:bg-gray-200 uppercase"
                                     >
                                         {category.translation?.text}
                                     </li>

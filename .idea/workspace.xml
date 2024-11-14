@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="" />
+    <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/home/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/RegisterForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/contact/Notification.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/contact/Notification.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -189,7 +195,7 @@
       <workItem from="1731471663109" duration="14590000" />
       <workItem from="1731509653963" duration="495000" />
       <workItem from="1731510370863" duration="4799000" />
-      <workItem from="1731571568967" duration="3189000" />
+      <workItem from="1731571568967" duration="4567000" />
     </task>
     <servers />
   </component>
