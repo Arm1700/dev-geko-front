@@ -8,41 +8,32 @@ import {DataContext} from "../context/DataProvider";
 
 export default function Courses() {
     const {t} = useTranslation();
-
     const {categories, courses, getCoursesByCategory, loading, error} = useContext(DataContext);
-
     const [gridStyleTF, setGridStyle] = useState(true);
     const [coursesPerPage, setCoursesPerPage] = useState(6);
     const [currentPage, setCurrentPage] = useState(1);
     const nav = useNavigate();
     const {id: initialCategoryId} = useParams();
-    const [categoryId, setCategoryId] = useState(initialCategoryId || ''); // Handle empty categoryId
+    const [categoryId, setCategoryId] = useState(initialCategoryId || '');
     const [showMenu, setShowMenu] = useState(false);
 
     const handleCategoryClick = (id) => {
         setCategoryId(id);
-        if (id) {
-            nav(`/course-category/${id}`);
-        } else {
-            nav('/course-category'); // Reset to all courses if "All" is clicked
-        }
+        setCurrentPage(1); // Reset to the first page on category change
+        nav(id ? `/course-category/${id}` : '/course-category'); // Navigate to category or all courses
     };
 
-    const toggleMenu = () => {
-        setShowMenu(!showMenu);
-    };
+    const toggleMenu = () => setShowMenu(!showMenu);
 
     useEffect(() => {
-        setCurrentPage(1);
-        setCoursesPerPage(6);
-        setCategoryId(initialCategoryId || ''); // Reset to empty if no category
+        setCurrentPage(1); // Reset to the first page if category changes
+        setCoursesPerPage(6); // Reset courses per page if needed
+        setCategoryId(initialCategoryId || ''); // Reset to all courses if no category selected
     }, [initialCategoryId]);
 
-    const startIndex = (currentPage - 1) * coursesPerPage;
-
-    // If categoryId is not set, show all courses
     const paginatedCourses = () => {
         const coursesToShow = categoryId ? getCoursesByCategory(categoryId) : courses;
+        const startIndex = (currentPage - 1) * coursesPerPage;
         return coursesToShow.slice(startIndex, startIndex + coursesPerPage);
     };
 
@@ -51,6 +42,7 @@ export default function Courses() {
     };
 
     let gridStyle = gridStyleTF ? 'md:grid-cols-3 sm500:grid-cols-2' : 'grid-cols-1';
+    const totalCourses = categoryId ? getCoursesByCategory(categoryId).length : courses.length;
 
     if (loading) return <p>{t("Loading...")}</p>;
     if (error) return <p>{t("Error")}: {error}</p>;
@@ -65,21 +57,18 @@ export default function Courses() {
                 <div className="flex mid:flex-row flex-col gap-5 py-10">
                     <div className="w-[20%] mid:flex flex-col hidden h-min border-b"
                          style={{position: 'sticky', top: '10px'}}>
-                        <h1 className="textHover cursor-pointer min-w-max text-2xl font-roboto-slab font-bold text-primaryDark"
-                        >
+                        <h1 className="textHover cursor-pointer min-w-max text-2xl font-roboto-slab font-bold text-primaryDark">
                             {t('Categories')}
                         </h1>
-                        <p
-                            onClick={() => handleCategoryClick('')}
-                            className={`uppercase min-w-max w-full textHover cursor-pointer py-[5px] ${!+categoryId  ? "text-primary" : "text-primaryDark"}`}
-                        >
+                        <p onClick={() => handleCategoryClick('')}
+                           className={`uppercase min-w-max w-full textHover cursor-pointer py-[5px] ${!categoryId ? "text-primary" : "text-primaryDark"}`}>
                             {t('ALL')}
                         </p>
                         {categories.map(({id, translation}) => (
-                            <p
-                                onClick={() => handleCategoryClick(id)}
-                                className={`uppercase min-w-max w-full textHover cursor-pointer py-[5px] ${+categoryId === id ? "text-primary" : "text-primaryDark"}`}
-                                key={id}>{translation?.text}
+                            <p onClick={() => handleCategoryClick(id)}
+                               className={`uppercase min-w-max w-full textHover cursor-pointer py-[5px] ${categoryId === id ? "text-primary" : "text-primaryDark"}`}
+                               key={id}>
+                                {translation?.text}
                             </p>
                         ))}
                     </div>
@@ -95,9 +84,9 @@ export default function Courses() {
                                onClick={() => setGridStyle(false)}></i>
                             <p className="text-color66 text-custom-15">
                                 {t('Showing', {
-                                    start: startIndex + 1,
-                                    end: startIndex + paginatedCourses().length,
-                                    total: categoryId ? getCoursesByCategory(categoryId).length : courses.length
+                                    start: (currentPage - 1) * coursesPerPage + 1,
+                                    end: Math.min(currentPage * coursesPerPage, totalCourses),
+                                    total: totalCourses
                                 })}
                             </p>
                         </div>
@@ -116,21 +105,24 @@ export default function Courses() {
                                 />
                             ))}
                         </div>
-                        {courses.length > 0 && (
+                        {totalCourses > coursesPerPage && (
                             <ReactPaginate
-                                previousLabel="<"
-                                nextLabel=">"
-                                pageCount={Math.ceil(paginatedCourses().length / coursesPerPage)}
-                                onPageChange={handlePageChange}
+                                previousLabel={<button>{'<'}</button>}
+                                nextLabel={<button>{'>'}</button>}
+                                pageCount={Math.ceil(totalCourses / coursesPerPage)}
+                                onPageChange={(data) => {
+                                    handlePageChange(data);
+                                    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top on page change
+                                }}
                                 breakLabel="..."
                                 pageRangeDisplayed={5}
                                 renderOnZeroPageCount={null}
-                                className={'pagination'}
-                                pageClassName={'pagination__item'}
-                                pageLinkClassName={'pagination__link'}
-                                activeLinkClassName={'pagination__link--active'}
-                                previousClassName={'pagination__previous'}
-                                nextClassName={currentPage === Math.ceil(courses.length / coursesPerPage) ? 'pagination__next disabled' : 'pagination__next'}
+                                className="pagination"
+                                pageClassName="pagination__item"
+                                pageLinkClassName="pagination__link"
+                                activeLinkClassName="pagination__link--active"
+                                previousClassName="pagination__previous"
+                                nextClassName="pagination__next"
                             />
                         )}
                     </div>

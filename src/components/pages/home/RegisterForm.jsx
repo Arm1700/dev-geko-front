@@ -24,33 +24,37 @@ export default function RegisterForm({check = true}) {
         setShowNotify(true)
         setTimeout(() => setShowNotify(false), 3000)
     }
-    const onSubmit = async data => {
-        console.log(data)
+    const onSubmit = async (data) => {
+        console.log(data);
         try {
-            const response = await postData(data)
-            triggerNotification()
+            // Send data to your API
+            const response = await postData(data);
+
+            // Trigger notification after submission
+            triggerNotification();
             setStatus({
                 status: 'success',
                 message: 'Message was sent successfully',
-            })
-            reset()
-            console.log('Data posted successfully:', response)
-        } catch (error) {
-            reset()
-            triggerNotification()
-            setStatus({
-                status: 'errorr',
-                message: error.message,
-            })
-            console.error('Error occurred while posting context:', error)
-        }
-    }
+            });
 
-    const handleCategorySelect = (categoryId) => {
-        setSelectedCategory(categoryId);
-        setValue("category", categoryId, {shouldValidate: true});
-        setIsDropdownOpen(false);
+            // Reset form fields and manually clear the dropdown states
+            reset(); // Reset all form fields
+            setSelectedCategory(""); // Reset category dropdown state
+            setSelectedCountry("");  // Reset country dropdown state
+
+            console.log('Data posted successfully:', response);
+        } catch (error) {
+            // Handle error
+            reset();  // Reset form fields
+            triggerNotification();
+            setStatus({
+                status: 'error',
+                message: error.message,
+            });
+            console.error('Error occurred while posting context:', error);
+        }
     };
+
 
     return (
         <div>
@@ -66,15 +70,16 @@ export default function RegisterForm({check = true}) {
                 <div className="space-y-4">
                     <Input
                         placeholder={t("fullName")}
-                        name="fullName"
-                        {...register("fullName", {required: t("fullName is required")})}
-                        error={errors.fullName?.message}
+                        name="full_name"
+                        {...register("full_name", {required: t("fullName is required")})}
+                        error={errors.full_name?.message}
                     />
 
                     <div className="mb-4">
                         <CountryDropdown
                             id="country"
                             value={selectedCountry || ""}
+                            name='country'
                             onChange={(value) => {
                                 setValue("country", value, {shouldValidate: true});
                                 setSelectedCountry(value);
@@ -84,25 +89,6 @@ export default function RegisterForm({check = true}) {
                         />
                         {errors.country && <p className="text-red-500 text-sm mt-1">{t(errors.country.message)}</p>}
                     </div>
-
-                    <Input
-                        placeholder={t("WhatsApp_Number")}
-                        type="tel"
-                        name="whatsapp"
-                        {...register("whatsapp", {
-                            required: t("WhatsApp number is required"),
-                            pattern: {value: /^\+?\d+$/, message: t("Please enter a valid phone number")},
-                        })}
-                        error={errors.whatsapp?.message}
-                    />
-
-                    <Input
-                        placeholder={t("Email")}
-                        type="email"
-                        name="email"
-                        {...register("email", {required: t("Email is required")})}
-                        error={errors.email?.message}
-                    />
 
                     <div className="mb-4 relative">
                         <button
@@ -131,6 +117,25 @@ export default function RegisterForm({check = true}) {
                         )}
                     </div>
                     {errors.category && <p className="text-red-500 text-sm mt-1">{t(errors.category.message)}</p>}
+
+                    <Input
+                        placeholder={t("WhatsApp_Number")}
+                        type="tel"
+                        name="whatsapp"
+                        {...register("whatsapp", {
+                            required: t("WhatsApp number is required"),
+                            pattern: {value: /^\+?\d+$/, message: t("Please enter a valid phone number")},
+                        })}
+                        error={errors.whatsapp?.message}
+                    />
+
+                    <Input
+                        placeholder={t("Email")}
+                        type="email"
+                        name="email"
+                        {...register("email", {required: t("Email is required")})}
+                        error={errors.email?.message}
+                    />
 
                     <Input
                         placeholder={t("Message")}

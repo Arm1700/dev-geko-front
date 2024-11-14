@@ -176,3 +176,16 @@
     /*filter: hue-rotate(180deg); !* Изменение оттенка изображения *!*/
 }
 
+.fade-enter, .fade-exit {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fade-enter-active {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+}
+

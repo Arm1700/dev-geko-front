@@ -23,7 +23,7 @@ export default function PopularCourse({
 
     return (
         <article
-            className={`my-5 border-gray flex ${gridStyleTF === true ? "none border rounded-lg  flex-col " : "sm:flex border-b"}`}>
+            className={`border-gray flex ${gridStyleTF === true ? "none border rounded-lg  flex-col " : "py-5 sm:flex border-b"}`}>
             <div
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}

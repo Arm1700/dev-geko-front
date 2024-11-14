@@ -56,7 +56,7 @@ export default function Event({pickedEvent}) {
             onMouseLeave={handleMouseLeave}
         >
             <div
-                className={`flex flex-col gap-1 sm:static w-[200px] max:w-[100px] md:mr-10 mr-0 max:bg-white max:text-center max:absolute max:top-[10%] max:left-[3%] ${isMenuVisible ? 'border-color56' : ''}`}
+                className={`sm:flex hidden  flex-col gap-1 sm:static w-[200px] max:w-[100px] md:mr-10 mr-0 max:bg-white max:text-center max:absolute max:top-[10%] max:left-[3%] ${isMenuVisible ? 'border-color56' : ''}`}
             >
                 <span className="text-primary font-bold text-6xl leading-60">
                     {pickedEvent.day}
