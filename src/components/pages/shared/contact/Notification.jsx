@@ -8,7 +8,7 @@ const Notification = ({ status='error', message='hello' }) => {
 
         const timer = setTimeout(() => {
             setShowNotification(false);
-        }, 2000);
+        }, 5000);
 
         return () => clearTimeout(timer);
     }, []);
