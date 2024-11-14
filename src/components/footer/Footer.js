@@ -16,7 +16,7 @@ const Footer = () => {
             {/*<div*/}
             {/*    className="flex middle:flex-row flex-col middle:items-center justify-between px-5 py-20 mx-[auto] gap-5 max-w-[1300px]">*/}
             <div
-                className="middle:grid middle:grid-cols-[1fr_10%_1fr_1fr]  grid-rows-[20%_1fr] justify-center px-5 py-20 mx-[auto] gap-5 max-w-[1300px]">
+                className="middle:grid middle:grid-cols-[1fr_max-content_1fr_1fr]  grid-rows-[20%_1fr] justify-center px-5 py-16 mx-[auto] gap-5 max-w-[1300px]">
                 <Logo/>
                 <div className="flex flex-col gap-5 row-start-2">
                     <div className="flex">
@@ -50,9 +50,10 @@ const Footer = () => {
                 <div className='column-start-3 row-span-2'>
                     <FacebookBox pageUrl="https://www.facebook.com/GekoOnlineEducation" />
                 </div>
-                {/*<div className='column-start-4 row-span-2'>*/}
-                {/*    <InstagramPost />*/}
-                {/*</div>*/}
+                <div className='column-start-4 row-span-2'>
+                    <FacebookBox pageUrl="https://www.facebook.com/GekoOnlineEducation" />
+                    {/*<InstagramPost />*/}
+                </div>
             </div>
         </footer>
     );

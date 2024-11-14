@@ -1,16 +1,31 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 
-const FacebookBox = ({ pageUrl }) => {
+const FacebookBox = ({pageUrl}) => {
     useEffect(() => {
+        // Ensure Facebook SDK is loaded and initialized
         if (window.FB) {
             window.FB.XFBML.parse(); // Parse Facebook plugins once the component renders
+        } else {
+            // Load the Facebook SDK if it's not already loaded
+            const script = document.createElement('script');
+            script.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0';
+            script.async = true;
+            script.onload = () => {
+                window.FB.init({
+                    appId: 'GekoOnlineEducation', // Replace with your Facebook app ID
+                    xfbml: true,
+                    version: 'v12.0',
+                });
+                window.FB.XFBML.parse();
+            };
+            document.body.appendChild(script);
         }
     }, [pageUrl]);
 
     return (
-        <div className="facebook-box" >
+        <div className="facebook-box">
             {/* Facebook Page plugin with Like button inside */}
-            <div className="fb-page-container" style={{ position: 'relative' }}>
+            <div className="fb-page-container" style={{position: 'relative'}}>
                 {/* Facebook Page plugin */}
                 <div
                     className="fb-page"
