@@ -139,7 +139,7 @@ export default function CoursePage() {
                                 <div
                                     className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
                                     <div className='flex items-center justify-center gap-1'>
-                                        <img src={'images/education.png'} alt=""/>
+                                        <img src={'/images/education.png'} alt=""/>
                                         <p className='text-primaryDark capitalize'>{t("StudentGroup")}</p>
                                     </div>
                                     <p className='text-primaryDark capitalize'>

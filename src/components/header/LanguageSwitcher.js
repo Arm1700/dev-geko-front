@@ -2,9 +2,9 @@ import { useTranslation } from 'react-i18next';
 
 export default function LanguageSwitcher() {
   const lngs = {
-    en: { nativeName: 'English', flag: './images/USA-flag.png' },
-    am: { nativeName: 'Armenian', flag: './images/Armenia-flag.jpg' },
-    ru: { nativeName: 'Russian', flag: './images/Russia-flag.png' },
+    en: { nativeName: 'English', flag: '/images/USA-flag.png' },
+    am: { nativeName: 'Armenian', flag: '/images/Armenia-flag.jpg' },
+    ru: { nativeName: 'Russian', flag: '/images/Russia-flag.png' },
   };
 
   const { i18n } = useTranslation();

@@ -77,7 +77,7 @@ export default function Home() {
             </div>
 
             <div className=" gap-20 py-10" style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${'images/books.jpg'})`,
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${'/images/books.jpg'})`,
             }}>
                 <div
                     className='popularDiv max-w-[1300px] mx-[auto] bg-cover gap-5 bg-no-repeat md:grid grid-cols-5 flex lg:justify-center items-center flex-col'>

@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/Logo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/Logo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/FacebookBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/FacebookBox.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,7 +191,7 @@
       <workItem from="1731471663109" duration="14590000" />
       <workItem from="1731509653963" duration="495000" />
       <workItem from="1731510370863" duration="4799000" />
-      <workItem from="1731571568967" duration="6670000" />
+      <workItem from="1731571568967" duration="7031000" />
     </task>
     <servers />
   </component>
