@@ -9,7 +9,7 @@ import {DataContext} from "../context/DataProvider";
 import {MdKeyboardArrowDown} from "react-icons/md";
 import Notification from "../shared/contact/Notification";
 
-export default function RegisterForm({check = true}) {
+export default function  RegisterForm({check = true}) {
     const {t} = useTranslation();
     const {register, handleSubmit, reset, setValue, formState: {errors}} = useForm();
     const {categories} = useContext(DataContext);

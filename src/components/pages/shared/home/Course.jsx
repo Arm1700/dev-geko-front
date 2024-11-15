@@ -91,16 +91,24 @@ const CourseSlider = () => {
                         <article
                             onClick={() => nav(`/course-category/${id}`)}
                             className="cursor-pointer flex-wrap img-wrapper mb-[40px] relative bg-primary rounded-lg overflow-hidden md:w-[162px] max:w-[220px] flex flex-col justify-center items-center"
-                            style={{ aspectRatio: "1 / 1" }}>
-                            <img className="inner-img absolute inset-0 w-full object-cover"
-                                 src={image.startsWith('https') ? image : `https://dev.gekoeducation.com${image}`}
-                                 alt="Course"
-                                 style={{
-                                     filter: 'brightness(50%)',
-                                     objectFit: 'cover',
-                                     width: '100%',
-                                     height: '100%',
-                                 }}/>
+                            style={{aspectRatio: "1 / 1"}}>
+                            <img
+                                className="inner-img absolute inset-0 w-full object-cover"
+                                src={
+                                    image && typeof image === 'string'
+                                        ? image.startsWith('https')
+                                            ? image
+                                            : `https://dev.gekoeducation.com${image}`
+                                        : 'https://via.placeholder.com/150' // Подставить заглушку
+                                }
+                                alt="Course"
+                                style={{
+                                    filter: 'brightness(50%)',
+                                    objectFit: 'cover',
+                                    width: '100%',
+                                    height: '100%',
+                                }}
+                            />
                             <p className="absoluteP absolute font-bold text-pseudo hover:text-primary text-base font-roboto-slab top-[50%] left-[50%] w-[90%] text-center z-50 uppercase">
                                 {translation.text}
                             </p>
