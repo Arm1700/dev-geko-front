@@ -5,16 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/pages/shared/Chat.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/RegisterForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Course.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Course.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/FacebookBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/FacebookBox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/InstagramPost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/InstagramPost.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/home/MainPhoto.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/MainPhoto.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/event/Event.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/event/Event.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/PopularCourse.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/PopularCourse.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Team.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Team.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +49,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/project/frontend/geko-front/public&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/project/frontend/geko-front&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -206,7 +210,10 @@
       <workItem from="1731642632328" duration="653000" />
       <workItem from="1731645143968" duration="7971000" />
       <workItem from="1731677277746" duration="5158000" />
-      <workItem from="1731697033618" duration="594000" />
+      <workItem from="1731697033618" duration="9509000" />
+      <workItem from="1731758571508" duration="592000" />
+      <workItem from="1731761173826" duration="553000" />
+      <workItem from="1731761833668" duration="3631000" />
     </task>
     <servers />
   </component>

@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import { MdOutlinePlace } from 'react-icons/md';
-import { TbClockHour3 } from 'react-icons/tb';
+import {MdOutlinePlace} from 'react-icons/md';
+import {TbClockHour3} from 'react-icons/tb';
 import {useNavigate} from "react-router-dom";
-import { useTranslation } from 'react-i18next';
-import { A11y, Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {useTranslation} from 'react-i18next';
+import {A11y, Autoplay} from "swiper/modules";
+import {Swiper, SwiperSlide} from 'swiper/react';
 
 export default function Event({pickedEvent}) {
     const nav = useNavigate();
@@ -42,8 +42,7 @@ export default function Event({pickedEvent}) {
     };
 
 
-
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     if (!pickedEvent) {
         return <div>{t('Event not found')}</div>; // Fallback message when event is not found
@@ -64,13 +63,16 @@ export default function Event({pickedEvent}) {
                 <span className="text-color60 leading-[25px] font-sans-serif">{t(pickedEvent.month)}</span>
             </div>
 
-            <div className="gap-2 flex middle:px-5 md:px-20 px-0 flex-col sm:order-none max:order-1 sm:max-w-[60%] max-w-full">
+            <div
+                className="gap-2 flex middle:px-5 md:px-20 px-0 flex-col sm:order-none max:order-1 sm:max-w-[60%] max-w-full">
                 <h5 className="text-lg font-bold hover:text-primary transition-colors duration-300 cursor-pointer"
                     onClick={() => handleCategoryClick(pickedEvent.id)}
                 >{t(pickedEvent.translation.title)}</h5>
                 <div className="flex gap-1 items-center">
-                    <TbClockHour3 className="text-primary w-[21px]" /> <span className="text-sm">{pickedEvent.hour}</span>
-                    <MdOutlinePlace className="text-primary" /> <span className="text-sm">{t(pickedEvent.translation.place)}</span>
+                    <TbClockHour3 className="text-primary w-[21px]"/> <span
+                    className="text-sm">{pickedEvent.hour}</span>
+                    <MdOutlinePlace className="text-primary"/> <span
+                    className="text-sm">{t(pickedEvent.translation.place)}</span>
                 </div>
                 <p className=" text-primaryDark text-custom-15 center">{t(pickedEvent.translation.description)}</p>
             </div>
@@ -90,12 +92,17 @@ export default function Event({pickedEvent}) {
                     onTouchStart={(swiper) => handleInteraction(swiper)}
                     onClick={(swiper) => handleInteraction(swiper)}
                 >
-                    {pickedEvent.event_galleries.map(({ img, id }) => (
-                        <SwiperSlide key={id}>
-                            <img alt={"image " + t(pickedEvent.description)} src={img}
-                                 className="rounded-md w-full" />
-                        </SwiperSlide>
-                    ))}
+                    {pickedEvent.event_galleries && pickedEvent.event_galleries.length > 0 ? (
+                        pickedEvent.event_galleries.map(({img, id}) => (
+                            <SwiperSlide key={id}>
+                                <img alt={"image " + t(pickedEvent.description)} src={img}
+                                     className="rounded-md w-full"/>
+                            </SwiperSlide>
+                        ))
+                    ) : (
+                        <img alt={"image " + t(pickedEvent.description)} src={pickedEvent.image}
+                             className="rounded-md w-full"/>
+                    )}
                 </Swiper>
             </div>
         </section>

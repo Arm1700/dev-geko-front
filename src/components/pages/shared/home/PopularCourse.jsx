@@ -19,7 +19,11 @@ export default function PopularCourse({
     const handleMouseLeave = () => {
         setIsHovered(false)
     }
-    const imageUrl = image.startsWith('http') ? image : image? `https://dev.gekoeducation.com${image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png';
+    const imageUrl = image && typeof image === 'string' && image.startsWith('https')
+        ? image
+        : image
+            ? `https://dev.gekoeducation.com${image}`
+            : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png';
 
     return (
         <article

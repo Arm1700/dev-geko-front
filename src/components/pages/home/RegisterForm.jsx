@@ -72,7 +72,6 @@ export default function  RegisterForm({check = true}) {
                         {...register("full_name", {required: t("fullName is required")})}
                         error={errors.full_name?.message}
                     />
-
                     <div className="mb-4">
                         <CountryDropdown
                             id="country"

@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-export default function MainPhoto({text1, text2}) {
+export default function MainPhoto() {
     const [videoLoaded, setVideoLoaded] = useState(false);
 
     return (
@@ -25,11 +25,6 @@ export default function MainPhoto({text1, text2}) {
                     <span className="text-white text-xl font-bold">Loader...</span>
                 </div>
             )}
-
-            <div className="relative z-10">
-                {/*<h5 className="font-roboto-slab text-white no-underline whitespace-no-wrap min-h-0 min-w-0 text-left leading-60 tracking-normal font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-5xl w-[750px] backdrop-filter-none filter-none transform-origin-center opacity-100 translate-x-0 translate-y-0 visible">{text1}</h5>*/}
-                {/*<h1 className="font-roboto-slab text-white no-underline whitespace-no-wrap min-h-0 min-w-0 text-left leading-60 tracking-normal font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-5xl w-[700px] backdrop-filter-none filter-none transform-origin-center opacity-100 translate-x-0 translate-y-0 visible">{text2}</h1>*/}
-            </div>
         </section>
     );
 }

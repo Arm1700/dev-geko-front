@@ -39,17 +39,26 @@ export default function EventsPage() {
                                     onSwiper={(swiper) => console.log(swiper)}
                                     onSlideChange={() => console.log('slide change')}
                                 >
-                                    {pickedEvent.event_galleries.map((value, index) => (
-                                        <SwiperSlide key={index}
+                                    {pickedEvent.event_galleries && pickedEvent.event_galleries.length > 0 ? (
+                                        pickedEvent.event_galleries.map((value, index) => (
+                                            <SwiperSlide
+                                                key={index}
+                                                style={{
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                }}
+                                            >
+                                                <img src={value.img} alt="" className="h-full w-full object-cover" />
+                                            </SwiperSlide>
+                                        ))
+                                    ) : (
+                                        <img
+                                            src={pickedEvent.image}
+                                            alt={"image " + t(pickedEvent.description)}
+                                            className="h-full w-full object-cover"
+                                        />
+                                    )}
 
-                                                     style={{
-                                                         display: 'flex',
-                                                         justifyContent: 'center',
-                                                     }}
-                                        >
-                                            <img src={value.img} alt="" className='h-full w-full object-cover]'/>
-                                        </SwiperSlide>
-                                    ))}
                                 </Swiper>
                             </article>
                         </div>

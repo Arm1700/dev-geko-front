@@ -19,7 +19,7 @@ export default function AboutUs() {
                     {t('ABOUT_US')}
                 </h1>
                 <div className='w-full flex justify-center'>
-                    <img src={'/images/mer masin.jpg'} className='w-1/2' alt=""/>
+                    <img src={'/images/mer_masin.jpg'} className='w-1/2' alt=""/>
                 </div>
                 <div className="py-2">
                     <p className="text-md text-primaryDark text-justify">
