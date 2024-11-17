@@ -5,7 +5,12 @@ export default function LessonInfo({image, title}) {
         >
             {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
             <img
-                src={image.startsWith('https') ? image : `https://dev.gekoeducation.com${image}`}
+                src={image && typeof image === 'string' && image.startsWith('https')
+                    ? image
+                    : image
+                        ? `https://dev.gekoeducation.com${image}`
+                        : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'
+                }
                 alt={title}  // Улучшено описание alt для доступности
                 className="w-[200px] text-primary" // Добавляем класс hover-effect
             />

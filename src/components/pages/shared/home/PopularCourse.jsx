@@ -23,6 +23,10 @@ export default function PopularCourse({
         ? image
         : image
             ? `https://dev.gekoeducation.com${image}`
+            : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'
+        ? image
+        : image
+            ? `https://dev.gekoeducation.com${image}`
             : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png';
 
     return (

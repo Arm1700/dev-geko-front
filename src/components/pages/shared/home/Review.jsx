@@ -64,7 +64,11 @@ export default function Review() {
                         <div key={i} className='flex justify-center h-[200px]'>
                             <div className="flex justify-center items-center w-full h-full">
                                 <img
-                                    src={review.image && review.image.startsWith('https') ? review.image : review.image ? `https://dev.gekoeducation.com${review.image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'}
+                                    src={review?.image && typeof review?.image === 'string' && review?.image.startsWith('https')
+                                        ? review?.image
+                                        : review?.image
+                                            ? `https://dev.gekoeducation.com${review?.image}`
+                                            : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'}
                                     className="rounded-full p-2 border-color86"
                                     style={{
                                         border: i === currentIndex ? '2px dotted rgba(0, 0, 0, 0.5)' : 'none',

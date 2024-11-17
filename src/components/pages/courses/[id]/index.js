@@ -93,7 +93,11 @@ export default function CoursePage() {
                             }}>
 
                             <img
-                                src={pickedCourse.image && pickedCourse.image.startsWith('https') ? pickedCourse.image : pickedCourse.image ? `https://dev.gekoeducation.com${pickedCourse.image}` : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'}
+                                src={pickedCourse?.image && typeof pickedCourse?.image === 'string' && pickedCourse?.image.startsWith('https')
+                                    ? pickedCourse?.image
+                                    : pickedCourse?.image
+                                        ? `https://dev.gekoeducation.com${pickedCourse?.image}`
+                                        : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'}
                                 alt={pickedCourse.translation.title}/>
                             <div className='w-full px-5'>
                                 <button
