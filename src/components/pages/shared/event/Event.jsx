@@ -1,14 +1,16 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {MdOutlinePlace} from 'react-icons/md';
 import {TbClockHour3} from 'react-icons/tb';
 import {useNavigate} from "react-router-dom";
 import {useTranslation} from 'react-i18next';
 import {A11y, Autoplay} from "swiper/modules";
 import {Swiper, SwiperSlide} from 'swiper/react';
+import {DataContext} from "../../context/DataProvider";
 
 export default function Event({pickedEvent}) {
     const nav = useNavigate();
     const {t} = useTranslation();
+    const {getImageUrl} = useContext(DataContext);
 
     const handleCategoryClick = (id) => {
         nav(`/events/${pickedEvent.status}/${id}`);
@@ -72,7 +74,7 @@ export default function Event({pickedEvent}) {
                     {pickedEvent.event_galleries && pickedEvent.event_galleries.length > 0 ? (
                         pickedEvent.event_galleries.map(({img, id}) => (
                             <SwiperSlide key={id}>
-                                <img alt={"image " + t(pickedEvent.description)} src={img}
+                                <img alt={"image " + t(pickedEvent.description)} src={getImageUrl(img)}
                                      className="rounded-md w-full"/>
                             </SwiperSlide>
                         ))
