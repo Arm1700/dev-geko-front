@@ -24,7 +24,7 @@ export default function PopularCourse({
     const imageUrl = getImageUrl(image)
     return (
         <article
-            className={`border-gray flex ${gridStyleTF === true ? "none border rounded-lg  flex-col " : "py-5 sm:flex border-b"}`}>
+            className={`border-gray flex mb-8 ${gridStyleTF === true ? "none border rounded-lg  flex-col " : "py-5 sm:flex border-b"}`}>
             <div
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}

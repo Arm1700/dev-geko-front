@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
-import './App.css';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { routesArray } from './entities/routesArray';
 import PageUpButton from './components/pages/shared/PageUpButton';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
@@ -10,13 +8,15 @@ import CoursePage from './components/pages/courses/[id]';
 import Courses from './components/pages/courses/Courses';
 import EventsPage from './components/pages/events/[id]';
 import Events from './components/pages/events/Events';
+import { routesArray } from './entities/routesArray';
+
+import './App.css';
 
 function App() {
     const { pathname } = useLocation();
 
-    // Эффект для скроллинга страницы в начало при изменении маршрута
     useEffect(() => {
-        window.scrollTo(0, 0);  // Сбрасываем скролл в начало страницы
+        window.scrollTo(0, 0);
     }, [pathname]);
 
     return (
@@ -30,12 +30,11 @@ function App() {
                 <Route path="/courses/:id" element={<CoursePage />} />
                 <Route path="/course-category/:id" element={<Courses />} />
 
-                {/* Динамически генерируем маршруты из массива */}
                 {routesArray.map((route) => (
                     <Route
                         key={route.id}
                         path={route.path}
-                        element={<route.component />}  // Здесь рендерим компонент для маршрута
+                        element={<route.component />}
                     />
                 ))}
 

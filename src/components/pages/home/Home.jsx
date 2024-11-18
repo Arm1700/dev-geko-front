@@ -10,8 +10,7 @@ import {useNavigate} from "react-router-dom";
 import {useTranslation} from 'react-i18next';
 import {DataContext} from "../context/DataProvider";
 import RegisterForm from "./RegisterForm";
-// import Reviews from '../shared/home/Review';
-// import Chat from "../shared/Chat";
+import Reviews from '../shared/home/Review';
 
 export default function Home() {
     const {t} = useTranslation();
@@ -129,20 +128,20 @@ export default function Home() {
                 </div>
             </div>
 
-            {/*<div className='flex flex-col justify-center'>*/}
-            {/*    <div className="text-center lg:px-20 px-5 pt-10 pb-5">*/}
-            {/*        <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">*/}
-            {/*            {t('What_People_Say')}*/}
-            {/*        </h1>*/}
-            {/*    </div>*/}
-            {/*    <div className="text-start lg:px-20 px-5 pt-5 min-h-[380px]">*/}
-            {/*        {loading ? (*/}
-            {/*            <Skeleton height={200} width={`100%`}/>*/}
-            {/*        ) : (*/}
-            {/*            <Reviews/>*/}
-            {/*        )}*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+            <div className='flex flex-col justify-center'>
+                <div className="text-center lg:px-20 px-5 pt-10 pb-5">
+                    <h1 className="text-custom-28 font-roboto-slab font-bold text-primaryDark">
+                        {t('What_People_Say')}
+                    </h1>
+                </div>
+                <div className="text-start lg:px-20 px-5 pt-5 min-h-[380px]">
+                    {loading ? (
+                        <Skeleton height={200} width={`100%`}/>
+                    ) : (
+                        <Reviews/>
+                    )}
+                </div>
+            </div>
         </main>
     );
 }

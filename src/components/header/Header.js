@@ -15,12 +15,17 @@ export default function Header() {
     return (
         <header className=" flex flex-col">
             <div className=" bg-secondary">
-                <div className="py-[10px] text-pseudo flex items-center  justify-between max:px-5 max-w-[1200px] mx-auto">
-                    <div className="w-70   flex items-center gap-3 justify-between">
-                        <BsTelephone/>
-                        <span className="hidden md:block">(+374) 98 03 33 94</span>
-                        <LuMailCheck/>
-                        <span className="hidden md:block">gekoeducation@gmail.com</span>
+                <div
+                    className="py-[10px] text-pseudo flex items-center  justify-between max:px-5 max-w-[1200px] mx-auto">
+                    <div className="w-70 flex md:flex-row flex-col md:items-center gap-3 justify-between">
+                        <div className={'flex items-center gap-3'}>
+                            <BsTelephone/>
+                            <span>(+374) 98 03 33 94</span>
+                        </div>
+                        <div className={'flex items-center gap-3'}>
+                            <LuMailCheck/>
+                            <span>gekoeducation@gmail.com</span>
+                        </div>
                     </div>
                     <LanguageSwitcher/>
                 </div>

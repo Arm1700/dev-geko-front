@@ -16,7 +16,7 @@ export default function EventsPage() {
     const {t} = useTranslation();
     const nav = useNavigate();
     const {id: eventId} = useParams();
-    const {getEventById} = useContext(DataContext);
+    const {getEventById, getImageUrl} = useContext(DataContext);
     let pickedEvent = getEventById(eventId)
 
 
@@ -39,15 +39,15 @@ export default function EventsPage() {
                                     onSlideChange={() => console.log('slide change')}
                                 >
                                     {pickedEvent.event_galleries && pickedEvent.event_galleries.length > 0 ? (
-                                        pickedEvent.event_galleries.map((value, index) => (
+                                        pickedEvent.event_galleries.map(({image, id}) => (
                                             <SwiperSlide
-                                                key={index}
+                                                key={id}
                                                 style={{
                                                     display: 'flex',
                                                     justifyContent: 'center',
                                                 }}
                                             >
-                                                <img src={value.img} alt="" className="h-full w-full object-cover" />
+                                                <img src={getImageUrl(image)} alt="" className="h-full w-full object-cover" />
                                             </SwiperSlide>
                                         ))
                                     ) : (

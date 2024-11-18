@@ -13,6 +13,9 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import PopularCourse from "../../shared/home/PopularCourse";
 import {useTranslation} from "react-i18next";
 import {DataContext} from "../../context/DataProvider";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
 
 export default function CoursePage() {
     const nav = useNavigate();
@@ -68,9 +71,10 @@ export default function CoursePage() {
                         </div>
 
                         <div
-                            className="flex  flex-col lg:mx-1 mx-5  md:sticky static border-[1px]  top-1 mt-8  h-min  gap-[10px] bg-pseudo"
+                            className="flex flex-col lg:mx-1 mx-5  md:sticky static border-[1px]  top-1 mt-8  h-min  gap-[10px]"
                             style={{
-                                gridRow: "span 2"
+                                gridRow: "span 2",
+                                backgroundColor:'rgb(231,231,231)'
                             }}>
 
                             <img
@@ -109,7 +113,11 @@ export default function CoursePage() {
                                         <IoLanguage className="text-primary"/>
                                         <p className='text-primaryDark capitalize'>{t("Language")}</p>
                                     </div>
-                                    <p className='text-primaryDark capitalize'>{t(pickedCourse.translation.lang)}</p>
+                                    <div className='flex gap-3'>
+                                        <img src="/images/Armenia-flag.jpg" alt="" className='w-[16px]'/>
+                                        <img src="/images/USA-flag.png" alt="" className='w-[16px]'/>
+                                        <img src="/images/Russia-flag.png" alt="" className='w-[16px]'/>
+                                    </div>
                                 </div>
                                 <div
                                     className="w-full flex items-center justify-between gap-3 text-color60 text-custom-15">
@@ -152,14 +160,27 @@ export default function CoursePage() {
                             </div>
                             <div className='w-full px-5 pb-5'>
                                 <ul className="flex px-[9px] justify-center items-center gap-3 w-full pt-3">
-                                    <li className="flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50">
-                                        <i className="fa fa-facebook-f"></i>
+                                    <li className="flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300">
+                                        <a href="https://www.facebook.com/GekoOnlineEducation/" target="_blank"
+                                           rel="noopener noreferrer">
+                                            <FontAwesomeIcon
+                                                icon={faFacebookF}
+                                                size="lg"
+                                                className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
+                                            />
+                                        </a>
                                     </li>
-                                    <li className="flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50">
-                                        <i className="fa fa-instagram"></i>
-                                    </li>
-                                    <li className="flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50">
-                                        <i className="fa fa-youtube-play"></i>
+
+                                    {/* Instagram link */}
+                                    <li className="flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300">
+                                        <a href="https://www.instagram.com/geko_education" target="_blank"
+                                           rel="noopener noreferrer">
+                                            <FontAwesomeIcon
+                                                icon={faInstagram}
+                                                size="lg"
+                                                className="text-pink-600 hover:text-pink-800 transition-colors duration-300"
+                                            />
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -189,10 +210,10 @@ export default function CoursePage() {
                                 autoplay={{
                                     delay: 1500, // Задержка между переключениями (в миллисекундах)
                                 }}
-
                             >
                                 {courses.slice(0, 6).map(({image, id, translation}) => (
-                                    <SwiperSlide key={id}>
+                                    <SwiperSlide key={id} style={{
+                                    }}>
                                         <PopularCourse
                                             id={id}
                                             image={image}
