@@ -72,9 +72,9 @@ export default function Event({pickedEvent}) {
 
                 >
                     {pickedEvent.event_galleries && pickedEvent.event_galleries.length > 0 ? (
-                        pickedEvent.event_galleries.map(({img, id}) => (
+                        pickedEvent.event_galleries.map(({image, id}) => (
                             <SwiperSlide key={id}>
-                                <img alt={"image " + t(pickedEvent.description)} src={getImageUrl(img)}
+                                <img alt={"image " + t(pickedEvent.description)} src={getImageUrl(image)}
                                      className="rounded-md w-full"/>
                             </SwiperSlide>
                         ))
