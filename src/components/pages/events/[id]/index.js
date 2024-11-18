@@ -11,6 +11,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import {useTranslation} from 'react-i18next';
 import {DataContext} from "../../context/DataProvider";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faFacebookF, faInstagram} from "@fortawesome/free-brands-svg-icons";
 
 export default function EventsPage() {
     const {t} = useTranslation();
@@ -84,20 +86,29 @@ export default function EventsPage() {
                                 <p className="text-custom-15 text-color60">{t(pickedEvent.translation.description)}</p>
                                 <div className="flex items-center">
                                     <p className="text-color66 capitalize">{t("share")}:</p>
-                                    <ul className="flex px-[9px] justify-center items-center gap-3">
-                                        <li className="cursor-pointer flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50">
+                                    <ul className="flex px-[9px] gap-3 w-full">
+                                        <li className="flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300">
                                             <a href="https://www.facebook.com/GekoOnlineEducation/" target="_blank"
                                                rel="noopener noreferrer">
-                                                <i className="fa-brands fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li className="cursor-pointer flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50">
-                                            <a href="https://www.instagram.com/geko_education/#" target="_blank"
-                                               rel="noopener noreferrer">
-                                                <i className="fa-brands fa-instagram"></i>
+                                                <FontAwesomeIcon
+                                                    icon={faFacebookF}
+                                                    size="lg"
+                                                    className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
+                                                />
                                             </a>
                                         </li>
 
+                                        {/* Instagram link */}
+                                        <li className="flex items-center justify-center w-[32px] h-[32px] border-2 rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300">
+                                            <a href="https://www.instagram.com/geko_education" target="_blank"
+                                               rel="noopener noreferrer">
+                                                <FontAwesomeIcon
+                                                    icon={faInstagram}
+                                                    size="lg"
+                                                    className="text-pink-600 hover:text-pink-800 transition-colors duration-300"
+                                                />
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -107,7 +118,7 @@ export default function EventsPage() {
                                         className="flex gap-3 text-color60 text-custom-15 border-b-[2px] border-colorF2 py-3">
                                         <TbClockHour9 className="text-primary"/>
                                         <div className="flex flex-col gap-1">
-                                        <p className="text-primaryDark font-bold">Start Time</p>
+                                            <p className="text-primaryDark font-bold">Start Time</p>
                                             <p>17/11/2024</p>
                                         </div>
                                     </div>
