@@ -35,7 +35,6 @@ const FacebookBox = () => {
         <div className="facebook-box">
             {/* Facebook Page plugin with Like button inside */}
             <div className="fb-page-container" style={{ position: 'relative' }}>
-                {/* Facebook Page plugin */}
                 <div
                     className="fb-page"
                     data-href="https://www.facebook.com/GekoOnlineEducation"  // Facebook page URL to display
@@ -59,7 +58,7 @@ const FacebookBox = () => {
                     style={{
                         position: 'absolute',
                         top: '18%',  // Adjust the vertical position as needed
-                        left: '12.5%', // Horizontally center it
+                        left: '16.5%', // Horizontally center it
                         transform: 'translateX(-50%)', // Ensures it is perfectly centered
                     }}
                 ></div>

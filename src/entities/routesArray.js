@@ -17,7 +17,6 @@ export const routesArray = [
     component: AboutUs,
     path: '/about-us',
   },
-
   {
     id: 5,
     name: 'COURSES',
@@ -36,4 +35,4 @@ export const routesArray = [
     component: Contacts,
     path: '/contacts',
   },
-]
+];

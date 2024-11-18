@@ -1,5 +1,5 @@
 import React, {useContext, useLayoutEffect, useState} from 'react'
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import {TbClockHour9} from 'react-icons/tb'
 import {IoLanguage} from 'react-icons/io5'
 import {PiStudentBold} from 'react-icons/pi'
@@ -15,6 +15,7 @@ import {useTranslation} from "react-i18next";
 import {DataContext} from "../../context/DataProvider";
 
 export default function CoursePage() {
+    const nav = useNavigate();
     const {t} = useTranslation();
     const {id: coursesID,} = useParams()
     const [slidesToShow, setSlidesToShow] = useState(3)
@@ -81,6 +82,7 @@ export default function CoursePage() {
                                 alt={pickedCourse.translation.title}/>
                             <div className='w-full px-5'>
                                 <button
+                                    onClick={() => nav(`/contacts`)}
                                     className="self-center w-[100%] py-[10px] px-[25px] rounded-[4px] uppercase font-bold text-white text-sm bg-primary">
                                     {t("Sign_Up")}
                                 </button>
