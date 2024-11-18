@@ -36,7 +36,6 @@ export default function EventsPage() {
                                     loop={pickedEvent.event_galleries.length > 1}
                                     modules={[Pagination, A11y]}
                                     speed={500}
-                                    onSwiper={(swiper) => console.log(swiper)}
                                     onSlideChange={() => console.log('slide change')}
                                 >
                                     {pickedEvent.event_galleries && pickedEvent.event_galleries.length > 0 ? (

@@ -1,16 +1,15 @@
+import {useContext} from "react";
+import {DataContext} from "../../context/DataProvider";
+
 export default function LessonInfo({image, title}) {
+    const {getImageUrl} = useContext(DataContext);
+
     return (
         <article
             className="hover-effect flex-container-content flex py-5 md:py-0 transition-colors duration-300 gap-2 text-white flex-col items-center justify-between shadow-2xl"
         >
-            {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
             <img
-                src={image && typeof image === 'string' && image.startsWith('https')
-                    ? image
-                    : image
-                        ? `https://dev.gekoeducation.com${image}`
-                        : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'
-                }
+                src={getImageUrl(image)}
                 alt={title}  // Улучшено описание alt для доступности
                 className="w-[200px] text-primary" // Добавляем класс hover-effect
             />

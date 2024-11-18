@@ -1,21 +1,18 @@
 import React, {useLayoutEffect, useState, useContext} from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, A11y, Autoplay } from 'swiper/modules'; // Импортируйте Autoplay
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Pagination, A11y, Autoplay} from 'swiper/modules'; // Импортируйте Autoplay
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {DataContext} from "../../context/DataProvider";
 
 const CourseSlider = () => {
     const nav = useNavigate();
     const [slidesToShow, setSlidesToShow] = useState(5);
     const [spaceBetween, setSpaceBetween] = useState(30);
-    const [autoplayTimeoutId, setAutoplayTimeoutId] = useState(null); // Для хранения идентификатора таймера
 
-    const renderBullet = (index, className) => {
-        return `<span class="${className}" style="background-color: orange;"></span>`;
-    };
+
 
     useLayoutEffect(() => {
         function updateSlidesToShow() {
@@ -39,31 +36,15 @@ const CourseSlider = () => {
         };
     }, []);
 
-    const {categories} = useContext(DataContext);
+    const {categories, getImageUrl, renderBullet} = useContext(DataContext);
 
 
-    const handleInteraction = (swiper) => {
-        // Остановка автопрокрутки
-        swiper.autoplay.stop();
 
-        // Если таймер уже установлен, сбросьте его
-        if (autoplayTimeoutId) {
-            clearTimeout(autoplayTimeoutId);
-        }
-
-        // Установите новый таймер на 5 секунд
-        const timeoutId = setTimeout(() => {
-            swiper.autoplay.start(); // Возобновите автопрокрутку
-            setAutoplayTimeoutId(null); // Сбросьте идентификатор таймера
-        }, 3000);
-
-        setAutoplayTimeoutId(timeoutId);
-    };
     const shouldLoop = categories.length > slidesToShow;
     return (
         <div className="popularDiv max-w-[1300px] mx-auto max:px-0 py-16 px-[5px]">
             <Swiper
-                modules={[Pagination, A11y,  Autoplay]} // Добавьте Autoplay
+                modules={[Pagination, A11y, Autoplay]} // Добавьте Autoplay
                 spaceBetween={spaceBetween}
                 slidesPerView={slidesToShow}
                 loop={shouldLoop}
@@ -77,16 +58,11 @@ const CourseSlider = () => {
                 speed={500}
                 autoplay={{
                     delay: 1500, // Задержка между переключениями (в миллисекундах)
-                    disableOnInteraction: false, // Продолжать автопрокрутку даже после взаимодействия
                 }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
-                onTouchStart={(swiper) => handleInteraction(swiper)} // Обработка касания
-                onClick={(swiper) => handleInteraction(swiper)} // Обработка клика
             >
-                {categories.map(({ image, id, translation }) => (
+                {categories.map(({image, id, translation}) => (
                     <SwiperSlide key={id}
-                                 style={{ display: 'flex', justifyContent: 'center' }}
+                                 style={{display: 'flex', justifyContent: 'center'}}
                     >
                         <article
                             onClick={() => nav(`/course-category/${id}`)}
@@ -94,13 +70,7 @@ const CourseSlider = () => {
                             style={{aspectRatio: "1 / 1"}}>
                             <img
                                 className="inner-img absolute inset-0 w-full object-cover"
-                                src={
-                                    image && typeof image === 'string'
-                                        ? image.startsWith('https')
-                                            ? image
-                                            : `https://dev.gekoeducation.com${image}`
-                                        : 'https://via.placeholder.com/150' // Подставить заглушку
-                                }
+                                src={getImageUrl(image)}
                                 alt="Course"
                                 style={{
                                     filter: 'brightness(50%)',

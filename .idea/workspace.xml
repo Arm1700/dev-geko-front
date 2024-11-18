@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/header/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/courses/[id]/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/LessonInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/LessonInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/PopularCourse.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/PopularCourse.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Review.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Team.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Team.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -206,7 +198,7 @@
       <workItem from="1731758571508" duration="592000" />
       <workItem from="1731761173826" duration="553000" />
       <workItem from="1731761833668" duration="3631000" />
-      <workItem from="1731779038546" duration="1001000" />
+      <workItem from="1731779038546" duration="1683000" />
     </task>
     <servers />
   </component>

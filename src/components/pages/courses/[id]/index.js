@@ -17,14 +17,10 @@ import {DataContext} from "../../context/DataProvider";
 export default function CoursePage() {
     const {t} = useTranslation();
     const {id: coursesID,} = useParams()
-    const renderBullet = (index, className) => {
-        return `<span class="${className}" style="background-color: orange; "></span>`; // Установите цвет фона в orange
-    };
-    const [autoplayTimeoutId, setAutoplayTimeoutId] = useState(null); // Для хранения идентификатора таймера
     const [slidesToShow, setSlidesToShow] = useState(3)
     const [spaceBetween, setSpaceBetween] = useState(30)
 
-    const {getCoursesById, courses } = useContext(DataContext);
+    const {getCoursesById, courses, renderBullet} = useContext(DataContext);
 
     let pickedCourse = getCoursesById(coursesID)
     useLayoutEffect(() => {
@@ -49,22 +45,6 @@ export default function CoursePage() {
         }
     }, [])
 
-    const handleInteraction = (swiper) => {
-        if (!swiper || !swiper.autoplay) return; // Safeguard for undefined swiper or autoplay
-
-        swiper.autoplay.stop();
-
-        if (autoplayTimeoutId) {
-            clearTimeout(autoplayTimeoutId);
-        }
-
-        const timeoutId = setTimeout(() => {
-            swiper.autoplay.start();
-            setAutoplayTimeoutId(null);
-        }, 3000);
-
-        setAutoplayTimeoutId(timeoutId);
-    };
 
     const shouldLoop = courses.length > slidesToShow;
 
@@ -206,12 +186,8 @@ export default function CoursePage() {
                                 speed={500}
                                 autoplay={{
                                     delay: 1500, // Задержка между переключениями (в миллисекундах)
-                                    disableOnInteraction: false, // Продолжать автопрокрутку даже после взаимодействия
                                 }}
-                                onSwiper={(swiper) => console.log(swiper)}
-                                onSlideChange={() => console.log('slide change')}
-                                onTouchStart={(swiper) => handleInteraction(swiper)} // Обработка касания
-                                onClick={(swiper) => handleInteraction(swiper)}
+
                             >
                                 {courses.slice(0, 6).map(({image, id, translation}) => (
                                     <SwiperSlide key={id}>

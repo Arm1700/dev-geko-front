@@ -8,13 +8,13 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 
 export default function Event({pickedEvent}) {
     const nav = useNavigate();
+    const {t} = useTranslation();
 
     const handleCategoryClick = (id) => {
         nav(`/events/${pickedEvent.status}/${id}`);
     };
 
     const [isMenuVisible, setMenuVisible] = useState(false);
-    const [autoplayTimeoutId, setAutoplayTimeoutId] = useState(null); // For storing the autoplay timeout ID
 
     const handleMouseEnter = () => {
         setMenuVisible(true);
@@ -24,25 +24,6 @@ export default function Event({pickedEvent}) {
         setMenuVisible(false);
     };
 
-    const handleInteraction = (swiper) => {
-        if (!swiper || !swiper.autoplay) return; // Safeguard for undefined swiper or autoplay
-
-        swiper.autoplay.stop();
-
-        if (autoplayTimeoutId) {
-            clearTimeout(autoplayTimeoutId);
-        }
-
-        const timeoutId = setTimeout(() => {
-            swiper.autoplay.start();
-            setAutoplayTimeoutId(null);
-        }, 3000);
-
-        setAutoplayTimeoutId(timeoutId);
-    };
-
-
-    const {t} = useTranslation();
 
     if (!pickedEvent) {
         return <div>{t('Event not found')}</div>; // Fallback message when event is not found
@@ -85,12 +66,8 @@ export default function Event({pickedEvent}) {
                     speed={500}
                     autoplay={{
                         delay: 1500,
-                        disableOnInteraction: false,
                     }}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
-                    onTouchStart={(swiper) => handleInteraction(swiper)}
-                    onClick={(swiper) => handleInteraction(swiper)}
+
                 >
                     {pickedEvent.event_galleries && pickedEvent.event_galleries.length > 0 ? (
                         pickedEvent.event_galleries.map(({img, id}) => (

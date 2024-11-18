@@ -1,6 +1,7 @@
 import {FaExternalLinkAlt} from 'react-icons/fa'
 import {useNavigate} from 'react-router-dom'
-import {useState} from 'react'
+import {useContext, useState} from 'react'
+import {DataContext} from "../../context/DataProvider";
 
 export default function PopularCourse({
                                           gridStyleTF = true,
@@ -11,6 +12,7 @@ export default function PopularCourse({
                                       }) {
     const nav = useNavigate()
     const [isHovered, setIsHovered] = useState(false)
+    const {getImageUrl} = useContext(DataContext);
 
     const handleMouseEnter = () => {
         setIsHovered(true)
@@ -19,16 +21,7 @@ export default function PopularCourse({
     const handleMouseLeave = () => {
         setIsHovered(false)
     }
-    const imageUrl = image && typeof image === 'string' && image.startsWith('https')
-        ? image
-        : image
-            ? `https://dev.gekoeducation.com${image}`
-            : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'
-        ? image
-        : image
-            ? `https://dev.gekoeducation.com${image}`
-            : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png';
-
+    const imageUrl = getImageUrl(image)
     return (
         <article
             className={`border-gray flex ${gridStyleTF === true ? "none border rounded-lg  flex-col " : "py-5 sm:flex border-b"}`}>
