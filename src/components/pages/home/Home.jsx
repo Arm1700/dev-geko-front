@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css"; // Импорт стилей skeleton
 import Course from '../shared/home/Course';
 import MainPhoto from './MainPhoto';
 import PopularCourse from '../shared/home/PopularCourse';
@@ -11,6 +10,7 @@ import {useTranslation} from 'react-i18next';
 import {DataContext} from "../context/DataProvider";
 import RegisterForm from "./RegisterForm";
 import Reviews from '../shared/home/Review';
+import "react-loading-skeleton/dist/skeleton.css";
 
 export default function Home() {
     const {t} = useTranslation();

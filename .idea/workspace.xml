@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +36,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/project/frontend/git new project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/project/frontend/geko-front&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -205,6 +206,9 @@
       <workItem from="1731932781272" duration="11000" />
       <workItem from="1731941869645" duration="596000" />
       <workItem from="1731943930477" duration="1044000" />
+      <workItem from="1732011018102" duration="1693000" />
+      <workItem from="1732072003654" duration="987000" />
+      <workItem from="1732091435970" duration="1389000" />
     </task>
     <servers />
   </component>
