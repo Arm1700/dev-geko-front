@@ -16,7 +16,6 @@ export default function Home() {
     const {t} = useTranslation();
     const {events, courses, lessonInfo, loading} = useContext(DataContext);
     const nav = useNavigate();
-    console.log(lessonInfo)
     const handleCategoryClick = () => {
         nav(`/course-category`);
     };

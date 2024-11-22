@@ -12,12 +12,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Подключение Facebook SDK -->
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v21.0"></script>
+    <script async defer crossorigin="anonymous"
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v21.0"
+            nonce="your-nonce">
+    </script>
+
     <script src="//code.jivo.ru/widget/A8fHYmlWEg" async></script>
 
     <title>Geko Education</title>
 </head>
 <body>
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '1263217894882530',
+            xfbml: true,
+            version: 'v21.0'
+        });
+    };
+</script>
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root"></div>
 </body>

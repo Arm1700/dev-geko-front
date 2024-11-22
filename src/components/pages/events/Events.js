@@ -15,10 +15,8 @@ export default function Events() {
         { title: 'upcoming', id: 2 },
         { title: 'completed', id: 3 },
     ];
-    console.log(tab)
     // Set activeTab based on the tab in the URL or default to 'completed'
     const [activeTab, setActiveTab] = useState(tab || 'completed');
-    console.log(activeTab)
     // Update the URL when the activeTab changes
     useEffect(() => {
         // Only update the URL if the active tab changes and is different from the current tab in the URL

@@ -7,6 +7,17 @@
     <list default="true" id="13dcaeb4-b6b3-413a-89d9-87807fcc47cf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/LanguageSwitcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/LanguageSwitcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/context/DataProvider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/context/DataProvider.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/events/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/Events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/events/[id]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/home/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home/RegisterForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/FacebookBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/FacebookBox.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/FacebookLikeButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/FacebookLikeButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/shared/home/Slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/shared/home/Slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +219,10 @@
       <workItem from="1731943930477" duration="1044000" />
       <workItem from="1732011018102" duration="1693000" />
       <workItem from="1732072003654" duration="987000" />
-      <workItem from="1732091435970" duration="1389000" />
+      <workItem from="1732091435970" duration="7988000" />
+      <workItem from="1732176619398" duration="619000" />
+      <workItem from="1732252783457" duration="626000" />
+      <workItem from="1732263000937" duration="1358000" />
     </task>
     <servers />
   </component>

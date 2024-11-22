@@ -38,7 +38,6 @@ const CustomSlider = () => {
         }
     };
 
-    console.log(middleItemIndex,'middleItemIndex')
     return (
         <Slider {...settings} onSwipe={handleSwipe}>
             {items.map(({id,name}, index) => (

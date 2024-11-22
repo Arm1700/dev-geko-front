@@ -25,7 +25,6 @@ export default function  RegisterForm({check = true}) {
         setTimeout(() => setShowNotify(false), 3000)
     }
     const onSubmit = async data => {
-        console.log(data)
         try {
             const response = await postData(data,setSelectedCategory ,setSelectedCountry)
 

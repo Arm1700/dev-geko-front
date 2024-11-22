@@ -10,20 +10,31 @@ export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
 
   return (
-    <div className='bg-white rounded '>
-      {Object.keys(lngs).map((lng) => (
+      <div className='bg-white rounded '>
+        {/*{Object.keys(lngs).map((lng) => (*/}
+        {/*  <button*/}
+        {/*    key={lng}*/}
+        {/*    type="submit"*/}
+        {/*    onClick={() => i18n.changeLanguage(lng)}*/}
+        {/*    title={lngs[lng].nativeName}*/}
+        {/*    className={`w-[35px] m-[3px] p-1 ${*/}
+        {/*      i18n.resolvedLanguage === lng ? 'bg-secondary rounded ' : ''*/}
+        {/*    }`}*/}
+        {/*  >*/}
+        {/*    <img alt={lngs[lng].nativeName} src={lngs[lng].flag}/>*/}
+        {/*  </button>*/}
+        {/*))}*/}
         <button
-          key={lng}
-          type="submit"
-          onClick={() => i18n.changeLanguage(lng)}
-          title={lngs[lng].nativeName}
-          className={`w-[35px] m-[3px] p-1 ${
-            i18n.resolvedLanguage === lng ? 'bg-secondary rounded ' : ''
-          }`}
+            key={'am'}
+            type="submit"
+            onClick={() => i18n.changeLanguage('am')}
+            title={lngs['am'].nativeName}
+            className={`w-[35px] m-[3px] p-1 ${
+                i18n.resolvedLanguage === 'am' ? 'bg-secondary rounded ' : ''
+            }`}
         >
-          <img alt={lngs[lng].nativeName} src={lngs[lng].flag}/>
+          <img alt={'Armenian'} src={lngs['am'].flag}/>
         </button>
-      ))}
-    </div>
+      </div>
   );
 }

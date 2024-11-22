@@ -38,7 +38,6 @@ export default function EventsPage() {
                                     loop={pickedEvent.event_galleries.length > 1}
                                     modules={[Pagination, A11y]}
                                     speed={500}
-                                    onSlideChange={() => console.log('slide change')}
                                 >
                                     {pickedEvent.event_galleries && pickedEvent.event_galleries.length > 0 ? (
                                         pickedEvent.event_galleries.map(({image, id}) => (

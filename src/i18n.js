@@ -12,9 +12,11 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        debug: true,
-        fallbackLng: 'en', // Default fallback language
-        lng: 'en',
+        debug: false,
+        // fallbackLng: 'en', // Default fallback language
+        // lng: 'en',
+        fallbackLng: 'am', // Default fallback language
+        lng: 'am',
         interpolation: {
             escapeValue: false, // React already escapes values
         },

@@ -21,7 +21,6 @@ const FacebookLikeButton = () => {
             <button
                 onClick={() => {
                     // Вы можете реализовать лайк через Graph API или другим способом
-                    console.log("Liked!");
                 }}
             >
                 Like

@@ -113,12 +113,10 @@ export const DataProvider = ({children}) => {
     };
     // Рендерим компонент только после загрузки данных или ошибки
     if (state.loading) {
-        console.log("Data is still loading...");
         return null;
     }
 
     if (state.error) {
-        console.error("Error fetching data:", state.error);
         return null;
     }
 
