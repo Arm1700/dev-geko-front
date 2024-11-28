@@ -24,7 +24,7 @@ export default function CoursePage() {
     const [slidesToShow, setSlidesToShow] = useState(3)
     const [spaceBetween, setSpaceBetween] = useState(30)
 
-    const {getCoursesById, courses, renderBullet} = useContext(DataContext);
+    const {getCoursesById, courses, renderBullet, BASE_URL} = useContext(DataContext);
 
     let pickedCourse = getCoursesById(coursesID)
     useLayoutEffect(() => {
@@ -81,7 +81,7 @@ export default function CoursePage() {
                                 src={pickedCourse?.image && typeof pickedCourse?.image === 'string' && pickedCourse?.image.startsWith('https')
                                     ? pickedCourse?.image
                                     : pickedCourse?.image
-                                        ? `https://dev.gekoeducation.com${pickedCourse?.image}`
+                                        ? `${BASE_URL}${pickedCourse?.image}`
                                         : 'https://eduma.thimpress.com/wp-content/uploads/2022/07/thumnail-cate-7-170x170.png'}
                                 alt={pickedCourse.translation.title}/>
                             <div className='w-full px-5'>

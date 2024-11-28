@@ -1,7 +1,8 @@
 import axios from 'axios';
+import {BASE_URL} from "../../context/DataProvider";
 
+const api = `${BASE_URL}/api/contact/`;
 // Endpoint URL
-const api = 'https://dev.gekoeducation.com/api/contact/';
 
 export async function postData(data, setSelectedCategory, setSelectedCountry) {
   try {
